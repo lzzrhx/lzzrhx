@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "[ LOCK ]"
+case $BLOCK_BUTTON in 1) ~/.config/i3/scripts/lock.sh;;esac

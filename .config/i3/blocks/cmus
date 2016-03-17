@@ -1,0 +1,3 @@
+#!/bin/bash
+cmus_artist=$(cmus-remote -Q | grep ' artist ' | cut -d ' ' -f3-);cmus_song=$(cmus-remote -Q | grep title | cut -d ' ' -f3-);cmus=${cmus_artist^^}" - "${cmus_song^^};if [ "$cmus" != " - " ];then echo $cmus;fi
+case $BLOCK_BUTTON in 1) cmus-remote -u;;2) cmus-remote -s;;4) cmus-remote -r;;5) cmus-remote -n;;esac

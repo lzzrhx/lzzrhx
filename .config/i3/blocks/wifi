@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "[ WIFI ]"
+case $BLOCK_BUTTON in 1) urxvt -name wicd-curses -e wicd-curses;;esac

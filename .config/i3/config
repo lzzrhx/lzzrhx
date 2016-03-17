@@ -1,0 +1,168 @@
+#stuff
+set $mod Mod4
+floating_modifier $mod
+
+#general config
+font pango: ProggyCleanTT 12
+hide_edge_borders both
+new_window none
+
+#set colors
+set $bg-color 	           #303030
+set $text-color            #A9A28F
+set $inactive-text-color   #807A6C
+set $highlight-color       #57807D
+
+#window colors
+client.focused $bg-color $bg-color $text-color $highlight-color
+client.unfocused $bg-color $bg-color $inactive-text-color $highlight-color
+client.focused_inactive $bg-color $bg-color $inactive-text-color $highlight-color
+client.urgent $bg-color $bg-color $highlight-color $highlight-color
+
+#bar
+bar {
+strip_workspace_numbers yes
+position top
+separator_symbol "//"
+tray_output none
+status_command i3blocks -c ~/.config/i3/i3blocks.conf
+colors {
+background $bg-color
+separator #757575
+focused_workspace $text-color $text-color $bg-color
+inactive_workspace $bg-color $bg-color $text-color
+urgent_workspace $bg-color $bg-color $highlight-color
+}}
+
+#set workspace names
+set $workspace1 "1:[ 01: FILES ]"
+set $workspace2 "2:[ 02: WEB ]"
+set $workspace3 "3:[ 03: MUSIC ]"
+set $workspace4 "4:[ 04: IRC ]"
+set $workspace5 "5:[ 05: NVIM ]"
+set $workspace6 "6:[ 06: VIDYA ]"
+set $workspace7 "7:[ 07 ]"
+set $workspace8 "8:[ 08 ]"
+set $workspace9 "9:[ 09 ]"
+set $workspace10 "10:[ 10 ]"
+
+#startup apps
+exec_always --no-startup-id xrandr --output HDMI1 --off --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VGA1 --off
+exec_always --no-startup-id feh --bg-scale ~/.wallpapers/1278171700477.jpg
+exec --no-startup-id xset s off -dpms 
+exec --no-startup-id compton --config ~/.config/.compton.conf
+exec --no-startup-id unclutter -idle 1
+exec --no-startup-id numlockx
+exec --no-startup-id redshift
+exec --no-startup-id sh -c 'sleep 30; exec greg sync'
+exec --no-startup-id firefox
+exec --no-startup-id urxvt -name ranger -e ranger
+exec --no-startup-id urxvt -name cmus -e cmus
+exec --no-startup-id sh -c 'sleep 30; exec urxvt -name irssi1 -e irssi -c Rizon'
+exec --no-startup-id sh -c 'sleep 30; exec urxvt -name irssi2 -e irssi -c freenode'
+exec --no-startup-id urxvt -name nvim -e nvim ~/Documents/Notes.txt
+exec --no-startup-id /usr/local/bin/steam
+#exec --no-startup-id sh -c 'sleep 30; exec cmus-remote -C "add ~/Music"'
+
+#default workspace for apps
+for_window [class="(?i)urxvt" instance="ranger"] move workspace $workspace1
+for_window [class="Firefox"] move workspace $workspace2
+for_window [class="(?i)urxvt" instance="cmus"] move workspace $workspace3
+for_window [class="(?i)urxvt" instance="irssi1"] move workspace $workspace4
+for_window [class="(?i)urxvt" instance="irssi2"] move workspace $workspace4
+for_window [class="(?i)urxvt" instance="nvim"] move workspace $workspace5
+for_window [class="Steam"] move workspace $workspace6
+for_window [class="Deluge"] move workspace $workspace10
+
+#keybinds
+bindsym --release button3 kill
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 485 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$highlight-color" -font "ProggyCleanTT 14"
+bindsym $mod+Shift+w exec urxvt -name wicd-curses -e wicd-curses
+bindsym $mod+Shift+u exec urxvt -name update -e ~/.config/i3/scripts/update.sh
+bindsym $mod+Shift+l exec ~/.config/i3/scripts/lock.sh
+bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+bindsym $mod+r mode "resize"
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+a focus parent
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+oslash focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+oslash move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym Print exec scrot ~/Pictures/Screenshots/screenshot_%Y-%m-%d-%H%M%S.png
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioPlay exec cmus-remote -u
+bindsym XF86AudioPause exec cmus-remote -u
+bindsym XF86AudioStop exec cmus-remote -s
+bindsym XF86AudioPrev exec cmus-remote -r
+bindsym XF86AudioNext exec cmus-remote -n
+#bindsym $mod+Shift+Home exec cmus-remote -u
+#bindsym $mod+Shift+Prior exec cmus-remote -s
+#bindsym $mod+Shift+Next exec cmus-remote -r
+#bindsym $mod+Shift+End exec cmus-remote -n
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+#set caps to escape
+exec_always --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
+exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+
+#workspaces
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+#resize mode
+mode "resize" {
+bindsym j resize shrink width 10 px or 10 ppt
+bindsym k resize grow height 10 px or 10 ppt
+bindsym l resize shrink height 10 px or 10 ppt
+bindsym oslash resize grow width 10 px or 10 ppt
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}

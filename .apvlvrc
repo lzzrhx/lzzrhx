@@ -1,0 +1,4 @@
+set fullscreen = yes
+set zoom = fitwidth
+set continuous = yes
+set content = no
