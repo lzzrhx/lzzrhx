@@ -17,3 +17,11 @@ URxvt*saveLines: 5000
 URxvt.perl-ext-common:     default,matcher,confirm-paste,selection-to-clipboard
 URxvt.url-launcher:        /usr/bin/firefox
 URxvt.matcher.button:      1
+rofi.color-enabled: true
+rofi.eh: 2
+rofi.bw: 0
+rofi.opacity: 85
+rofi.padding: 485
+rofi.width: 100
+rofi.font: ProggyCleanTT 14
+rofi.lines: 3

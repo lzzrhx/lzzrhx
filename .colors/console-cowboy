@@ -33,3 +33,14 @@
 !white
 *color7:#A9A28F
 *color15:#807A6C
+
+! Rofi
+#define r_bg   #303030
+#define r_fg   #A9A28F
+#define r_hlfg #57807D
+! States: bg, fg, bgalt, hlbg, hlfg
+rofi.color-normal: r_bg,r_fg,r_bg,r_bg,r_hlfg
+rofi.color-urgent: r_bg,r_fg,r_bg,r_bg,r_hlfg
+rofi.color-active: r_bg,r_fg,r_bg,r_bg,r_hlfg
+! states: background, border
+rofi.color-window: r_bg,r_bg
