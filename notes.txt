@@ -120,7 +120,9 @@ $ vim /etc/modprobe.d/nobeep.conf
 # blacklist snd_pcsp
 $ nmcli device wifi list
 $ nmcli device wifi connect <ssid> password <password>
-$ vim /etc/X11/xorg.conf.d/70-synaptics.conf
+
+// TOUCHPAD GESTURES:
+$ sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf
 # Add this:
 Section "InputClass"
     Identifier "touchpad"
@@ -141,11 +143,10 @@ Section "InputClass"
         Option "MaxTapTime" "125"
 EndSection
 
-
 // PACKAGES:
 $ pacman -S firefox discord spotify-launcher okular qbittorrent thunar mplayer
 $ pacman -S blender cuda godot
-$ pacman -S github-cli python python-pip sdl2 python-pygame
+$ pacman -S github-cli python python-pip sdl2 python-pygame cmake
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
 
 // DOTFILES:
@@ -158,11 +159,12 @@ $ cd yay
 $ makepkg -si
 $ cd
 $ rm -rf ~/yay/
+
+// YAY PACKAGES:
 $ yay -S sublime-text-4
 
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-$ sudo pacman -S cmake
 $ vim
 # :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
