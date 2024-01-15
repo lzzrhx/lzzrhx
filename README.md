@@ -1,3 +1,7 @@
+# 3drenderer
+
+See notes.txt for more info
+
 ![screenshot](screenshots/screenshot_00.png?raw=true "screenshot")
 
 ------
