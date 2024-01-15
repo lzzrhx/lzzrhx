@@ -1,4 +1,4 @@
-# 3drenderer
+# dotfiles
 
 See notes.txt for more info
 
