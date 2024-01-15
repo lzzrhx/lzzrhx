@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "[ UPDATE ]"
-case $BLOCK_BUTTON in 1) urxvt -name update -e ~/.config/i3/scripts/update.sh;;esac

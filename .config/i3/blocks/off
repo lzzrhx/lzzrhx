@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "[ OFF ]"
-case $BLOCK_BUTTON in 1) sudo poweroff ;;2) i3-msg exit ;;3) sudo reboot ;;esac

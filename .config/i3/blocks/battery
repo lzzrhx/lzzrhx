@@ -1,3 +1,0 @@
-#!/bin/bash
-echo $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage:/ { print $2 }')
-case $BLOCK_BUTTON in 5) xbacklight -dec 10 ;;4) xbacklight -inc 10 ;;esac

@@ -1,3 +1,0 @@
-#!/bin/bash
-echo $(echo $(curl -su casper.eide@gmail.com:$(secret-tool lookup service gmail) https://mail.google.com/mail/feed/atom || echo "<fullcount>-</fullcount>") | grep -oPm1 "(?<=<fullcount>)[^<]+")
-case $BLOCK_BUTTON in 1) urxvt -name mutt -e mutt;;esac
