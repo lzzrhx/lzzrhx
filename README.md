@@ -14,6 +14,7 @@
 
 ![screenshot](screenshots/screenshot_03.png?raw=true "screenshot")
 
+\*
 Fonts from:
 The Ultimate Oldschool PC Font Pack
 https://int10h.org/oldschool-pc-fonts/
@@ -213,3 +214,4 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
+\*
