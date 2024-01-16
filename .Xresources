@@ -1,11 +1,7 @@
+! Import color scheme
 #include "/home/laser_wolf/.colors/apprentice"
 
-URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste
-URxvt*saveLines:        5000
-URxvt*scrollBar:        false
-URxvt*cursorBlink:      true
-URxvt.internalBorder:   10
-
+! Set font
 *font:      xft:Px437 IBM VGA 8x16:size=8
 !*font:     xft:Px437 ToshibaSat 8x16:size=8
 !*font:     xft:Px437 EverexMe 8x16:size=8
@@ -15,21 +11,20 @@ URxvt.internalBorder:   10
 !*font:     xft:Px437 DOS/V re. JPN16:size=8
 !*font:     xft:Px437 Compis:size=8
 
-! extensions -> matcher: open URL with a left click
+! rxvt-unicode setup
+URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste
+URxvt*saveLines:        5000
+URxvt*scrollBar:        false
+URxvt*cursorBlink:      true
+URxvt.internalBorder:   10
+
+! Matcher extension: open URL with a left click
 URxvt.urlLauncher     : xdg-open
 URxvt.url-launcher    : xdg-open
 URxvt.matcher.button  : 1
 
-Xcursor.theme : Vanilla-DMZ-AA
-Xcursor.size  : 18
-
-
+! Change copy/paste keybinds
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-
-! anti-aliasing
-!Xft*antialias : true
-!Xft*hinting   : 1
-!Xft*dpi       : 96

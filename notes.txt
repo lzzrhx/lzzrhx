@@ -12,12 +12,12 @@ https://github.com/gustavopezzi/vimfiles
 * OS: ARCH LINUX
 * DISPLAY MANAGER: Ly
 * WINDOW MANAGER: i3
-* LAUNCHER: rofi 
+* LAUNCHER: Rofi 
+* TERMINAL EMULATOR: rxvt-unicode
 
 // THEME:
 * MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
-* VIM THEME: Benokai
-* ROFI THEME: Custom (inversed Apprentice)
+* VIM THEME: Benokai (https://github.com/benjaminwhite/Benokai)
 * MAIN FONT: IBM VGA 8x16
 
 // USAGE/KEY COMMANDS:
@@ -59,12 +59,15 @@ https://github.com/gustavopezzi/vimfiles
 * 3D EDITOR: blender
 * GAME EDITOR: godot
 
+// NOTES
+* Username is hardcoded in the import of color scheme in .Xresources
+
 // TODO:
 * Issue: unresponsive keyboard/mouse after inactivity (FIXED?)
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
-$ loadkeys no
+(for norwegian keyboard) $ loadkeys no
 $ cat /sys/firmware/efi/fw_platform_size
 $ iwctl
 $ adapter phy0 set-property Powered on
@@ -106,7 +109,7 @@ $ vim /etc/hosts
 * 127.0.0.1     localhost
 * ::1           localhost
 * 127.0.1.1     <hostname>.localdomain  localhost
-$ (usually not required) mkinitcpio -P linux
+(usually not required) $ mkinitcpio -P linux
 $ passwd
 $ useradd -m <username>
 $ passwd <username>
@@ -131,8 +134,8 @@ $ exit
 $ umount -lR /mnt
 $ reboot
 * login with <username>
-$ localectl --no-convert set-x11-keymap no pc104
-$ (if dual boot:) sudo grub-mkconfig -o /boot/grub/grub.cfg
+(for norweigan keyboard) $ localectl --no-convert set-x11-keymap no pc104
+(for dual boot setup) $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 $ vim /etc/modprobe.d/nobeep.conf
 * blacklist pcspkr
 * blacklist snd_pcsp
