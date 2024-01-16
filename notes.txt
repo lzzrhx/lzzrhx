@@ -60,9 +60,8 @@ https://github.com/gustavopezzi/vimfiles
 * GAME EDITOR: godot
 
 // TODO:
-* Issue: unresponsive keyboard/mouse after inactivity
-* Issue: urxvt-unicode adds empty lines when moving window
-* Find a console based wifi manager (similar to wicd curses)
+* Issue: unresponsive keyboard/mouse after inactivity (FIXED?)
+* Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
 $ loadkeys no
