@@ -52,7 +52,6 @@ markup=none
 
 # Battery indicator
 [battery]
-label=BAT: 
 interval=30
 
 # Time
