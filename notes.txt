@@ -44,7 +44,6 @@ https://github.com/gustavopezzi/vimfiles
 * FILE MANAGER: $ ranger
 * MUSIC PLAYER: $ cmus
 * PROCESS MANAGER: $ htop
-* NETWORK MONITOR: $ slurm
 * AUDIO MIXER: $ alsamixer
 * TEXT EDITOR: $ vim
 
@@ -193,7 +192,6 @@ $ rm -rf ~/yay/
 
 // YAY PACKAGES:
 $ yay -S sublime-text-4
-$ yay -S slurm
 
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
