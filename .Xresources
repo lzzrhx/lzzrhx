@@ -11,6 +11,9 @@
 !*font:     xft:Px437 DOS/V re. JPN16:size=8
 !*font:     xft:Px437 Compis:size=8
 
+! Set cursor
+!Xcursor.theme: retrosmart-xcursor-white
+
 ! rxvt-unicode setup
 URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste
 URxvt*saveLines:        5000

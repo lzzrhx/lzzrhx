@@ -41,26 +41,26 @@ elsif ($acpi !~ /: ([\w\s]+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
+
+if ($percent > 95) {
+    $percent = 100;
+}
+
 $full_text = "$label$percent%";
 
-if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
-} elsif ($status eq 'Charging') {
+if ($status eq 'Charging') {
 	$full_text .= ' CHR';
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
 	$ac_adapt = <AC_ADAPTER>;
 	close(AC_ADAPTER);
-
 	if ($ac_adapt =~ /: ([\w-]+)/) {
 		$ac_adapt = $1;
-
 		if ($ac_adapt eq 'on-line') {
 			$full_text .= ' CHR';
-		} elsif ($ac_adapt eq 'off-line') {
-			$full_text .= ' DIS';
-		}
-	}
+	
+        }
+    }
 }
 
 $short_text = $full_text;
@@ -69,6 +69,10 @@ if ($acpi =~ /(\d\d:\d\d):/) {
 	$full_text .= " ($1)";
 }
 
+if ($percent == 100) {
+    $full_text = "";
+    $short_text = "";
+}
 # print text
 print "$full_text\n";
 print "$short_text\n";
@@ -77,15 +81,10 @@ print "$short_text\n";
 if ($status eq 'Discharging') {
 
 	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
-
+		print "#FF8700\n";
+	} elsif ($percent < 50) {
+		print "#FFFFAF\n";
+    }
 	if ($percent < 5) {
 		exit(33);
 	}
