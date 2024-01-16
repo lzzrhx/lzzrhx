@@ -1,7 +1,7 @@
 # dotfiles
 
-> [!NOTE]
-> [See notes.txt for more info](notes.txt)
+> [!TIP]
+> See [notes.txt](notes.txt) for more info
 
 ![screenshot](screenshots/screenshot_00.png?raw=true "screenshot")
 
