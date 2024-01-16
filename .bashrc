@@ -7,11 +7,12 @@ clear
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -a'
 alias grep='grep --color=auto'
 #alias vim='nvim'
 alias xresources='xrdb -load ~/.Xresources'
 alias lock='~/.config/i3/lock.sh'
+alias slurm='slurm -i wlp0s20f3'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

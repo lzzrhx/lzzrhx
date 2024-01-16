@@ -1,6 +1,6 @@
 #include "/home/laser_wolf/.colors/apprentice"
 
-URxvt.perl-ext-common:  default,matcher,clipboard,font-size,-selection-popup,selection-to-clipboard,confirm-paste
+URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste
 URxvt*saveLines:        5000
 URxvt*scrollBar:        false
 URxvt*cursorBlink:      true
@@ -22,6 +22,12 @@ URxvt.matcher.button  : 1
 
 Xcursor.theme : Vanilla-DMZ-AA
 Xcursor.size  : 18
+
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! anti-aliasing
 !Xft*antialias : true

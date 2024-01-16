@@ -1,0 +1,59 @@
+! Gruvbox Dark
+! https://github.com/morhetz/gruvbox
+
+! Black
+*color0:	#282828
+
+! Red
+*color1:	#CC241D
+
+! Green
+*color2:	#98971A
+
+! Yellow
+*color3:	#D79921
+
+! Blue
+*color4:	#458588
+
+! Magenta
+*color5:	#B16286
+
+! Cyan
+*color6:	#689D6A
+
+! White
+*color7:	#A89984
+
+! Bright black
+*color8:	#928374
+
+! Bright red
+*color9:	#FB4934
+
+! Bright green
+*color10:	#B8BB26
+
+! Bright yellow
+*color11:	#FABD2F
+
+! Bright blue
+*color12:	#83A598
+
+! Bright magenta
+*color13:	#D3869B
+
+! Bright cyan
+*color14:	#8EC07C
+
+! Bright white
+*color15:	#EBDBB2
+
+! Background
+*background:	#282828
+
+! Foreground
+*foreground:	#EBDBB2
+
+! Cursor
+*cursorColor:	#EBDBB2
