@@ -1,7 +1,3 @@
-Fonts from:
-The Ultimate Oldschool PC Font Pack
-https://int10h.org/oldschool-pc-fonts/
-
 Lock-screen from:
 https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
@@ -18,8 +14,7 @@ https://github.com/gustavopezzi/vimfiles
 // THEME:
 * MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
 * VIM THEME: Benokai (https://github.com/benjaminwhite/Benokai)
-* MAIN FONT: IBM VGA 8x16
-
+* MAIN FONT: IBM VGA 8x16 (https://int10h.org/oldschool-pc-fonts/)
 // USAGE/KEY COMMANDS:
 * [win] + ENTER = terminal
 * [win] + D = rofi launcher
@@ -62,7 +57,6 @@ https://github.com/gustavopezzi/vimfiles
 * Username is hardcoded in the import of color scheme in .Xresources
 
 // TODO:
-* Issue: unresponsive keyboard/mouse after inactivity (FIXED?)
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -125,7 +119,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
 $ systemctl enable ly.service
