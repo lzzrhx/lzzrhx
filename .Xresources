@@ -1,5 +1,5 @@
 ! Import color scheme
-#include "/home/laser_wolf/.colors/apprentice"
+#include "./.colors/apprentice"
 
 ! Set font
 *font:      xft:Px437 IBM VGA 8x16:size=8
@@ -12,7 +12,7 @@
 !*font:     xft:Px437 Compis:size=8
 
 ! Set cursor
-!Xcursor.theme: retrosmart-xcursor-white
+Xcursor.theme: retrosmart-xcursor-white
 
 ! rxvt-unicode setup
 URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste

@@ -48,6 +48,8 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * PROCESS MANAGER: $ htop
 * AUDIO MIXER: $ alsamixer
 * TEXT EDITOR: $ vim
+* LIST WIFI NETWORKS: $ nmcli device wifi list
+* CONNECT TO WIFI: $ nmcli device wifi connect <ssid> password <password>
 
 // USAGE/APPS (THROUGH ROFI):
 * WEB BROWSER: firefox
@@ -64,10 +66,7 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * Username is hardcoded in the import of color scheme in .Xresources
 
 // TODO:
-* Silent boot: Don't display xorg start messages
-* Silent boot: Don't display i3 shutdown messages
 * Make i3block for volume that works with bluetooth headset
-* Enable bluetooth autoconnect
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -165,7 +164,7 @@ Section "InputClass"
         Option "EmulateTwoFingerMinW" "8"
         Option "CoastingSpeed" "0"
         Option "FingerLow" "30"
-        Option "FingerHigh" "50"
+        Option "FingerHigh" "100"
         Option "MaxTapTime" "125"
 EndSection
 
@@ -198,6 +197,9 @@ $ rm -rf ~/yay/
 
 // YAY PACKAGES:
 $ yay -S sublime-text-4
+$ yay -S bluetooth-autoconnect
+$ sudo systemctl enable bluetooth-autoconnect
+$ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -210,3 +212,19 @@ $ ./.vim/bundles/YouCompleteMe/install.py
 $ yay -S xcursor-retrosmart
 * Netork monitor:
 $ yay -S slurm
+* Dwarf Fortress:
+$ sudo pacman -S dwarffortress
+* Cataclysm: Dark Days Ahead
+$ sudo pacman -S cataclysm-dda
+* Nethack:
+$ sudo pacman -S nethack
+
+// QUIET BOOT
+* Redirect Xorg stdout and stderr to file:
+$ sudo vim /etc/ly/config.ini
+* Change the "x_cmd" line to:
+x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
+* Redirect i3 sdout and stderr to log file:
+$ sudo vim /usr/share/xsessions/i3.desktop
+* Change the "Exec" line to:
+Exec=i3 > ~/.i3_log 2>&1
