@@ -4,6 +4,9 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 Vim settings from:
 https://github.com/gustavopezzi/vimfiles
 
+Linux course:
+https://pikuma.com/courses/linux-unix-command-line-bash-shell
+
 // SYSTEM:
 * OS: ARCH LINUX
 * DISPLAY MANAGER: Ly
@@ -15,6 +18,7 @@ https://github.com/gustavopezzi/vimfiles
 * MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
 * VIM THEME: Benokai (https://github.com/benjaminwhite/Benokai)
 * MAIN FONT: IBM VGA 8x16 (https://int10h.org/oldschool-pc-fonts/)
+
 // USAGE/KEY COMMANDS:
 * [win] + ENTER = terminal
 * [win] + D = rofi launcher
@@ -33,6 +37,9 @@ https://github.com/gustavopezzi/vimfiles
 * [win] + [shift] + RIGHT = move right
 * [win] + [shift] + UP = move up
 * [win] + [shift] + DOWN = move down
+* Print = screenshot
+* Ctrl+PrtSc = selection screenshot
+* Shift+PrtSc = delayed (5 sec) screenshot
 
 // USAGE/TERMINAL COMMANDS:
 * SPECS: $ neofetch
@@ -57,6 +64,10 @@ https://github.com/gustavopezzi/vimfiles
 * Username is hardcoded in the import of color scheme in .Xresources
 
 // TODO:
+* Silent boot: Don't display xorg start messages
+* Silent boot: Don't display i3 shutdown messages
+* Make i3block for volume that works with bluetooth headset
+* Enable bluetooth autoconnect
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -119,7 +130,8 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree
+$ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
 $ systemctl enable ly.service
@@ -192,3 +204,9 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
+
+// OPTIONAL / EXTRA STUFF
+* Retro cursor theme:
+$ yay -S xcursor-retrosmart
+* Netork monitor:
+$ yay -S slurm

@@ -40,8 +40,7 @@ bar {
 }}
 
 # Startup apps
-#exec_always --no-startup-id feh --bg-scale ~/picture/wallpaper.png
-exec_always --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VGA1 --off
+#exec --no-startup-id xrandr --output HDMI-0 --auto --same-as DP-2
 exec --no-startup-id xset s off -dpms 
 exec --no-startup-id unclutter -idle 1
 exec --no-startup-id numlockx
@@ -70,7 +69,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Screenshot
 bindsym Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png
-bindsym Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
+bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -s
+bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
 
 # Rofi setup and hotkey
 bindsym $mod+d exec rofi -show drun -font "Px437 IBM VGA 8x16 12" -theme custom

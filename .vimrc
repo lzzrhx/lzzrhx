@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'farmergreg/vim-lastplace'
 call vundle#end()
 filetype plugin indent on
 
@@ -60,6 +61,19 @@ colorscheme Benokai
 
 " Configure syntax highlight files
 syntax enable
+
+" Press enter to add new line
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+" Status line always visible
+set laststatus=2
+
+" Incremental search
+set incsearch
+
+" Persistent undo
+set undofile
 
 "source ~/.vim/syntax/asm.vim
 "au BufRead,BufNewFile *.asm set filetype=asm

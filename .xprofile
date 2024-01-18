@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xrandr --output DP-2 --primary --output HDMI-0 --auto --same-as DP-2
