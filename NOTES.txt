@@ -63,7 +63,6 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * GAME EDITOR: godot
 
 // TODO:
-* Make i3block for volume that works with bluetooth headset
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
