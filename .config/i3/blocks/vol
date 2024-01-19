@@ -74,13 +74,16 @@ awk '/^\s*\*/{f=1}/^\s*index:/{f=0}f' |\
 grep "device.api" |\
 head -n1 |\
 sed 's/.*= "\(.*\)".*/\1/')
-if [ $API_NAME == 'bluez' ]
-then
+if [ $API_NAME == 'bluez' ]; then
     VOL="$VOL (BT)"
 fi
 
 # Format text
-VOL="VOL: $VOL"
+if [ $VOL == "%" ]; then
+    VOL=""
+else
+    VOL="VOL: $VOL"
+fi
 
 # Print long text
 echo "$VOL"
