@@ -49,8 +49,8 @@ function set_default_playback_device_next {
 case "$BLOCK_BUTTON" in
     1) set_default_playback_device_next ;;
     3) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
-    4) pactl set-sink-volume @DEFAULT_SINK@ +1% ;;
-    5) pactl set-sink-volume @DEFAULT_SINK@ -1% ;;
+    4) pulsemixer --change-volume +2 --max-volume 100 ;;
+    5) pulsemixer --change-volume -2 --max-volume 100 ;;
 esac
 
 # Get active sink
