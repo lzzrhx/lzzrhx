@@ -10,98 +10,72 @@ default_border none
 font pango:Px437 IBM VGA 8x16, monospace 8
 
 # Set colors
-set_from_resource $i3-block-warn-color i3wm.color1 #ff0000
 set_from_resource $desktop-bg-color i3wm.color0 #000000
 set_from_resource $bg-color i3wm.background #000000
 set_from_resource $text-color i3wm.foreground #cccccc
 set_from_resource $inactive-text-color i3wm.color8 #666666
-set_from_resource $highlight-color i3wm.color11 #ffff00
+set_from_resource $highlight-color i3wm.color11 #ffffff
 
 # Set window colors
-exec --no-startup-id xsetroot -solid "$desktop-bg-color"
+exec xsetroot -solid "$desktop-bg-color"
 client.focused $bg-color $bg-color $text-color $highlight-color
 client.unfocused $bg-color $bg-color $inactive-text-color $highlight-color
 client.focused_inactive $bg-color $bg-color $inactive-text-color $highlight-color
 client.urgent $bg-color $bg-color $highlight-color $highlight-color
 
-# Setup status bar
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
 	strip_workspace_numbers yes
 	position top
-	separator_symbol "*"
+	separator_symbol "//"
 	tray_output none        
 	#status_command i3status
-	status_command I3BLOCK_WARN_COLOR=$i3-block-warn-color i3blocks -c ~/.config/i3/i3blocks-config
+	status_command i3blocks
 	colors {
 		background $bg-color
 		separator $text-color
-        statusline $text-color
-        focused_workspace $text-color $text-color $bg-color
+		focused_workspace $text-color $text-color $bg-color
 		inactive_workspace $bg-color $bg-color $text-color
 		urgent_workspace $bg-color $bg-color $highlight-color
-    }
-}
+}}
 
-# Startup apps
-#exec --no-startup-id xrandr --output HDMI-0 --auto --same-as DP-2
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet
+
+#startup apps
+exec_always --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VGA1 --off
+#exec_always --no-startup-id feh --bg-scale ~/picture/wallpaper.png
 exec --no-startup-id xset s off -dpms 
 exec --no-startup-id unclutter -idle 1
 exec --no-startup-id numlockx
 exec --no-startup-id redshift -l 60:5
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-#exec --no-startup-id dex --autostart --environment i3
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# Set hotkeys
+# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioPlay exec playerctl -a play-pause
 bindsym XF86AudioStop exec playerctl -a stop
 bindsym XF86AudioPrev exec playerctl -a previous
 bindsym XF86AudioNext exec playerctl -a next
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# Screenshot
-bindsym Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png
-bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -s
-bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
-
-# Rofi setup and hotkey
-bindsym $mod+d exec rofi -show drun -font "Px437 IBM VGA 8x16 12" -theme custom
-
-# Lock screen
-bindsym $mod+Shift+e exec ~/.config/i3/lock.sh
-
-# Exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec i3-msg exit
-
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1:[ 01 ]"
-set $ws2 "2:[ 02 ]"
-set $ws3 "3:[ 03 ]"
-set $ws4 "4:[ 04 ]"
-set $ws5 "5:[ 05 ]"
-set $ws6 "6:[ 06 ]"
-set $ws7 "7:[ 07 ]"
-set $ws8 "8:[ 08 ]"
-set $ws9 "9:[ 09 ]"
-set $ws10 "10:[ 10 ]"
-
+bindsym Print exec scrot ~/pictures/screenshots/screenshot_%Y-%m-%d-%H%M%S.png
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -114,6 +88,14 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec --no-startup-id dmenu_run
+# A more modern dmenu replacement is rofi:
+bindsym $mod+d exec rofi -show drun -font "Px437 IBM VGA 8x16 12" -theme minimal
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -165,6 +147,19 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:[ 01 ]"
+set $ws2 "2:[ 02 ]"
+set $ws3 "3:[ 03 ]"
+set $ws4 "4:[ 04 ]"
+set $ws5 "5:[ 05 ]"
+set $ws6 "6:[ 06 ]"
+set $ws7 "7:[ 07 ]"
+set $ws8 "8:[ 08 ]"
+set $ws9 "9:[ 09 ]"
+set $ws10 "10:[ 10 ]"
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -189,23 +184,30 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
-        # Pressing down will shrink the window’s height.
-        # Pressing up will grow the window’s height.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
-        bindsym l resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
