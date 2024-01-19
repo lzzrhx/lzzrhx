@@ -54,7 +54,7 @@ case "$BLOCK_BUTTON" in
 esac
 
 # Get active sink
-ACTIVE=$(pacmd list-sinks | grep "state\: RUNNING" -B4 -A7 | grep "index:\|name:\|volume: \(front\|mono\)\|muted:")
+ACTIVE=$(pacmd list-sinks | grep "state: RUNNING" -B4 -A7 | grep "index:\|name:\|volume: \(front\|mono\)\|muted:")
 [[ -z "$ACTIVE" ]] && ACTIVE=$(pacmd list-sinks | grep "index:\|name:\|volume: \(front\|mono\)\|muted:" | grep -A3 '*')
 for name in INDEX NAME VOL MUTED; do
     read $name
@@ -79,7 +79,8 @@ if [ $API_NAME == 'bluez' ]; then
 fi
 
 # Format text
-if [ $VOL == "%" ]; then
+if [ "$VOL" == "%" ]
+then
     VOL=""
 else
     VOL="VOL: $VOL"

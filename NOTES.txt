@@ -50,6 +50,8 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * TEXT EDITOR: $ vim
 * LIST WIFI NETWORKS: $ nmcli device wifi list
 * CONNECT TO WIFI: $ nmcli device wifi connect <ssid> password <password>
+* CALENDAR: $ calcurse
+* CALCULATOR: $ calc
 
 // USAGE/APPS (THROUGH ROFI):
 * WEB BROWSER: firefox
@@ -125,7 +127,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service

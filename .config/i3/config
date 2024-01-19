@@ -24,13 +24,27 @@ client.unfocused $bg-color $bg-color $inactive-text-color $highlight-color
 client.focused_inactive $bg-color $bg-color $inactive-text-color $highlight-color
 client.urgent $bg-color $bg-color $highlight-color $highlight-color
 
+# Run pactl info to start pulse
+exec --no-startup-id pactl info
+
+# Disable screensaver
+exec --no-startup-id xset s off -dpms 
+
+# Unclutter: hides mouse on inactivity
+exec --no-startup-id unclutter -idle 1
+
+# Numlockx: enable numlock
+exec --no-startup-id numlockx
+
+# Redshift: adjust screen color temperature to reduce eye strain
+exec --no-startup-id redshift -l 60:5
+
 # Setup status bar
 bar {
 	strip_workspace_numbers yes
 	position top
 	separator_symbol "*"
 	tray_output none        
-	#status_command i3status
 	status_command I3BLOCK_WARN_COLOR=$i3-block-warn-color i3blocks -c ~/.config/i3/i3blocks-config
 	colors {
 		background $bg-color
@@ -41,22 +55,6 @@ bar {
 		urgent_workspace $bg-color $bg-color $highlight-color
     }
 }
-
-# Startup apps
-#exec --no-startup-id xrandr --output HDMI-0 --auto --same-as DP-2
-exec --no-startup-id pulseaudio --start
-exec --no-startup-id xset s off -dpms 
-exec --no-startup-id unclutter -idle 1
-exec --no-startup-id numlockx
-exec --no-startup-id redshift -l 60:5
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-#exec --no-startup-id dex --autostart --environment i3
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Set hotkeys
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -71,7 +69,7 @@ bindsym XF86AudioNext exec playerctl -a next
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-# Screenshot
+# Screenshot hotkeys
 bindsym Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png
 bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -s
 bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
@@ -81,9 +79,6 @@ bindsym $mod+d exec rofi -show drun -font "Px437 IBM VGA 8x16 12" -theme custom
 
 # Lock screen
 bindsym $mod+Shift+e exec ~/.config/i3/lock.sh
-
-# Exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec i3-msg exit
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload

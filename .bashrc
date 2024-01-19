@@ -13,6 +13,7 @@ alias grep='grep --color=auto'
 alias xresources='xrdb -load ~/.Xresources'
 alias lock='~/.config/i3/lock.sh'
 alias slurm='slurm -i wlp0s20f3'
+alias i3-config='vim .config/i3/config'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

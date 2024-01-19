@@ -14,5 +14,4 @@ signal=1
 
 # Time
 [time]
-command=date '+%d-%m-%Y %H:%M:%S '
 interval=1
