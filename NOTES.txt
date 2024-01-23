@@ -65,6 +65,7 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * GAME EDITOR: godot
 
 // TODO:
+* Add support for hotplugging HDMI
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -127,7 +128,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
@@ -166,7 +167,7 @@ Section "InputClass"
         Option "MaxTapTime" "125"
 EndSection
 
-// DISABLE SUSPEND
+// DISABLE SUSPEND:|
 $ sudo mkdir /etc/systemd/sleep.conf.d/
 $ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
 * Add these lines:
@@ -176,15 +177,21 @@ AllowHibernation=no
 AllowSuspendThenHibernate=no
 AllowHybridSleep=no
 
+// QUIET BOOT:
+* Redirect Xorg stdout and stderr to file:
+$ sudo vim /etc/ly/config.ini
+* Change the "x_cmd" line to:
+x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
+* Redirect i3 sdout and stderr to log file:
+$ sudo vim /usr/share/xsessions/i3.desktop
+* Change the "Exec" line to:
+Exec=i3 > ~/.i3_log 2>&1
+
 // PACKAGES:
 $ pacman -S firefox discord spotify-launcher okular qbittorrent thunar mplayer
 $ pacman -S blender cuda godot
-$ pacman -S github-cli python python-pip sdl2 python-pygame cmake
+$ pacman -S github-cli python python-pip sdl2 python-pygame cmake gdb
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
-
-// DOTFILES:
-$ git clone https://github.com/LASER-WOLF/dotfiles.git
-* Copy contents of dotfiles to appropriate folders
 
 // YAY:
 $ git clone https://aur.archlinux.org/yay.git
@@ -199,13 +206,17 @@ $ yay -S bluetooth-autoconnect
 $ sudo systemctl enable bluetooth-autoconnect
 $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
+// DOTFILES:
+$ git clone https://github.com/LASER-WOLF/dotfiles.git
+* Copy contents of dotfiles to appropriate folders
+
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
 
-// OPTIONAL / EXTRA STUFF
+// OPTIONAL / EXTRA STUFF:
 * Retro cursor theme:
 $ yay -S xcursor-retrosmart
 * Netork monitor:
@@ -216,13 +227,3 @@ $ sudo pacman -S dwarffortress
 $ sudo pacman -S cataclysm-dda
 * Nethack:
 $ sudo pacman -S nethack
-
-// QUIET BOOT
-* Redirect Xorg stdout and stderr to file:
-$ sudo vim /etc/ly/config.ini
-* Change the "x_cmd" line to:
-x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
-* Redirect i3 sdout and stderr to log file:
-$ sudo vim /usr/share/xsessions/i3.desktop
-* Change the "Exec" line to:
-Exec=i3 > ~/.i3_log 2>&1

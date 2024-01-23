@@ -39,6 +39,9 @@ exec --no-startup-id numlockx
 # Redshift: adjust screen color temperature to reduce eye strain
 exec --no-startup-id redshift -l 60:5
 
+# Picom: enable vsync to avoid screen tearing
+exec --no-startup-id picom -b
+
 # Setup status bar
 bar {
 	strip_workspace_numbers yes
