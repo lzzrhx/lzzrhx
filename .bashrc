@@ -14,6 +14,7 @@ alias xresources='xrdb -load ~/.Xresources'
 alias lock='~/.config/i3/lock.sh'
 alias slurm='slurm -i wlp0s20f3'
 alias i3-config='vim .config/i3/config'
+alias enable-hdmi='xrandr --output HDMI-0 --auto --same-as DP-2'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

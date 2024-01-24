@@ -18,7 +18,8 @@ set_from_resource $inactive-text-color i3wm.color8 #666666
 set_from_resource $highlight-color i3wm.color11 #ffff00
 
 # Set window colors
-exec --no-startup-id xsetroot -solid "$desktop-bg-color"
+#exec --no-startup-id xsetroot -solid "$desktop-bg-color"
+exec --no-startup-id hsetroot -solid "$desktop-bg-color"
 client.focused $bg-color $bg-color $text-color $highlight-color
 client.unfocused $bg-color $bg-color $inactive-text-color $highlight-color
 client.focused_inactive $bg-color $bg-color $inactive-text-color $highlight-color

@@ -66,6 +66,7 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 
 // TODO:
 * Add support for hotplugging HDMI
+* Dual boot bluetooth key issue:(
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -128,7 +129,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
@@ -167,7 +168,7 @@ Section "InputClass"
         Option "MaxTapTime" "125"
 EndSection
 
-// DISABLE SUSPEND:|
+// DISABLE SUSPEND:
 $ sudo mkdir /etc/systemd/sleep.conf.d/
 $ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
 * Add these lines:
