@@ -38,7 +38,7 @@ exec --no-startup-id unclutter -idle 1
 exec --no-startup-id numlockx
 
 # Redshift: adjust screen color temperature to reduce eye strain
-exec --no-startup-id redshift -l 60:5
+exec --no-startup-id redshift -l 60:5 -O 4000
 
 # Picom: enable vsync to avoid screen tearing
 exec --no-startup-id picom -b

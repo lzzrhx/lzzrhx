@@ -129,7 +129,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
@@ -164,8 +164,11 @@ Section "InputClass"
         Option "EmulateTwoFingerMinW" "8"
         Option "CoastingSpeed" "0"
         Option "FingerLow" "30"
-        Option "FingerHigh" "100"
+        Option "FingerHigh" "50"
         Option "MaxTapTime" "125"
+        Option "PalmDetect" "1"
+        Option "PalmMinWidth" "6"
+        Option "PalmMinZ" "300"
 EndSection
 
 // DISABLE SUSPEND:
