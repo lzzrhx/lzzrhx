@@ -220,6 +220,10 @@ $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
 
+// PAIRED BLUETOOTH DEVICES ON DUAL BOOT:
+* Pair the device on windows, then copy the pairing keys over to Linux:
+https://wiki.archlinux.org/title/bluetooth
+
 // OPTIONAL / EXTRA STUFF:
 * Retro cursor theme:
 $ yay -S xcursor-retrosmart

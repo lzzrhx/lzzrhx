@@ -79,7 +79,7 @@ bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S
 bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
 
 # Rofi setup and hotkey
-bindsym $mod+d exec rofi -show drun -font "Px437 IBM VGA 8x16 12" -theme custom
+bindsym $mod+d exec rofi -show run -font "Px437 IBM VGA 8x16 12" -theme custom
 
 # Lock screen
 bindsym $mod+Shift+e exec ~/.config/i3/lock.sh
