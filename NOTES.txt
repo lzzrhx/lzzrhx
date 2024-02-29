@@ -1,9 +1,6 @@
 Lock-screen from:
 https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
-Vim settings from:
-https://github.com/gustavopezzi/vimfiles
-
 Linux course:
 https://pikuma.com/courses/linux-unix-command-line-bash-shell
 
@@ -129,7 +126,7 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts
+$ pacman -S git neofetch alsa-utils feh scrot numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts nodejs
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service

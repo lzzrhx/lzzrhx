@@ -77,3 +77,11 @@ gT               = go to prev tab
 :wqa   = write and quit on all tabs
 :q!    = quit without saving
 
+
+
+x delete char (command mode)
+r replace char (command mode)
++p paste from system clipboard
+I insert mode at beginning of line
+A insert mode at end of line
+

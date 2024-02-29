@@ -75,7 +75,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Screenshot hotkeys
 bindsym Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png
-bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -s
+bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -l mode=edge -s
 bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
 
 # Rofi setup and hotkey
