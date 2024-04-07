@@ -1,9 +1,6 @@
 Lock-screen from:
 https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
-Linux course:
-https://pikuma.com/courses/linux-unix-command-line-bash-shell
-
 // SYSTEM:
 * OS: ARCH LINUX
 * DISPLAY MANAGER: Ly
@@ -45,6 +42,7 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 * PROCESS MANAGER: $ htop
 * AUDIO MIXER: $ alsamixer
 * TEXT EDITOR: $ vim
+* DIFF TOOL: $ vimdiff <file1> <file2>
 * LIST WIFI NETWORKS: $ nmcli device wifi list
 * CONNECT TO WIFI: $ nmcli device wifi connect <ssid> password <password>
 * CALENDAR: $ calcurse
@@ -63,7 +61,6 @@ https://pikuma.com/courses/linux-unix-command-line-bash-shell
 
 // TODO:
 * Add support for hotplugging HDMI
-* Dual boot bluetooth key issue:(
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
