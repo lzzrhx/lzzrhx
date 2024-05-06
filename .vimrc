@@ -13,6 +13,7 @@ call plug#begin()
 " Make sure you use single quotes
 
 Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'ycm-core/YouCompleteMe'
 
@@ -104,3 +105,13 @@ set ttimeoutlen=50
 set updatetime=300
 
 set signcolumn=yes
+
+"set wildmode=list:longest,list:full
+"set wildmenu
+set diffopt+=iwhiteall
+
+autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType h setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType hpp setlocal commentstring=//\ %s
+

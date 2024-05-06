@@ -53,11 +53,12 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * MUSIC PLAYER: spotify-launcher
 * CHAT CLIENT: discord
 * FILE MANAGER: thunar
+* TEXT EDITOR: subl
 * TORRENT CLIENT: qbittorrent
 * BLUETOOTH MANAGER: blueman-manager
 * AUDIO MIXER: pavucontrol
 * 3D EDITOR: blender
-* GAME EDITOR: godot
+* GAME ENGINE: godot
 
 // TODO:
 * Add support for hotplugging HDMI
