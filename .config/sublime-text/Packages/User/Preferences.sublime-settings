@@ -7,7 +7,7 @@
 	"theme": "Default Dark.sublime-theme",
 	"ruler_style": "dotted",
 	"tab_size": 4,
-	//"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": true,
 	"use_tab_stops": false,
 	"always_show_minimap_viewport": true,
 	"caret_style": "smooth",
