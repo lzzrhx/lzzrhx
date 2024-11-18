@@ -36,32 +36,32 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * Shift+PrtSc = delayed (5 sec) screenshot
 
 // USAGE/TERMINAL COMMANDS:
-* SPECS: $ neofetch
-* FILE MANAGER: $ ranger
-* MUSIC PLAYER: $ cmus
-* PROCESS MANAGER: $ htop
-* AUDIO MIXER: $ alsamixer
-* TEXT EDITOR: $ vim
-* DIFF TOOL: $ vimdiff <file1> <file2>
+* SPECS:              $ neofetch
+* FILE MANAGER:       $ ranger
+* MUSIC PLAYER:       $ cmus
+* PROCESS MANAGER:    $ htop
+* AUDIO MIXER:        $ alsamixer
+* TEXT EDITOR:        $ vim
+* DIFF TOOL:          $ vimdiff <file1> <file2>
 * LIST WIFI NETWORKS: $ nmcli device wifi list
-* CONNECT TO WIFI: $ nmcli device wifi connect <ssid> password <password>
-* CALENDAR: $ calcurse
-* CALCULATOR: $ calc
+* CONNECT TO WIFI:    $ nmcli device wifi connect <ssid> password <password>
+* CALENDAR:           $ calcurse
+* CALCULATOR:         $ calc
 
 // USAGE/APPS (THROUGH ROFI):
-* WEB BROWSER: firefox
-* MUSIC PLAYER: spotify-launcher
-* CHAT CLIENT: discord
-* FILE MANAGER: thunar
-* TEXT EDITOR: subl
-* TORRENT CLIENT: qbittorrent
+* WEB BROWSER:       firefox
+* MUSIC PLAYER:      spotify-launcher
+* CHAT CLIENT:       discord
+* FILE MANAGER:      thunar
+* TEXT EDITOR:       subl
+* TORRENT CLIENT:    qbittorrent
 * BLUETOOTH MANAGER: blueman-manager
-* AUDIO MIXER: pavucontrol
-* 3D EDITOR: blender
-* GAME ENGINE: godot
+* AUDIO MIXER:       pavucontrol
+* 3D EDITOR:         blender
+* GAME ENGINE:       godot
+* PDF READER:        okular
 
 // TODO:
-* Add support for hotplugging HDMI
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
@@ -191,7 +191,7 @@ $ pacman -S firefox discord spotify-launcher okular qbittorrent thunar mplayer
 $ pacman -S blender cuda godot
 $ pacman -S github-cli python python-pip sdl2 python-pygame cmake gdb
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
-$ pacman -S zathura zathura-pdf-mupdf texlive-binextra
+$ pacman -S zathura zathura-pdf-mupdf texlive-binextra texlive
 
 // YAY:
 $ git clone https://aur.archlinux.org/yay.git
@@ -207,8 +207,8 @@ $ sudo systemctl enable bluetooth-autoconnect
 $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
 // DOTFILES:
-$ git clone https://github.com/LASER-WOLF/dotfiles.git
-* Copy contents of dotfiles to appropriate folders
+$ git clone https://github.com/casper-borretzen/casper-borretzen.git
+* Copy contents of /dotfiles to appropriate folders
 
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
