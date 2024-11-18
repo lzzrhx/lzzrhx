@@ -1,0 +1,59 @@
+! Apprentice
+! https://romainl.github.io/Apprentice/
+
+! Black
+*color0:	#1C1C1C
+
+! Red
+*color1:	#AF5F5F
+
+! Green
+*color2:	#5F875F
+
+! Yellow
+*color3:	#87875F
+
+! Blue
+*color4:	#5F87AF
+
+! Magenta
+*color5:	#5F5F87
+
+! Cyan
+*color6:	#5F8787
+
+! White
+*color7:	#6C6C6C
+
+! Bright black
+*color8:	#444444
+
+! Bright red
+*color9:	#FF8700
+
+! Bright green
+*color10:	#87AF87
+
+! Bright yellow
+*color11:	#FFFFAF
+
+! Bright blue
+*color12:	#8FAFD7
+
+! Bright magenta
+*color13:	#8787AF
+
+! Bright cyan
+*color14:	#5FAFAF
+
+! Bright white
+*color15:	#FFFFFF
+
+! Background
+*background:	#262626
+
+! Foreground
+*foreground:	#BCBCBC
+
+! Cursor
+*cursorColor:	#BCBCBC

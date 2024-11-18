@@ -1,0 +1,5 @@
+How I'm able to take notes in mathematics lectures using LaTeX and Vim
+https://castel.dev/post/lecture-notes-1/
+
+Getting started with the VimTeX plugin
+https://ejmastnak.com/tutorials/vim-latex/vimtex/

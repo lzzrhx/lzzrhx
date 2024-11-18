@@ -1,0 +1,49 @@
+! Import color scheme
+#include "./.colors/apprentice"
+
+! Set font
+*font:      xft:PxPlus IBM VGA 8x16:size=8
+!*font:     xft:Px437 IBM VGA 8x16:size=8
+!*font:     xft:Px437 ToshibaSat 8x16:size=8
+!*font:     xft:Px437 EverexMe 8x16:size=8
+!*font:     xft:Px437 NEC APC3 8x16:size=8
+!*font:     xft:Px437 FMTowns re. 8x16:size=8
+!*font:     xft:Px437 DOS/V re. ANK16:size=8
+!*font:     xft:Px437 DOS/V re. JPN16:size=8
+!*font:     xft:Px437 Compis:size=8
+
+! Set cursor
+Xcursor.theme: retrosmart-xcursor-white
+
+! rxvt-unicode setup
+URxvt.perl-ext-common:  default,matcher,-selection-popup,selection-to-clipboard,confirm-paste,keyboard-select
+URxvt*saveLines:        5000
+URxvt*scrollBar:        false
+URxvt*cursorBlink:      true
+URxvt.internalBorder:   10
+
+! Matcher extension: open URL with a left click
+URxvt.urlLauncher     : xdg-open
+URxvt.url-launcher    : xdg-open
+URxvt.matcher.button  : 1
+
+! Change copy/paste keybinds
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Keyboard select setup
+! h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
+! g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E: More vi-like cursor movement keys
+! '/'/?:      Start forward/backward search
+! n/N:        Repeat last search, N: in reverse direction
+! Ctrl-f/b:   Scroll down/up one screen
+! Ctrl-d/u:   Scroll down/up half a screen
+! v/V/Ctrl-v: Toggle normal/linewise/blockwise selection
+! y/Return:   Copy selection to primary buffer, Return: quit afterwards
+! Y:          Copy selected lines to primary buffer or cursor line and quit
+! q/Escape:   Quit keyboard selection mode
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keyboard-select.clipboard: true

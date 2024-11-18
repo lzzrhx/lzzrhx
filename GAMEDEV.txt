@@ -1,0 +1,160 @@
+////////////////////////////////////////////////////////////////////////////////
+// GAME DEVELOPMENT RESOURCES
+////////////////////////////////////////////////////////////////////////////////
+
+# DOCUMENTATION:
+ - Godot docs                          https://docs.godotengine.org/
+    + GDScript style guide             https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
+ - PEP 8: Style Guide for Python Code  https://peps.python.org/pep-0008/
+ - Pygame docs                         https://www.pygame.org/docs/
+ - SDL Wiki                            https://wiki.libsdl.org/
+ - NESdev Wiki                         https://www.nesdev.org/wiki/
+ - PICO-8 User Manual                  https://www.lexaloffle.com/dl/docs/pico-8_manual.html
+ - Raylib Cheatsheet                   https://www.raylib.com/cheatsheet/cheatsheet.html
+
+
+# SOURCE CODE:
+ - (C)   Wolfenstein 3D  https://github.com/id-Software/wolf3d
+ - (C++) DOOM            https://github.com/id-Software/DOOM
+ - (C)   Quake           https://github.com/id-Software/Quake
+ - (C)   NetHack         https://github.com/NetHack/NetHack
+ - (C)   Angband         https://github.com/angband/angband
+ - (C++) Cataclysm-DDA   https://github.com/CleverRaven/Cataclysm-DDA
+
+
+# YOUTUBE PLAYLISTS:
+ - Gamedev #1  https://www.youtube.com/playlist?list=PLUznfNKscdcPwi9lqA-nCmzzGjvamtTFk
+ - Gamedev #2  https://www.youtube.com/playlist?list=PLUznfNKscdcMenAaMby5wO1JI8bxJJpn1
+ - Devlogs     https://www.youtube.com/playlist?list=PLUznfNKscdcPTyLIUIbY98FFfMp76GD3l
+ - Godot       https://www.youtube.com/playlist?list=PLUznfNKscdcNpHVcxUch_Xfsc6I8wu791
+ - PICO-8      https://www.youtube.com/playlist?list=PLUznfNKscdcNqvEYwCTjIIRpgd-MUwxc-
+ - NES         https://www.youtube.com/playlist?list=PLUznfNKscdcPw5CnWLlj42EjGwv9AwlEK
+ - Coding      https://www.youtube.com/playlist?list=PLUznfNKscdcN4GoQADvhbC8ER_ny3Wl-S
+
+
+# COURSES:
+ - Gustavo Pezzi, Pikuma
+    + Master the Linux Terminal & Bash Shell   https://pikuma.com/courses/linux-unix-command-line-bash-shell
+    + Understanding Bitshifting Operations     https://pikuma.com/courses/bit-shifting-operator-tutorial
+    + NES Programming with 6502 Assembly       https://pikuma.com/courses/nes-game-programming-tutorial
+      + https://github.com/LASER-WOLF/NesVideoGame/
+    + Raycasting Engine Programming with C     https://pikuma.com/courses/raycasting-engine-tutorial-algorithm-javascript
+      + https://github.com/LASER-WOLF/RaycastingEngine
+    + 3D Computer Graphics Programming         https://pikuma.com/courses/learn-3d-computer-graphics-programming
+      + https://github.com/LASER-WOLF/3DSoftwareRenderer
+    + C++ Game Engine Programming              https://pikuma.com/courses/cpp-2d-game-engine-development
+      + https://github.com/LASER-WOLF/2DGameEngine
+ - Jasper Flick, Catlike Coding (Unity/Godot)  https://catlikecoding.com/
+
+
+# BOOKS & ZINES:
+ - B. W. Kernighan & D. M. Ritchie, The C Programming Language, Second Edition
+ - ISO/IEC 9899:1999 (C99 standard)
+ - ISO/IEC 9899:2018 (C17 standard)
+ - Jens Gustedt, Modern C                                           https://gustedt.gitlabpages.inria.fr/modern-c/
+ - S.B Lippmann, J. Lajoie & B. Moo, C++ Primer, Fifth Edition
+ - Bjarne Stroustrup, The C++ Programming Language, Fourth Edition  https://www.stroustrup.com/4th.html 
+ - Jon Skeet, C# In Depth, Fourth Edition                           https://csharpindepth.com/
+ - Robert Nystrom, Game Programming Patterns                        https://gameprogrammingpatterns.com/
+ - Eric Lengyel, Foundations of Game Engine Development             https://foundationsofgameenginedev.com/
+ - Michael Abrash, Graphics Programming Black Book                  https://www.drdobbs.com/parallel/graphics-programming-black-book/184404919
+ - Real-Time Rendering, Fourth Edition                              https://www.realtimerendering.com/
+ - GPU Gems #1 - #3                                                 https://developer.nvidia.com/gpugems/gpugems
+ - Dylan Bennett, Game Development with PICO-8                      https://mboffin.itch.io/gamedev-with-pico-8-issue1
+ - Arnaud De Bock, PICO-8 Fanzine
+    + Issue #1                                                      https://sectordub.itch.io/pico-8-fanzine-1
+    + Issue #2                                                      https://sectordub.itch.io/pico-8-fanzine-2
+    + Issue #3                                                      https://sectordub.itch.io/pico-8-fanzine-3
+    + Issue #4                                                      https://sectordub.itch.io/pico-8-fanzine-4
+
+
+# PAPERS & ARTICLES:
+ - Gustavo Pezzi, Fundamental Math for Game Developers                           https://pikuma.com/blog/math-for-game-developers
+ - Gustavo Pezzi, Oversimplified History of Retro Game Consoles for Programmers  https://pikuma.com/blog/game-console-history-for-programmers
+ - Glenn Fiedler, Fix Your Timestep!                                             https://gafferongames.com/post/fix_your_timestep/
+ - David Colson, How to make a simple entity-component-system in C++             https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html
+ - David Colson, Building a PS1 style retro 3D renderer                          https://www.david-colson.com/2021/11/30/ps1-style-renderer.html
+ - Rasterization Rules & the Edge Function                                       https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
+ - Microsoft Direct3D Rasterization Rules                                        https://docs.microsoft.com/en-us/windows/win32/direct3d9/rasterization-rules#triangle-rasterization-rules
+ - Triangle rasterizer:
+    + (1/3) Juan Pineda, A Parallel Algorithm for Polygon Rasterization          https://www.cs.drexel.edu/~deb39/Classes/Papers/comp175-06-pineda.pdf
+    + (2/3) Fabian Giesen, Optimizing the basic rasterizer                       https://fgiesen.wordpress.com/2013/02/10/optimizing-the-basic-rasterizer/
+    + (3/3) Kristoffer Dyrkorn, A fast and precise triangle rasterizer           https://kristoffer-dyrkorn.github.io/triangle-rasterizer/
+ - Chris Hecker, Texture Mapping Technical Articles                              https://www.chrishecker.com/Miscellaneous_Technical_Articles
+ - Kok-Lim Low, Perspective-Correct Interpolation                                https://s3.amazonaws.com/thinkific/file_uploads/167815/attachments/c06/b72/f58/KokLimLow-PerspectiveCorrectInterpolation.pdf
+ - Kenneth I. Joy, On-Line Computer Graphics Notes: Clipping                     https://import.cdn.thinkific.com/167815/JoyKennethClipping-200905-175314.pdf
+ - Peter Shirley, Ray Tracing in One Weekend                                     https://raytracing.github.io/books/RayTracingInOneWeekend.html
+ - Amit Patel, Amit’s A* Pages                                                   http://theory.stanford.edu/~amitp/GameProgramming/
+ - Amit Patel, Introduction to the A* Algorithm                                  https://www.redblobgames.com/pathfinding/a-star/introduction.html
+ - Amit Patel, Implementation of A*                                              https://www.redblobgames.com/pathfinding/a-star/implementation.html
+ - Albert Ford, Symmetric Shadowcasting                                          https://www.albertford.com/shadowcasting/
+ - Bob Nystrom, What the Hero Sees: Field-of-View for Roguelikes                 https://journal.stuffwithstuff.com/2015/09/07/what-the-hero-sees/
+ - Amit Patel, Wraparound square tile maps on a sphere                           https://www.redblobgames.com/x/1938-square-tiling-of-sphere/
+ - Ken Perlin, An image synthesizer                                              https://dl.acm.org/doi/pdf/10.1145/325165.325247
+ - Ken Perlin, Improving noise                                                   https://mrl.nyu.edu/~perlin/paper445.pdf
+ - Ken Perlin, Implementing Improved Perlin Noise                                https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-5-implementing-improved-perlin-noise
+ - Amit Patel, Making maps with noise functions                                  https://www.redblobgames.com/maps/terrain-from-noise/
+ - Inigo Quilez, Value noise derivatives:                                        https://iquilezles.org/articles/morenoise/
+
+
+# WEBSITES:
+ - Red Blob Games   https://www.redblobgames.com/
+ - Basic Game Math  https://gamemath.com/
+ - Immersive Math   http://immersivemath.com
+ - Learn OpenGL     https://learnopengl.com/
+
+
+# PODCASTS:
+ - Roguelike Radio  http://www.roguelikeradio.com/
+
+
+# COMMUNITIES:
+ - Reddit, Gamedev multireddit  https://www.reddit.com/user/laserwolf/m/gamedev/
+ - Discord, Godot Engine        https://discord.gg/4JBkykG
+ - Discord, PICO-8              https://discord.gg/nMVEeVFkVD
+ - Discord, Raylib              https://discord.gg/raylib
+
+# GAME JAMS:
+ - The 7DRL Challenge  https://7drl.com/
+ - Godot Wild Jam!     https://godotwildjam.com/
+
+
+# C & C++ LIBRARIES:
+ - Graphics, audio & hardware access
+    + (C)   raylib      https://github.com/raysan5/raylib
+    + (C)   SDL         https://github.com/libsdl-org/SDL
+    + (C++) SFML        https://github.com/SFML/SFML
+    + (C)   GLFW        https://github.com/glfw/glfw
+ - Physics
+    + (C++) Bullet      https://github.com/bulletphysics/bullet3
+    + (C++) Box2D       https://github.com/erincatto/box2d
+    + (C)   Chipmunk2D  https://github.com/slembcke/Chipmunk2D
+ - UI
+    + (C++) DearImGui   https://github.com/ocornut/imgui
+ - Logging
+    + (C++) SPDLog      https://github.com/gabime/spdlog
+    + (C)   Log.c       https://github.com/rxi/log.c
+ - ECS
+    + (C++) EnTT        https://github.com/skypjack/entt
+    + (C)   Flecs       https://github.com/SanderMertens/flecs
+ - Other
+    + (C++) glm         https://github.com/g-truc/glm
+
+
+# TOOLS:
+ - Godot           https://godotengine.org/
+ - Sublime Text    https://www.sublimetext.com/
+ - Blender         https://www.blender.org/
+ - treeIT          http://www.evolved-software.com/treeit/treeit
+ - gaea            https://quadspinner.com/
+ - Crocotile 3D    https://crocotile3d.com/
+ - Cascadeur       https://cascadeur.com/
+ - Instant Meshes  https://github.com/wjakob/instant-meshes
+
+
+# ASSETS:
+ - Fonts, The Ultimate Oldschool PC Font Pack  https://int10h.org/oldschool-pc-fonts/
+ - Mixed, itch.io                              https://itch.io/game-assets/free
+ - Mixed, Kenney                               https://kenney.nl/assets
+ - Lospec Palette list                         https://lospec.com/palette-list
+

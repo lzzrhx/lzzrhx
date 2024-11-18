@@ -1,0 +1,17 @@
+# Global settings
+command=./blocks/$BLOCK_NAME
+separator_block_width=35
+markup=none
+
+# Battery indicator
+[bat]
+interval=10
+
+# Volume indicator
+[vol]
+interval=5
+signal=1
+
+# Time
+[time]
+interval=1

@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+
+###########################
+# VOL BLOCK
+###########################
+
+set -a
+MIXER=${MIXER:-""}
+SCONTROL=${SCONTROL:-""}
+
+# Set mixer
+if [[ -z "$MIXER" ]] ; then
+    MIXER="default"
+    if amixer -D pulse info >/dev/null 2>&1 ; then
+        MIXER="pulse"
+    fi
+fi
+
+# Set scontrol
+if [[ -z "$SCONTROL" ]] ; then
+    SCONTROL=$(amixer -D "$MIXER" scontrols | sed -n "s/Simple mixer control '\([^']*\)',0/\1/p" | head -n1)
+fi
+
+# Set capability
+CAPABILITY=$(amixer -D $MIXER get $SCONTROL | sed -n "s/  Capabilities:.*cvolume.*/Capture/p")
+
+# Move sinks to new playback device
+function move_sinks_to_new_default {
+    DEFAULT_SINK=$1
+    pacmd list-sink-inputs | grep index: | grep -o '[0-9]\+' | while read SINK
+    do
+        pacmd move-sink-input $SINK $DEFAULT_SINK
+    done
+}
+
+# Change to next playback device
+function set_default_playback_device_next {
+    inc=${1:-1}
+    num_devices=$(pacmd list-sinks | grep -c index:)
+    sink_arr=($(pacmd list-sinks | grep index: | grep -o '[0-9]\+'))
+    default_sink_index=$(( $(pacmd list-sinks | grep index: | grep -no '*' | grep -o '^[0-9]\+') - 1 ))
+    default_sink_index=$(( ($default_sink_index + $num_devices + $inc) % $num_devices ))
+    default_sink=${sink_arr[$default_sink_index]}
+    pacmd set-default-sink $default_sink
+    move_sinks_to_new_default $default_sink
+}
+
+# Handle muse input
+case "$BLOCK_BUTTON" in
+    1) set_default_playback_device_next ;;
+    3) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
+    4) pulsemixer --change-volume +2 --max-volume 100 ;;
+    5) pulsemixer --change-volume -2 --max-volume 100 ;;
+esac
+
+# Get active sink
+ACTIVE=$(pacmd list-sinks | grep "state: RUNNING" -B4 -A7 | grep "index:\|name:\|volume: \(front\|mono\)\|muted:")
+[[ -z "$ACTIVE" ]] && ACTIVE=$(pacmd list-sinks | grep "index:\|name:\|volume: \(front\|mono\)\|muted:" | grep -A3 '*')
+for name in INDEX NAME VOL MUTED; do
+    read $name
+done < <(echo "$ACTIVE")
+INDEX=$(echo "$INDEX" | grep -o '[0-9]\+')
+
+# Get volume
+VOL=$(echo "$VOL" | grep -o "[0-9]*%" | head -1 )
+VOL="${VOL%?}%"
+if [[ $MUTED =~ "yes" ]] ; then
+    VOL="MUTE"
+fi
+
+# Check if active sink is bluetooth
+API_NAME=$(pacmd list-sinks |\
+awk '/^\s*\*/{f=1}/^\s*index:/{f=0}f' |\
+grep "device.api" |\
+head -n1 |\
+sed 's/.*= "\(.*\)".*/\1/')
+if [[ $API_NAME == 'bluez' ]]; then
+    VOL="$VOL (BT)"
+fi
+
+# Format text
+if [[ "$VOL" == "%" ]]; then
+    VOL=""
+else
+    VOL="VOL: $VOL"
+fi
+
+# Print long text
+echo "$VOL"
+
+# Print short text
+echo "$VOL"
+
+# Print color when muted
+if [[ $MUTED =~ "yes" ]] ; then
+    echo $I3BLOCK_WARN_COLOR
+fi

@@ -1,0 +1,409 @@
+///////////////////////////////////////////////////////////////////////////////
+// This document contains notes for the book:
+// "Game Programming Patterns" by Robert Nystrom
+///////////////////////////////////////////////////////////////////////////////
+
+  #0: INTRODUCTION
+  #1: DESIGN PATTERNS REVISITED
+    1.1: COMMAND ............ https://gameprogrammingpatterns.com/command.html
+    1.2: FLYWEIGHT .......... https://gameprogrammingpatterns.com/flyweight.html
+    1.3: OBSERVER ........... https://gameprogrammingpatterns.com/observer.html
+    1.4: PROTOTYPE .......... https://gameprogrammingpatterns.com/prototype.html
+    1.5: SINGLETON .......... https://gameprogrammingpatterns.com/singleton.html
+    1.6: STATE .............. https://gameprogrammingpatterns.com/state.html
+  #2: SEQUENCING PATTERNS
+    2.1: DOUBLE BUFFER ...... https://gameprogrammingpatterns.com/double-buffer.html
+    2.2: GAME LOOP .......... https://gameprogrammingpatterns.com/game-loop.html
+    2.3: UPDATE METHOD ...... https://gameprogrammingpatterns.com/update-method.html
+  #3: BEHAVIORAL PATTERNS
+    3.1: BYTECODE ........... https://gameprogrammingpatterns.com/bytecode.html
+    3.2: SUBCLASS SANDBOX ... https://gameprogrammingpatterns.com/subclass-sandbox.html
+    3.3: TYPE OBJECT ........ https://gameprogrammingpatterns.com/type-object.html
+  #4: DECOUPLING PATTERNS
+    4.1: COMPONENT .......... https://gameprogrammingpatterns.com/component.html
+    4.2: EVENT QUEUE ........ https://gameprogrammingpatterns.com/event-queue.html
+    4.3: SERVICE LOCATOR .... https://gameprogrammingpatterns.com/service-locator.html
+  #5: OPTIMIZATION PATTERNS
+    5.1: DATA LOCALITY ...... https://gameprogrammingpatterns.com/data-locality.html
+    5.2: DIRTY FLAG ......... https://gameprogrammingpatterns.com/dirty-flag.html
+    5.3: OBJECT POOL ........ https://gameprogrammingpatterns.com/object-pool.html
+    5.4: SPATIAL PARTION .... https://gameprogrammingpatterns.com/spatial-partition.html
+
+///////////////////////////////////////////////////////////////////////////////
+// #0 | INTRODUCTION                                                     p. 1
+///////////////////////////////////////////////////////////////////////////////
+
+ - Unlike concrete algorithms, a pattern is usually formless unless applied 
+   to some specific problem. Each time you use a pattern, 
+   you'll likely implement it differently
+ 
+ - This book continues the process started by the Gang of Four of documenting
+   and sharing the software patterns they saw.
+   "Design Patterns: Elements of Reusable Object-Oriented Software"
+   by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
+
+
+///////////////////////////////////////////////////////////////////////////////
+// #1 | ARCHITECTURE, PERFORMANCE, AND GAMES                             p. 9
+///////////////////////////////////////////////////////////////////////////////
+
+ - Abstraction and decoupling make evolving your program faster and easier,
+   but don't waste time doing them unless you're confident the code in question
+   needs that flexibility.
+ 
+ - Think about design for performance throughout your development cycle, but
+   put off the low-level, nitty-gritty optimizations that lock assumptions
+   into your code until as late as possible.
+
+ - Move quickly to explore your game's design space, but don't go so fast that
+   you leave a mess behind you.
+
+ - If you are going to ditch code, don't waste time making it pretty.
+
+
+///////////////////////////////////////////////////////////////////////////////
+// #2 | DESIGN PATTERNS REVISITED                                       p. 19
+///////////////////////////////////////////////////////////////////////////////
+
+ - A fresh look at selected patterns from the book "Design Patterns:
+   Elements of Reusable Object-Oriented Software"
+
+
+  2.1 | COMMAND                                                         p. 21
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ " Encapsulate a request as an object, thereby letting users parameterize 
+   clients with different requests, queue or log requests, and support
+   undoable operations. "
+  
+ - A command is a reified method call.
+ 
+ - Commands are object-oriented replacements for callbacks
+
+ - Example use case: Control input handling
+
+ - The command pattern allows for easy implementation of Undo and Redo system
+
+
+  2.2 | FLYWEIGHT                                                       p. 33
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+ " Use sharing to support large numbers of fine-grained objects efficiently. "
+
+ - Example use case:
+   Instead of storing say a texture and mesh for each instance of a 3d game
+   object we can instead store the mesh/texture as a model that can be shared
+   between multiple game objects. The game object only stores a reference to
+   the model. This is used togther with instanced rendering (GPU) to only send
+   the model data to the GPU once, even when rendering the same object
+   thousands of times.
+
+ - Seperates the object's data into two kinds. 
+   1. The kind of data that is not specific to a single instance of that 
+      object and be shared across multiple objects. 
+      Also called intristic state. 
+   2. The rest of the data is the extrinsic state. The stuff that's unique to
+      a single instance.
+
+
+  2.3 | OBSERVER                                                        p. 43
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+ " Define a one-to-many dependency between objects so that when one object
+   changes state, all its dependents are notified and updated automatically. "
+
+ - One of the most widely used and widely known of 
+   the original Gang of Four patterns.
+
+ - Model-View-Controller architecture is using the Observer pattern
+
+ - C# event keyword is Observer and it is in the core of Java
+
+ - One piece of code can announce that something interesting happened without
+   actually caring who receives the notification.
+
+ - Example use case: Achievements
+
+ - We can create a base class Observer and any class that want to be notified of
+   events can derivce from this base class and become an observer.
+   The object being observed is called the "subject".
+   The subject base class stores a list of observers and exposes a public API for 
+   modifying that list. It also has a protected method for notifying observers
+   of events. The object that needs to send notifications just need to derive
+   from the subject base class to send notifications to the observers.
+
+
+  2.4 | PROTOTYPE                                                       p. 59
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+ " Specify the kinds of objects to create using a prototypical instance,
+   and create new objects by copying this prototype.
+
+ - Make a new object by copying an existing (prototype) object. Copying the 
+   object with all it's content.
+
+ - In languges with classes we don't usually do this kinda stuff, classes can
+   handle this kind of functionality, but it can be a very usefull pattern
+   to implement when handling data for the game, 
+   e.g. data stored in JSON files.
+
+ - Example use case: Data in JSON files to avoid typing duplicate values
+   over and over.
+
+   {
+     "name": "elf warrior",
+     "hp": 30,
+     "weaknesses": ["fire"],
+     "favorite_things": ["trees", "long hair"]
+   }
+
+   {
+     "name": "elf wizard"
+     "prototype": "elf warrior", // copies the values from "elf warrior"
+     "hp": 20,
+     "spells": ["roots"]
+   }
+
+
+
+  2.5 | SINGLETON                                                       p. 73
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+ " Ensure a class has one instance, and provide a global point of 
+   access to it "
+
+ - Despite noble intentions, the Singleton pattern usually 
+   does more harm than good.
+
+ - Globals can be problematic. Think carefully before implmenting a singleton
+   if it is actually necessary and if the implementation can be done in a
+   different way. Is the class really necessary?  Can we use a static class 
+   instead? Or give access to the class through some other way?
+
+
+  2.6 | STATE                                                           p. 87
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ " Allow an object to alter its behaviour when its internal state changes.
+   The object will appear to change it's class. "
+
+ - Finite state machine (FSM)
+   + Fixed set of states
+   + Can only be in one state at a time
+   + A simple one can be with enums and switch statements
+
+ - The state pattern: Make a state machine, not with enums and switches but
+   by using state specific classes.
+ 
+ - Concurrent state machine: Multiple state machines running at the same time
+
+ - Hierarchical state machine: States and states within those states
+
+ - Pushdown automata: Push and pop states on stack, allows history of states
+   and makes it easy to return to previous state
+
+ - Example use case: Character state (running, standing, in-air, swimming, etc.)
+
+
+///////////////////////////////////////////////////////////////////////////////
+// #3 | SEQUENCING PATTERNS                                            p. 105
+///////////////////////////////////////////////////////////////////////////////
+ 
+ - As world builders, we must invent time and craft the gears that drive
+   our game's great clock.
+
+
+  3.1 | DOUBLE BUFFER                                                  p. 107
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Cause a series of operations to appear instantaneous or simultaneous. 
+ 
+ - Have two indexed instances of the thing you want to update.
+   
+   Buffer buffers[2];
+   Buffer* current = buffers[0];
+   Buffer* next = buffers[1];
+
+   Update one while allowing reading from the other.
+
+   current->drawThingsInTheBuffer();
+   next->renderThingsFromTheBuffer();
+
+   Then swap the buffers after every finished update of a buffer:
+
+   void swap() {
+       Buffer* temp = current;
+       current = next;
+       next = temp;
+   }
+
+   This is very usefull in rendering, as it allows allows us to have an 
+   incomplete famebuffer that we can update pixel by pixel, while also always
+   having a "finished" framebuffer ready for rendering.
+
+ - Example use case: Framebuffer
+
+ - Other example use cases can be in physics and AI
+
+
+  3.2 | GAME LOOP                                                      p. 123
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Decouple the progression of game time from user input and processor speed.
+
+ - A game loop runs continuously during gameplay. Each turn of the loop, it
+   processes user input without blocking, updates the game state, and render
+   the game. It tracks the passage of time to control the rate of gameplay.
+
+ - Types:
+   + Fixed time step with no synchronization
+     + Shitty and not usable in most cases
+   + Fixed time step with synchronization
+     + Capped framerate
+   + Variable time step
+     + Simple. Keeps things consistent across all framerates
+     + Non-deterministic, not good for multiplayer and physics
+   + Fixed update time step, variable rendering
+     + The most complex option, but also the most adaptable.
+     + Rendering uses variable time step, but the update method
+       runs at a fixed time step making it suitable for physics
+       updates and such..
+     + Deterministic
+
+
+  3.3 | UPDATE METHOD                                                  p. 139
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Simulate a collection of independent objects by telling each to process
+   one frame of behaviour at a time.
+
+ - The game world maintains a collection of objects. Each object implements an
+   update method that simulates one frame of the object's behavior. Each frame,
+   the game updates evey object in the collection.
+
+///////////////////////////////////////////////////////////////////////////////
+// #4 | BEHAVIORAL PATTERNS                                            p. 153
+///////////////////////////////////////////////////////////////////////////////
+ 
+ - Patterns that can help to quickly define and refine a large quantity of
+   maintanable behavior
+
+
+  4.1 | BYTECODE                                                       p. 155
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Give behaviour the flexability of data by encoding it as instructions for
+   a virtual machine.
+
+ - The most complex pattern in the book.
+
+
+  4.2 | SUBCLASS SANDBOX                                               p. 181
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Define behaviour in a subclass using a set of operations provided by 
+   its base class.
+
+ - A base class defines an abstract sandbox method and several provided
+   operations. Marking them protected makes it clear that they are for use by
+   derived classes. Each derived sandboxed subclass implements the sandbox
+   method using the provided operations.
+
+
+  4.3 | TYPE OBJECT                                                    p. 193
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Allow the flexible creation of new "classes" by creaing a class, each
+   instance of which represents a different type of object.
+ 
+ - Define a type object class and a typed object class. Each type object
+   instance represents a different logical type. Each typed object stores a
+   reference to the object that describes its type.
+   Instance-specific data is stored in the typed object instance, and data or
+   behaviour that should be shared across all instances of the same conceptual
+   type is stored in the type object. Objects referencing the same type object
+   will function as if they were the same type. This lets us share data and
+   behaviour across a set of similar objects, much like subclassing lets us do,
+   but without having a fixed set of hard-coded subclasses.
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// #5 | DECOUPLING PATTERNS                                            p. 211
+///////////////////////////////////////////////////////////////////////////////
+
+ - When we say two pieces of code are "decoupled" we mean a change in one 
+   usually doesn't require a change in the other.
+   This makes it much easier to make changes to the code at a later point.
+
+
+  5.1 | COMPONENT                                                      p. 213
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  
+   Allow a single entity to span multiple domains without coupling 
+   the domains to each other.
+
+ - ...
+
+
+  5.2 | EVENT QUEUE                                                    p. 233
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Decouple when a message or event is sent from when it is processed.
+
+ - ...
+
+
+  5.3 | SERVICE LOCATOR                                                p. 251
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Provide a global point of access to a service without coupling users
+   to the concrete class that implements it.
+
+ - ...
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// #6 | OPTIMIZATION PATTERNS                                         p. 267
+///////////////////////////////////////////////////////////////////////////////
+ 
+ - ...
+
+
+  6.1 | DATA LOCALITY                                                  p. 269
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+   Accelerate memory access by arranging data to take advantage
+   of CPU caching.
+
+ - ...
+
+
+  6.2 | DIRTY FLAG                                                     p. 291
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Avoid unneccessary work by deferring it until the result is needed.
+
+ - ...
+
+
+  6.3 | OBJECT POOL                                                    p. 305
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Improve performance and memory use by reusing objects from a fixed pool
+   instead of allocating and freeing them individually.
+
+ - ...
+
+
+  6.4 | SPATIAL PARTION                                                p. 321
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ 
+   Efficiently locate objects by storing them in a data structure 
+   organized by their positions.
+
+ - ...
+
+

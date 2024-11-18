@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+###########################
+# TIME BLOCK
+###########################
+
+# Handle muse input
+case "$BLOCK_BUTTON" in
+    1) urxvt -e calcurse ;;
+esac
+
+# Format text
+TIME=$(date '+%d-%m-%Y %H:%M:%S ')
+
+# Print long text
+echo "${TIME}"
+
+# Print short text
+echo "${TIME}"
