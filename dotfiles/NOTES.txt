@@ -205,6 +205,7 @@ $ yay -S sublime-text-4
 $ yay -S bluetooth-autoconnect
 $ sudo systemctl enable bluetooth-autoconnect
 $ systemctl --user enable pulseaudio-bluetooth-autoconnect
+½ yay -S mathpix-snipping-tool
 
 // DOTFILES:
 $ git clone https://github.com/casper-borretzen/casper-borretzen.git

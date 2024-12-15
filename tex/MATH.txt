@@ -16,6 +16,9 @@
   ^3             | U+00B3     | ³           | Superscript 3
   _(0-9)         | U+208(0-9) | ₀₁₂₃₄₅₆₇₈₉  | Subscript 0-9
  --------------------------------------------------------
+  \rightarrow    |            | →           | Right arrow
+  \leftarrow     |            | ←           | Left arrow
+  \neq           |            | ≠           | Not equal
   \in            | U+2208     | ∈           | Element of
   \nin           | U+2209     | ∉           | Not an element of
   \mp            | U+2213     | ∓           | Plus-or-minus

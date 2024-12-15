@@ -1,0 +1,54 @@
+% https://github.com/SeniorMars/dotfiles/tree/main/latex_template
+
+\documentclass[11pt,a4paper]{report}
+
+\title{title here}
+\author{Casper Eide Özdemir-Børretzen}
+\date{}
+
+\makeatletter
+\newcommand{\institle}{\@title}
+\newcommand{\insauthor}{\@author}
+\newcommand{\insdate}{\@date}
+\makeatother
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
+%\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{ulem}
+\usepackage{url}
+\hypersetup{urlcolor=blue,pdftitle={\institle},pdfauthor={\insauthor}}
+\urlstyle{sf}
+
+\begin{document}
+%\includepdf[pages={1}]{forside.pdf}
+%\maketitle
+\begin{titlepage}
+\begin{center}
+\vspace*{6cm}
+\LARGE{\institle}\\
+\vspace{1cm}
+\large{\insauthor}\\
+\vfill
+\includegraphics[width=0.4\textwidth]{hvl_logo_engelsk.png}\\
+%\vspace{1cm}
+%\small{\@date}
+\end{center}
+\end{titlepage}
+
+\newpage
+
+text here
+
+\end{document}
