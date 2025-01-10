@@ -111,3 +111,5 @@
  A         = insert mode at end of line
  ctrl+r *  = paste from system clipboard
  ctrl+r "  = paste from unnamed (default) register
+
+VimTricks, Vim Spell Check: https://vimtricks.com/p/vim-spell-check/

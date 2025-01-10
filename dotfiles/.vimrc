@@ -124,3 +124,5 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType hpp setlocal commentstring=//\ %s
 autocmd FileType cs setlocal commentstring=//\ %s
 
+"set spell
+set hls
