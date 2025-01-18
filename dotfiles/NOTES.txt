@@ -191,7 +191,8 @@ $ pacman -S firefox discord spotify-launcher okular qbittorrent thunar mplayer
 $ pacman -S blender cuda godot
 $ pacman -S github-cli python python-pip sdl2 python-pygame cmake gdb
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
-$ pacman -S zathura zathura-pdf-mupdf texlive-binextra texlive
+$ pacman -S zathura zathura-pdf-mupdf texlive-binextra texlive signal-desktop
+$ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 
 // YAY:
 $ git clone https://aur.archlinux.org/yay.git
