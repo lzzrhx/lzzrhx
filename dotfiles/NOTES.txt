@@ -209,7 +209,7 @@ $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 ½ yay -S mathpix-snipping-tool
 
 // DOTFILES:
-$ git clone https://github.com/casper-borretzen/casper-borretzen.git
+$ git clone https://github.com/lzzrhx/lzzrhx.git
 * Copy contents of /dotfiles to appropriate folders
 
 // VIM:
