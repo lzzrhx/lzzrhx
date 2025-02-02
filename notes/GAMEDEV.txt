@@ -37,13 +37,13 @@
     + Master the Linux Terminal & Bash Shell   https://pikuma.com/courses/linux-unix-command-line-bash-shell
     + Understanding Bitshifting Operations     https://pikuma.com/courses/bit-shifting-operator-tutorial
     + NES Programming with 6502 Assembly       https://pikuma.com/courses/nes-game-programming-tutorial
-      + https://github.com/LASER-WOLF/NesVideoGame/
+      + https://github.com/lzzrhx/nes-video-game
     + Raycasting Engine Programming with C     https://pikuma.com/courses/raycasting-engine-tutorial-algorithm-javascript
-      + https://github.com/LASER-WOLF/RaycastingEngine
+      + https://github.com/lzzrhx/raycasting-engine
     + 3D Computer Graphics Programming         https://pikuma.com/courses/learn-3d-computer-graphics-programming
-      + https://github.com/LASER-WOLF/3DSoftwareRenderer
+      + https://github.com/lzzrhx/3d-software-renderer
     + C++ Game Engine Programming              https://pikuma.com/courses/cpp-2d-game-engine-development
-      + https://github.com/LASER-WOLF/2DGameEngine
+      + https://github.com/lzzrhx/2d-game-engine
  - Jasper Flick, Catlike Coding (Unity/Godot)  https://catlikecoding.com/
 
 
