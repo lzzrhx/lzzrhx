@@ -187,12 +187,16 @@ $ sudo vim /usr/share/xsessions/i3.desktop
 Exec=i3 > ~/.i3_log 2>&1
 
 // PACKAGES:
-$ pacman -S firefox discord spotify-launcher okular qbittorrent thunar mplayer
-$ pacman -S blender cuda godot
-$ pacman -S github-cli python python-pip sdl2 python-pygame cmake gdb
-$ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
-$ pacman -S zathura zathura-pdf-mupdf texlive-binextra texlive signal-desktop
 $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
+$ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
+$ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
+$ pacman -S texlive-binextra texlive 
+$ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-desktop ark
+$ pacman -S blender godot cuda
+
+// DEVELOPMENT:
+$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime
+$ pacman -S raylib sdl3 sdl-2-compat
 
 // YAY:
 $ git clone https://aur.archlinux.org/yay.git
@@ -233,3 +237,7 @@ $ sudo pacman -S dwarffortress
 $ sudo pacman -S cataclysm-dda
 * Nethack:
 $ sudo pacman -S nethack
+* Math:
+$ sudo pacman -S geogebra mathpix-snipping-tool xournalapp
+* Printing:
+$ sudo pacman -S cups gedit

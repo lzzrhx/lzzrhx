@@ -44,16 +44,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " Set no wrap
 set nowrap
 
-" Set tab size to 4 spaces
-set tabstop=4
-
 " Set autoindent on
 set autoindent
 
-" Set shift width to 4 spaces
+" Set tab size to 4 spaces
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4
-
-" Convert tabs to spaces
 set expandtab
 
 " Enable backspace options
@@ -80,8 +77,13 @@ set ruler
 "nnoremap tl :tablast<CR>
 
 " Set color scheme
-"set termguicolors
-colorscheme Benokai
+set termguicolors
+"colorscheme borland
+"colorscheme itg_flat
+"colorscheme arcadia
+"colorscheme minimalist
+colorscheme apprentice
+"colorscheme benokai
 
 " Configure syntax highlight files
 syntax enable
@@ -109,9 +111,7 @@ set noshowmode
 
 " Remove delay when exiting insert mode
 set ttimeoutlen=50
-
 set updatetime=300
-
 set signcolumn=yes
 
 "set wildmode=list:longest,list:full
@@ -124,5 +124,10 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType hpp setlocal commentstring=//\ %s
 autocmd FileType cs setlocal commentstring=//\ %s
 
+autocmd FileType tex set noautoindent
+
 "set spell
-set hls
+"set hls"
+
+set printoptions=header:0,number:y
+let g:html_font="PxPlus IBM VGA 8x16"
