@@ -39,11 +39,12 @@ set nowrap
 
 " Set autoindent on
 set autoindent
+set smartindent
 
 " Set tab size to 4 spaces
 set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=0
+set shiftwidth=0
 set expandtab
 
 " Enable backspace options
@@ -70,11 +71,9 @@ set ttimeoutlen=50
 set updatetime=300
 set signcolumn=yes
 
-" Statusline always visible
+" Statusline & tabline always visible
 set laststatus=2
-
-" Statusline setup
-"set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set showtabline=2
 
 " Set swap file directory
 set directory=$HOME/.vim/swapfiles//
@@ -82,6 +81,13 @@ set directory=$HOME/.vim/swapfiles//
 " Set print options for hardprint
 set printoptions=header:0,number:y
 
+set scrolloff=1
+set sidescrolloff=2
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set formatoptions+=j
+set autoread
+set history=1000
+set tabpagemax=50
 set diffopt+=iwhiteall
 
 " Filetype specific settings
@@ -91,16 +97,6 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType hpp setlocal commentstring=//\ %s
 autocmd FileType cs setlocal commentstring=//\ %s
 autocmd FileType txt set spell
-
-" Set tab navigation with Ctrl-tab
-"nnoremap th :tabfirst<CR>
-"nnoremap tk :tabnext<CR>
-"nnoremap tj :tabprev<CR>
-"nnoremap tl :tablast<CR>
-
-" Press enter to add new line
-"map <Enter> o<ESC>
-"map <S-Enter> O<ESC>
 
 "set wildmode=list:longest,list:full
 "set wildmenu
@@ -127,29 +123,30 @@ let g:vimtex_quickfix_mode=0
 "let g:tex_conceal='abdmg'
 
 " Lightline settings
-"let g:lightline = {
-"    \ 'active': {
-"    \ 'left': [ [ 'mode', 'paste' ],
-"    \           [ 'readonly', 'name', 'modified' ] ],
-"    \ 'right': [ [ 'lineinfo' ],
-"    \            [ 'percent' ],
-"    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
-"    \ },
-"    \ 'inactive': {
-"    \ 'left': [ [ 'filename' ] ],
-"    \ 'right': [ [ 'lineinfo' ],
-"    \            [ 'percent' ] ]
-"    \ },
-"    \ 'tabline': {
-"    \ 'left': [ [ 'tabs' ] ],
-"    \ 'right': [ [ 'close' ] ] 
-"    \ },
-"    \ 'component_function': {
-"    \   'name': 'LightlineName'
-"    \ }
-"    \ }
-"function! LightlineName()
-"  return winwidth(0) > 100 ? expand('%:p') : expand('%:t')
-"endfunction
-
+let g:lightline = {
+    \ 'colorscheme': 'tasty_apprentice',
+    \ 'active': {
+    \ 'left': [ [ 'mode', 'paste' ],
+    \           [ 'readonly', 'fullname', 'modified' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'inactive': {
+    \ 'left': [ [ 'filename' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ] ]
+    \ },
+    \ 'tabline': {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ ] 
+    \ },
+    \ 'tab': {
+    \ 'active': [ 'tabnum', 'filename', 'modified' ],
+    \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+    \ },
+    \ 'component': {
+    \   'fullname': '%F'
+    \ }
+    \ }
 
