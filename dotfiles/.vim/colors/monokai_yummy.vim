@@ -1,5 +1,4 @@
 " monokai-yummy (heavily based on monokai-tasty and apprentice)
-" by: lzzrhx
 " monokai-tasty | https://github.com/patstockwell/vim-monokai-tasty
 " apprentice    | https://github.com/romainl/Apprentice
 
@@ -55,6 +54,11 @@ let s:grey           = { 'cterm': 240, 'gui': '#585858' } " medium_grey
 let s:darker_grey    = { 'cterm': 236, 'gui': '#303030' } " dark_grey
 let s:light_grey     = { 'cterm': 242, 'gui': '#6c6c6c' } " light_grey
 
+" Set colors, lightline default colors
+let s:darker_blue    = { 'cterm':  24, 'gui': '#005f87' } " darkestblue
+let s:dark_blue      = { 'cterm':  31, 'gui': '#0087af' } " darkblue
+let s:light_blue     = { 'cterm': 117, 'gui': '#87dfff' } " mediumcyan
+
 " Set text styles
 let s:none           = { 'cterm': 'NONE', 'gui': 'NONE' }
 let s:bold           = { 'cterm': 'bold', 'gui': 'bold' }
@@ -102,6 +106,9 @@ endif
 " Highlights, added / modified
 call Highlight('StatusLine',        { 'fg': s:lightest_grey, 'bg': s:darker_grey, 'style': s:none })
 call Highlight('Pmenu',             { 'fg': s:lightest_grey, 'bg': s:darker_grey, 'style': s:none })
+call Highlight('IncSearch', { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
+call Highlight('Search', { 'fg': s:white, 'bg': s:dark_blue, 'style': s:none })
+call Highlight('CurSearch', { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
 
 " Highlights, YouCompleteMe
 call Highlight('YcmWarningSign',    { 'fg': s:black, 'bg': s:orange, 'style': s:none })
@@ -172,9 +179,7 @@ call Highlight('gitcommitSelectedFile', { 'fg': s:orange, 'bg': s:none, 'style':
 call Highlight('gitcommitSummary', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 call Highlight('gitcommitOverflow', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('SpecialKey', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
-call Highlight('IncSearch', { 'fg': s:black, 'bg': s:purple, 'style': s:bold_underline })
-call Highlight('Search', { 'fg': s:black, 'bg': s:yellow, 'style': s:bold })
-call Highlight('CurSearch', { 'fg': s:black, 'bg': s:purple, 'style': s:bold })
+
 call Highlight('Identifier', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('Question', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })

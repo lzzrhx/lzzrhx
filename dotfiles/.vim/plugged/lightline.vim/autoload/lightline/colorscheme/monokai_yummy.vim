@@ -1,5 +1,4 @@
 " monokai-yummy (heavily based on monokai-tasty and apprentice)
-" by: lzzrhx
 " monokai-tasty | https://github.com/patstockwell/vim-monokai-tasty
 " apprentice    | https://github.com/romainl/Apprentice
 

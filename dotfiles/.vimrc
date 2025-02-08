@@ -58,7 +58,7 @@ set nowritebackup
 set incsearch
 
 " Highlight search
-"set hlsearch
+set hlsearch
 
 " Persistent undo
 set undofile

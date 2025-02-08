@@ -7,6 +7,21 @@
  h/j/k/l  = left/down/up/right
  ctrl+u/d = scroll up/down
  gg/G     = go to first/last line
+ w/W      = go to beginning of next word
+ b/B      = go to previous word
+ e/E      = go to end of word
+ 0        = go to start of line
+ $        = go to end of line
+ %        = go to start/end of bracket
+ t*/T*    = jumps before next/previous *
+ f*/F*    = jumps to next/previous *
+ mx       = set mark x
+ 'x       = go to mark x
+
+
+# SCROLLING
+-------------------------------------------------------------------------------
+ zz       = center screen on cursor
 
 
 # INSERT
@@ -28,35 +43,57 @@
  d      = (delete) cut
  >      = indent right
  <      = indent left
+ =      = auto indent
 
 
 # COPY/PASTE/DELETE/REPLACE
 -------------------------------------------------------------------------------
  yy        = yank line
  dd        = delete line
+ cc        = change line
  x         = delete character
  X         = delete previous character
  D         = delete to end of line
  R         = replace mode
  r         = replace single character
- S         = replace line
  p         = paste
  P         = paste (before cursor)
  "+y       = copy to system clipboard
  "+p       = paste from system clipboard
  ctrl+r *  = paste from system clipboard
  ctrl+r "  = paste from unnamed (default) register
+ :reg      = see registers
 
 
-# UNDO/REDO
+# SELECTION EXAMPLES
+-------------------------------------------------------------------------------
+ y         = yank selection
+ d         = delete selection
+ i         = inner
+ dw        = delete word
+ d2w       = delete 2 words
+ di        = delete inner { lol }
+ ciw       = change word
+ yi2b      = copy 2 previous words
+ ci(       = change everything inside parentheses
+ dt(       = delete everything up to left parentheses
+ gg=G      = auto indent whole file
+ "7yy      = yank line to register 7
+ "7p       = paste from register 7
+
+
+# UNDO/REDO/REPEAT
 -------------------------------------------------------------------------------
  u         = undo
  R         = redo
+ .         = repeat previous command
 
 
 # SEARCH/REPLACE
 -------------------------------------------------------------------------------
  /pattern       = search
+ ?pattern       = search backwards
+ */#            = search forwards/backwards for current token
  n              = next result
  N              = previous result
  :%s/old/new/g  = replace all (in file)
@@ -98,4 +135,24 @@
  :wqa   = write and quit on all tabs
  :q!    = quit without saving
 
-VimTricks, Vim Spell Check: https://vimtricks.com/p/vim-spell-check/
+
+
+////////////////////////////////////////////////////////////////////////////////
+// LINKS
+////////////////////////////////////////////////////////////////////////////////
+
+- Vimcasts
+   http://vimcasts.org/
+
+- VimTricks, Vim Spell Check
+   https://vimtricks.com/p/vim-spell-check/
+
+- Vim Tutorial for Beginners
+   https://youtu.be/RZ4p-saaQkc
+
+- How I'm able to take notes in mathematics lectures using LaTeX and Vim
+   https://castel.dev/post/lecture-notes-1/
+
+- Getting started with the VimTeX plugin
+   https://ejmastnak.com/tutorials/vim-latex/vimtex/
+
