@@ -22,7 +22,7 @@ set termguicolors
 "colorscheme arcadia
 "colorscheme apprentice
 "colorscheme minimalist
-colorscheme monokai_tasty
+colorscheme monokai_yummy
 
 " Set line number foreground and background color
 highlight LineNr ctermbg=darkgray ctermfg=white
@@ -110,10 +110,6 @@ let g:indentLine_fileTypeExclude = ['text']
 " YouCompleteMe settings
 let g:ycm_warning_symbol = '››'
 let g:ycm_error_symbol = '!›'
-hi link YcmWarningSection YcmWarningSign
-hi YcmWarningSign ctermfg=bg ctermbg=208
-hi link YcmErrorSection YcmErrorSign
-hi YcmErrorSign ctermfg=231 ctermbg=197
 
 " Vimtex settings
 let g:tex_flavor='latex'
@@ -124,10 +120,10 @@ let g:vimtex_quickfix_mode=0
 
 " Lightline settings
 let g:lightline = {
-    \ 'colorscheme': 'tasty_apprentice',
+    \ 'colorscheme': 'monokai_yummy',
     \ 'active': {
     \ 'left': [ [ 'mode', 'paste' ],
-    \           [ 'readonly', 'fullname', 'modified' ] ],
+    \           [ 'readonly', 'absolutepath', 'modified' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
     \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
@@ -145,8 +141,25 @@ let g:lightline = {
     \ 'active': [ 'tabnum', 'filename', 'modified' ],
     \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
     \ },
-    \ 'component': {
-    \   'fullname': '%F'
+    \ 'mode_map' : {
+    \ 'n'     : ' NORMAL ',
+    \ 'i'     : ' INSERT ',
+    \ 'R'     : ' REPLACE',
+    \ 'v'     : ' VISUAL ',
+    \ 'V'     : ' V-LINE ',
+    \ "\<C-v>": ' V-BLOCK',
+    \ 'c'     : ' COMMAND',
+    \ 's'     : ' SELECT ',
+    \ 'S'     : ' S-LINE ',
+    \ "\<C-s>": ' S-BLOCK',
+    \ 't'     : 'TERMINAL',
     \ }
     \ }
+
+" Set leader key
+let mapleader = " "
+
+" vim-powered terminal in split window
+map <Leader>t :term ++close<cr>
+tmap <Leader>t <c-w>:term ++close<cr>
 

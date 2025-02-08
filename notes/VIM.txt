@@ -2,54 +2,56 @@
 // VIM CHEAT SHEET
 ///////////////////////////////////////////////////////////////////////////////
 
-# MODES
+# NAVIGATE
+-------------------------------------------------------------------------------
+ h/j/k/l  = left/down/up/right
+ ctrl+u/d = scroll up/down
+ gg/G     = go to first/last line
+
+
+# INSERT
 -------------------------------------------------------------------------------
  i      = insert mode
- I      = insert mode at the beginning of the line
- v      = visual mode
- V      = linewise visual mode
- ctrl+v = visual block mode
+ I      = insert mode, at the beginning of the line
+ a      = insert mode, (append) after cursor
+ A      = insert mode, (append) at the end of the line
+ o      = insert mode, (open) at new line below
+ O      = insert mode, (open) at new line above
 
 
-
-# VISUAL COMMANDS
+# VISUAL
 -------------------------------------------------------------------------------
+ v      = visual mode
+ V      = visual mode, linewise
+ ctrl+v = visual block mode
  y      = (yank) copy
  d      = (delete) cut
- <      = shift text left
- >      = shift text right
+ >      = indent right
+ <      = indent left
 
 
-
-# INDENT TEXT
+# COPY/PASTE/DELETE/REPLACE
 -------------------------------------------------------------------------------
- >>     = indent
- <<     = de-indent
-
-
-
-# COPY/PASTE
--------------------------------------------------------------------------------
- yy     = yank line
- dd     = delete line
- p      = paste
- P      = paste (before cursor)
-
+ yy        = yank line
+ dd        = delete line
+ x         = delete character
+ X         = delete previous character
+ D         = delete to end of line
+ R         = replace mode
+ r         = replace single character
+ S         = replace line
+ p         = paste
+ P         = paste (before cursor)
+ "+y       = copy to system clipboard
+ "+p       = paste from system clipboard
+ ctrl+r *  = paste from system clipboard
+ ctrl+r "  = paste from unnamed (default) register
 
 
 # UNDO/REDO
 -------------------------------------------------------------------------------
- u      = undo
- R      = redo
-
-
-
-# GOTO LINE
--------------------------------------------------------------------------------
- 1G     = go to first line
- gg     = go to first line
- G      = go to end of file
-
+ u         = undo
+ R         = redo
 
 
 # SEARCH/REPLACE
@@ -59,7 +61,6 @@
  N              = previous result
  :%s/old/new/g  = replace all (in file)
  :%s/old/new/gc = replace all (in file) with confirmations
-
 
 
 # WINDOWS
@@ -73,7 +74,6 @@
  ctrl+w+arrows = move to other window
 
 
-
 # TABS
 -------------------------------------------------------------------------------
  :tabe <filename> = open a new tab
@@ -83,7 +83,6 @@
  :tabm +-<number> = move tab (relative)
  gt               = go to next tab
  gT               = go to prev tab
-
 
 
 # FILES
@@ -98,18 +97,5 @@
  :x     = write and quit
  :wqa   = write and quit on all tabs
  :q!    = quit without saving
-
-
-
-# OTHER
--------------------------------------------------------------------------------
- x         = delete char (command mode)
- r         = replace char (command mode)
- "+y       = copy to system clipboard
- "+p       = paste from system clipboard
- I         = insert mode at beginning of line
- A         = insert mode at end of line
- ctrl+r *  = paste from system clipboard
- ctrl+r "  = paste from unnamed (default) register
 
 VimTricks, Vim Spell Check: https://vimtricks.com/p/vim-spell-check/
