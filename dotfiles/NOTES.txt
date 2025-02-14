@@ -45,6 +45,7 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * DIFF TOOL:          $ vimdiff <file1> <file2>
 * LIST WIFI NETWORKS: $ nmcli device wifi list
 * CONNECT TO WIFI:    $ nmcli device wifi connect <ssid> password <password>
+* WIFI MENU:          $ nmtui
 * CALENDAR:           $ calcurse
 * CALCULATOR:         $ calc
 
@@ -60,6 +61,7 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * 3D EDITOR:         blender
 * GAME ENGINE:       godot
 * PDF READER:        okular
+* MESSAGING:         signal-desktop
 
 // TODO:
 * Issue: urxvt-unicode adds empty lines when moving window (BUG)
@@ -211,7 +213,6 @@ $ yay -S sublime-text-4
 $ yay -S bluetooth-autoconnect
 $ sudo systemctl enable bluetooth-autoconnect
 $ systemctl --user enable pulseaudio-bluetooth-autoconnect
-½ yay -S mathpix-snipping-tool
 
 // DOTFILES:
 $ git clone https://github.com/lzzrhx/lzzrhx.git
@@ -232,14 +233,12 @@ https://wiki.archlinux.org/title/bluetooth
 $ yay -S xcursor-retrosmart
 * Netork monitor:
 $ yay -S slurm
-* Dwarf Fortress:
-$ sudo pacman -S dwarffortress
-* Cataclysm: Dark Days Ahead
-$ sudo pacman -S cataclysm-dda
-* Nethack:
-$ sudo pacman -S nethack
+* Games:
+$ sudo pacman -S dwarffortress cataclysm-dda nethack steam
 * Math:
-$ sudo pacman -S geogebra mathpix-snipping-tool xournalapp
+$ sudo pacman -S geogebra xournalapp
+$ yay -S mathpix-snipping-tool
 * Printing:
 $ sudo pacman -S cups gedit
 $ systemctl enable cups.service
+
