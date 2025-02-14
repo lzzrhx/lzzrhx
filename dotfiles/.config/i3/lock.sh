@@ -1,7 +1,8 @@
 #!/bin/bash
-scrot /tmp/screen.png
-convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
-[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
+img="$HOME"/.lockscreen.png
+scrot $img
+magick $img -scale 5% -scale 2000% $img
+#[[ -f ~/.config/i3/lock.png ]] && magick $img ~/.config/i3/lock.png -gravity center -composite -matte $img
 playerctl -a --no-messages stop
-i3lock -u -i /tmp/screen.png
-rm /tmp/screen.png
+i3lock --no-unlock-indicator --image=$img
+rm $img

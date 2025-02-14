@@ -24,9 +24,6 @@ set termguicolors
 "colorscheme minimalist
 colorscheme monokai_yummy
 
-" Set line number foreground and background color
-highlight LineNr ctermbg=darkgray ctermfg=white
-
 " Set line number and ruler
 set number
 set ruler
@@ -81,14 +78,15 @@ set directory=$HOME/.vim/swapfiles//
 " Set print options for hardprint
 set printoptions=header:0,number:y
 
-set scrolloff=1
-set sidescrolloff=2
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-set formatoptions+=j
+" Misc settings
 set autoread
 set history=1000
 set tabpagemax=50
+set scrolloff=1
+set sidescrolloff=2
+set formatoptions+=j
 set diffopt+=iwhiteall
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 " Filetype specific settings
 autocmd FileType c setlocal commentstring=//\ %s
@@ -96,10 +94,14 @@ autocmd FileType h setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType hpp setlocal commentstring=//\ %s
 autocmd FileType cs setlocal commentstring=//\ %s
-autocmd FileType txt set spell
+"autocmd FileType tex setlocal textwidth=0 wrapmargin=0 wrap linebreak columns=80
 
-"set wildmode=list:longest,list:full
-"set wildmenu
+" Set leader key
+let mapleader = " "
+
+" Vim-powered terminal in split window
+map <Leader>t :term ++close<cr>
+tmap <Leader>t <c-w>:term ++close<cr>
 
 " IndentLine settings
 let g:indentLine_char = '·'
@@ -114,9 +116,8 @@ let g:ycm_error_symbol = '!›'
 " Vimtex settings
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_syntax_conceal_disable=1
 "let g:vimtex_view_method='zathura'
-"set conceallevel=1
-"let g:tex_conceal='abdmg'
 
 " Lightline settings
 let g:lightline = {
@@ -155,11 +156,4 @@ let g:lightline = {
     \ 't'     : 'TERMINAL',
     \ }
     \ }
-
-" Set leader key
-let mapleader = " "
-
-" vim-powered terminal in split window
-map <Leader>t :term ++close<cr>
-tmap <Leader>t <c-w>:term ++close<cr>
 

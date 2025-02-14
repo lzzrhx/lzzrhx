@@ -179,7 +179,6 @@ call Highlight('gitcommitSelectedFile', { 'fg': s:orange, 'bg': s:none, 'style':
 call Highlight('gitcommitSummary', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 call Highlight('gitcommitOverflow', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('SpecialKey', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
-
 call Highlight('Identifier', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('Question', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
