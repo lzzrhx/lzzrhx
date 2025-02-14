@@ -1,4 +1,4 @@
-" monokai-yummy (heavily based on monokai-tasty and apprentice)
+" tasty-apprentice (heavily based on monokai-tasty and apprentice)
 " monokai-tasty | https://github.com/patstockwell/vim-monokai-tasty
 " apprentice    | https://github.com/romainl/Apprentice
 
@@ -7,7 +7,7 @@ if exists('syntax_on')
   syntax reset
 endif
 
-let g:colors_name = 'monokai_yummy'
+let g:colors_name = 'tasty_apprentice'
 
 " Highlight function helper
 function! Highlight(group, colour)
@@ -25,39 +25,124 @@ function! Highlight(group, colour)
   exec l:highlight_command
 endfunction
 
-" Set colors, monokai-tasty / apprentice
+" Config - Theme mix level
+" let g:tasty_apprentice_mix_level
+if !exists('g:tasty_apprentice_mix_level') || count([0,1,2,3,4,5], g:tasty_apprentice_mix_level) == 0
+    let g:tasty_apprentice_mix_level = 1
+endif
+
+" Set colors, [monokai-tasty]
+if g:tasty_apprentice_mix_level == 0
+    let s:dark_green     = { 'cterm':  22, 'gui': '#0f3315' } " dark_green
+    let s:purple         = { 'cterm': 141, 'gui': '#af87ff' } " purple
+    let s:green          = { 'cterm': 148, 'gui': '#a4e400' } " light_green
+    let s:blue           = { 'cterm':  81, 'gui': '#62d8f1' } " light_blue
+    let s:magenta        = { 'cterm': 197, 'gui': '#fc1a70' } " magenta
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffff87' } " yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff9700' } " orange
+    let s:red            = { 'cterm': 197, 'gui': '#ff005f' } " danger
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#005f87' } " [lightline] darkestblue
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#0087af' } " [lightline] darkblue
+    let s:light_blue     = { 'cterm': 117, 'gui': '#87dfff' } " [lightline] mediumcyan
+endif
+
+" Set colors, [monokai-tasty / apprentice] mix (80% / 20%)
+if g:tasty_apprentice_mix_level == 1
+    let s:dark_green     = { 'cterm':  22, 'gui': '#1f4323' } " dark_green / dark_green
+    let s:purple         = { 'cterm': 141, 'gui': '#a787ef' } " purple / light_purple
+    let s:green          = { 'cterm': 148, 'gui': '#a0d938' } " light_green / light_green
+    let s:blue           = { 'cterm':  81, 'gui': '#6cd0ec' } " light_blue / light_blue
+    let s:magenta        = { 'cterm': 197, 'gui': '#e9467c' } " magenta / light_purple
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffff8f' } " yellow / yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff9400' } " orange / orange
+    let s:red            = { 'cterm': 197, 'gui': '#ef2f5f' } " danger / red
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#17648c' }
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#2887af' }
+    let s:light_blue     = { 'cterm': 117, 'gui': '#87d9fa' }
+endif
+
+" Set colors, [monokai-tasty / apprentice] mix (60% / 40%)
+if g:tasty_apprentice_mix_level == 2
+    let s:dark_green     = { 'cterm':  22, 'gui': '#3e6440' } " dark_green / dark_green
+    let s:purple         = { 'cterm': 141, 'gui': '#a088df' } " purple / light_purple
+    let s:green          = { 'cterm': 148, 'gui': '#9bce52' } " light_green / light_green
+    let s:blue           = { 'cterm':  81, 'gui': '#74c8e7' } " light_blue / light_blue
+    let s:magenta        = { 'cterm': 197, 'gui': '#d55d88' } " magenta / light_purple
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffff97' } " yellow / yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff9100' } " orange / orange
+    let s:red            = { 'cterm': 197, 'gui': '#e0425f' } " danger / red
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#256991' }
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#3a87af' }
+    let s:light_blue     = { 'cterm': 117, 'gui': '#88d3f5' }
+endif
+
+" Set colors, [monokai-tasty / apprentice] mix (40% / 60%)
+if g:tasty_apprentice_mix_level == 3
+    let s:dark_green     = { 'cterm':  22, 'gui': '#3e6440' } " dark_green / dark_green
+    let s:purple         = { 'cterm': 141, 'gui': '#9888cf' } " purple / light_purple
+    let s:green          = { 'cterm': 148, 'gui': '#95c466' } " light_green / light_green
+    let s:blue           = { 'cterm':  81, 'gui': '#7cbfe1' } " light_blue / light_blue
+    let s:magenta        = { 'cterm': 197, 'gui': '#b38b95' } " magenta / cyan
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffff9f' } " yellow / yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff8d00' } " orange / orange
+    let s:red            = { 'cterm': 197, 'gui': '#d04e5f' } " danger / red
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#306d95' }
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#4887af' }
+    let s:light_blue     = { 'cterm': 117, 'gui': '#88cef1' }
+endif
+
+" Set colors, [monokai-tasty / apprentice] mix (20% / 80%)
+if g:tasty_apprentice_mix_level == 4
+    let s:dark_green     = { 'cterm':  22, 'gui': '#4e754f' } " dark_green / dark_green
+    let s:purple         = { 'cterm': 141, 'gui': '#8f87bf' } " purple / light_purple
+    let s:green          = { 'cterm': 148, 'gui': '#8fb977' } " light_green / light_green
+    let s:blue           = { 'cterm':  81, 'gui': '#82b7dc' } " light_blue / light_blue
+    let s:magenta        = { 'cterm': 197, 'gui': '#919ea2' } " magenta / cyan
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffffa7' } " yellow / yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff8a00' } " orange / orange
+    let s:red            = { 'cterm': 197, 'gui': '#bf585f' } " danger / red
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#3a729a' }
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#5487af' }
+    let s:light_blue     = { 'cterm': 117, 'gui': '#88c8ec' }
+endif
+
+" Set colors, [apprentice]
+if g:tasty_apprentice_mix_level == 5
+    let s:dark_green     = { 'cterm':  65, 'gui': '#5f875f' } " green
+    let s:purple         = { 'cterm': 103, 'gui': '#8787af' } " light_purple
+    let s:green          = { 'cterm': 108, 'gui': '#87af87' } " light_green
+    let s:blue           = { 'cterm': 110, 'gui': '#87afd7' } " light_blue
+    let s:magenta        = { 'cterm':  73, 'gui': '#5fafaf' } " cyan
+    let s:yellow         = { 'cterm': 228, 'gui': '#ffffaf' } " yellow
+    let s:orange         = { 'cterm': 208, 'gui': '#ff8700' } " orange
+    let s:red            = { 'cterm': 131, 'gui': '#af5f5f' } " red
+    let s:darker_blue    = { 'cterm':  24, 'gui': '#43779f' }
+    let s:dark_blue      = { 'cterm':  31, 'gui': '#5f87af' }
+    let s:light_blue     = { 'cterm': 117, 'gui': '#88c2e7' }
+endif
+
+" Set colors, [monokai-tasty / apprentice] common
 let s:white          = { 'cterm': 250, 'gui': '#ffffff' } " white / white
 let s:lightest_grey  = { 'cterm': 250, 'gui': '#bcbcbc' } " light_grey / lighter_grey (terminal foreground)
 let s:dark_grey      = { 'cterm': 238, 'gui': '#444444' } " darker_grey / grey
 let s:darkest_grey   = { 'cterm': 235, 'gui': '#262626' } " charcoal / darker_grey (terminal background)
 
-" Set colors, monokai-tasty
-let s:off_white      = { 'cterm': 251, 'gui': '#cccccc' } " off_white
-let s:lighter_grey   = { 'cterm': 245, 'gui': '#8a8a8a' } " grey
-let s:dark_highlight = { 'cterm':   0, 'gui': '#0b0e10' } " dark highlight
-let s:purple         = { 'cterm': 141, 'gui': '#af87ff' } " purple
-let s:green          = { 'cterm': 148, 'gui': '#a4e400' } " light_green
-let s:blue           = { 'cterm':  81, 'gui': '#62d8f1' } " light_blue
-let s:magenta        = { 'cterm': 197, 'gui': '#fc1a70' } " magenta
-let s:orange         = { 'cterm': 208, 'gui': '#ff9700' } " orange
-let s:red            = { 'cterm': 197, 'gui': '#ff005f' } " danger
-let s:yellow         = { 'cterm': 228, 'gui': '#ffff87' } " yellow
-let s:diff_delete_fg = { 'cterm':   1, 'gui': '#5f0000' } " diff_delete_fg
-let s:diff_delete_bg = { 'cterm':  52, 'gui': '#3b0e10' } " diff_delete_bg
-let s:dark_green     = { 'cterm':  22, 'gui': '#0f3315' } " dark_green
-let s:diff_text      = { 'cterm':  33, 'gui': '#3b3e54' } " diff_text
-let s:diff_change    = { 'cterm':  60, 'gui': '#252b3e' } " diff_change
-
-" Set colors, apprentice
+" Set colors, [apprentice]
 let s:black          = { 'cterm': 234, 'gui': '#1c1c1c' } " almost_black
 let s:grey           = { 'cterm': 240, 'gui': '#585858' } " medium_grey
 let s:darker_grey    = { 'cterm': 236, 'gui': '#303030' } " dark_grey
 let s:light_grey     = { 'cterm': 242, 'gui': '#6c6c6c' } " light_grey
+let s:diff_text      = { 'cterm': 145, 'gui': '#afafaf' } " dark_grey
 
-" Set colors, lightline default colors
-let s:darker_blue    = { 'cterm':  24, 'gui': '#005f87' } " darkestblue
-let s:dark_blue      = { 'cterm':  31, 'gui': '#0087af' } " darkblue
-let s:light_blue     = { 'cterm': 117, 'gui': '#87dfff' } " mediumcyan
+" Set colors, [monokai-tasty]
+let s:off_white      = { 'cterm': 251, 'gui': '#cccccc' } " off_white
+let s:lighter_grey   = { 'cterm': 245, 'gui': '#8a8a8a' } " grey
+let s:dark_highlight = { 'cterm':   0, 'gui': '#0b0e10' } " dark highlight
+let s:diff_delete_fg = { 'cterm':   1, 'gui': '#5f0000' } " diff_delete_fg
+let s:diff_delete_bg = { 'cterm':  52, 'gui': '#3b0e10' } " diff_delete_bg
+"let s:diff_text      = { 'cterm':  33, 'gui': '#3b3e54' } " diff_text
+"let s:diff_change    = { 'cterm':  60, 'gui': '#252b3e' } " diff_change
+"let s:yellow         = { 'cterm': 228, 'gui': '#ffff87' } " yellow
 
 " Set text styles
 let s:none           = { 'cterm': 'NONE', 'gui': 'NONE' }
@@ -66,39 +151,39 @@ let s:underline      = { 'cterm': 'underline', 'gui': 'underline' }
 let s:bold_underline = { 'cterm': 'bold,underline', 'gui': 'bold,underline' }
 
 " Config - Italic text
-" let g:monokai_yummy_italic
-if !exists('g:monokai_yummy_italic')
+" let g:tasty_apprentice_italic
+if !exists('g:tasty_apprentice_italic')
     if has('gui_running') || $TERM_ITALICS == 'true'
-        let g:monokai_yummy_italic = 1
+        let g:tasty_apprentice_italic = 1
     else
-        let g:monokai_yummy_italic = 0
+        let g:tasty_apprentice_italic = 0
     endif
 endif
 
-if g:monokai_yummy_italic
+if g:tasty_apprentice_italic
     let s:italic = { 'cterm': 'italic', 'gui': 'italic' }
 else
     let s:italic = { 'cterm': 'NONE', 'gui': 'NONE' }
 endif
 
 " Config - Window highlight
-" let g:monokai_yummy_highlight_active_window
-if !exists('g:monokai_yummy_highlight_active_window')
-    let g:monokai_yummy_highlight_active_window = 0
+" let g:tasty_apprentice_highlight_active_window
+if !exists('g:tasty_apprentice_highlight_active_window')
+    let g:tasty_apprentice_highlight_active_window = 0
 endif
-if g:monokai_yummy_highlight_active_window == 1
+if g:tasty_apprentice_highlight_active_window == 1
     call Highlight('NormalNC', { 'fg': s:off_white, 'bg': s:darker_grey, 'style': s:none })
 endif
 
 " Config - Selection colored
-" let g:monokai_yummy_selection_colored
-if !exists('g:monokai_yummy_selection_colored')
-    let g:monokai_yummy_selection_colored = 1
+" let g:tasty_apprentice_selection_colored
+if !exists('g:tasty_apprentice_selection_colored')
+    let g:tasty_apprentice_selection_colored = 1
 endif
-if g:monokai_yummy_selection_colored == 0
+if g:tasty_apprentice_selection_colored == 0
     call Highlight('WildMenu', { 'fg': s:darker_grey, 'bg': s:lightest_grey, 'style': s:none })
     call Highlight('PmenuSel', { 'fg': s:darker_grey, 'bg': s:lightest_grey, 'style': s:none })
-elseif g:monokai_yummy_selection_colored == 1
+elseif g:tasty_apprentice_selection_colored == 1
     call Highlight('WildMenu', { 'fg': s:darker_grey, 'bg': s:orange, 'style': s:none })
     call Highlight('PmenuSel', { 'fg': s:orange, 'bg': s:grey, 'style': s:none })
 endif
@@ -164,7 +249,7 @@ call Highlight('Operator', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('PreProc', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Repeat', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('DiffChange', { 'fg': s:none, 'bg': s:diff_change, 'style': s:none })
+call Highlight('DiffChange', { 'fg': s:none, 'bg': s:light_grey, 'style': s:none })
 call Highlight('DiffText', { 'fg': s:none, 'bg': s:diff_text, 'style': s:bold })
 call Highlight('DiffDelete', { 'fg': s:diff_delete_fg, 'bg': s:diff_delete_bg, 'style': s:none })
 call Highlight('DiffAdd', { 'fg': s:none, 'bg': s:dark_green, 'style': s:none })

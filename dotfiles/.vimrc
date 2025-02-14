@@ -6,7 +6,6 @@ call plug#begin()
 Plug 'farmergreg/vim-lastplace'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
-Plug 'mg979/vim-visual-multi'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
@@ -23,7 +22,7 @@ set termguicolors
 "colorscheme arcadia
 "colorscheme apprentice
 "colorscheme minimalist
-colorscheme monokai_yummy
+colorscheme tasty_apprentice
 
 " Set line number and ruler
 set number
@@ -122,7 +121,7 @@ let g:vimtex_syntax_conceal_disable=1
 
 " Lightline settings
 let g:lightline = {
-    \ 'colorscheme': 'monokai_yummy',
+    \ 'colorscheme': 'tasty_apprentice',
     \ 'active': {
     \ 'left': [ [ 'mode', 'paste' ],
     \           [ 'readonly', 'absolutepath', 'modified' ] ],
