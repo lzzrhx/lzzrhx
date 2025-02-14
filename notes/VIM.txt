@@ -1,9 +1,9 @@
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 // VIM CHEAT SHEET
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-# NAVIGATE
--------------------------------------------------------------------------------
+ NAVIGATE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  h/j/k/l  = left/down/up/right
  ctrl+u/d = scroll up/down
  gg/G     = go to first/last line
@@ -19,13 +19,22 @@
  'x       = go to mark x
 
 
-# SCROLLING
--------------------------------------------------------------------------------
+ SCROLL:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  zz       = center screen on cursor
+ zt       = set screen with cursor on top
+ zb       = set screen with cursor on bottom
+ ctrl+u   = scroll screen and cursor up 1/2 page
+ ctrl+d   = scroll screen and cursor down 1/2 page
+ ctrl+y   = scroll up
+ ctrl+e   = scroll down
+ H        = move cursor to highest line of screen
+ M        = move cursor to middle line of screen
+ L        = move cursor to last line of screen
 
 
-# INSERT
--------------------------------------------------------------------------------
+ INSERT MODE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  i      = insert mode
  I      = insert mode, at the beginning of the line
  a      = insert mode, (append) after cursor
@@ -34,8 +43,8 @@
  O      = insert mode, (open) at new line above
 
 
-# VISUAL
--------------------------------------------------------------------------------
+ VISUAL MODE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  v      = visual mode
  V      = visual mode, linewise
  ctrl+v = visual block mode
@@ -46,8 +55,8 @@
  =      = auto indent
 
 
-# COPY/PASTE/DELETE/REPLACE
--------------------------------------------------------------------------------
+ COPY/PASTE/DELETE/REPLACE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  yy        = yank line
  dd        = delete line
  cc        = change line
@@ -65,8 +74,8 @@
  :reg      = see registers
 
 
-# SELECTION EXAMPLES
--------------------------------------------------------------------------------
+ SELECTION EXAMPLES:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  y         = yank selection
  d         = delete selection
  i         = inner
@@ -82,38 +91,27 @@
  "7p       = paste from register 7
 
 
-# UNDO/REDO/REPEAT
--------------------------------------------------------------------------------
- u         = undo
- R         = redo
- .         = repeat previous command
+ UNDO/REDO/REPEAT:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ u                = undo
+ R                = redo
+ .                = repeat previous command
 
 
-# SEARCH/REPLACE
--------------------------------------------------------------------------------
- /pattern       = search
- ?pattern       = search backwards
- */#            = search forwards/backwards for current token
- n              = next result
- N              = previous result
- :%s/old/new/g  = replace all (in file)
- :%s/old/new/gc = replace all (in file) with confirmations
+ SEARCH/REPLACE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ /pattern         = search
+ ?pattern         = search backwards
+ */#              = search forwards/backwards for current token
+ n                = next result
+ N                = previous result
+ :%s/old/new/g    = replace all (in file)
+ :%s/old/new/gc   = replace all (in file) with confirmations
 
 
-# WINDOWS
--------------------------------------------------------------------------------
- :sp           = (ctrl+ws) split window
- :vsp          = (ctrl+wv) vertical split window
- :close        = (ctrl+wq) close window
- ctrl+ww       = switch window
- ctrl+wx       = exchange window
- ctrl+w=       = make all windows equal size
- ctrl+w+arrows = move to other window
-
-
-# TABS
--------------------------------------------------------------------------------
- :tabe <filename> = open a new tab
+ TABS:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ :tabe <filename> = edit file in new tab
  :tabc            = close tab
  :tabo            = close all other tabs
  :tabm <number>   = move tab (absolute)
@@ -122,37 +120,24 @@
  gT               = go to prev tab
 
 
-# FILES
--------------------------------------------------------------------------------
- :e <filename> = edit file
- :saveas       = save file as
+ WINDOWS:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ :sp              = (ctrl+ws) split window
+ :vsp             = (ctrl+wv) vertical split window
+ :close           = (ctrl+wq) close window
+ ctrl+ww          = switch window
+ ctrl+wx          = exchange window
+ ctrl+w=          = make all windows equal size
+ ctrl+w+arrows    = move to other window
 
 
-# SAVING/EXITING
--------------------------------------------------------------------------------
- :w     = write
- :x     = write and quit
- :wqa   = write and quit on all tabs
- :q!    = quit without saving
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-// LINKS
-////////////////////////////////////////////////////////////////////////////////
-
-- Vimcasts
-   http://vimcasts.org/
-
-- VimTricks, Vim Spell Check
-   https://vimtricks.com/p/vim-spell-check/
-
-- Vim Tutorial for Beginners
-   https://youtu.be/RZ4p-saaQkc
-
-- How I'm able to take notes in mathematics lectures using LaTeX and Vim
-   https://castel.dev/post/lecture-notes-1/
-
-- Getting started with the VimTeX plugin
-   https://ejmastnak.com/tutorials/vim-latex/vimtex/
+ OPEN/SAVE/EXIT:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ :e <filename>    = edit file
+ :q               = quit (or close tab/window)
+ :q!              = quit without saving
+ :w               = write
+ :w <filename>    = save as
+ :wq              = write and quit
+ :wqa             = write and quit on all tabs
 

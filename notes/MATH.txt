@@ -76,6 +76,6 @@
 
   SOURCES:
  --------------------------------------------------------
-  Unicode Math Symbols                   | http://xahlee.info/comp/unicode_math_operators.html
-  List of Greek letters and math symbols | https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
-  The great, big list of LaTeX symbols   | https://ftp.fagskolen.gjovik.no/pub/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+  Unicode Math Symbols                      | http://xahlee.info/comp/unicode_math_operators.html
+  List of Greek letters and math symbols    | https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
+  The great, big list of LaTeX symbols      | https://ftp.fagskolen.gjovik.no/pub/tex-archive/info/symbols/comprehensive/symbols-a4.pdf

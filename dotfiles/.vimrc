@@ -6,6 +6,7 @@ call plug#begin()
 Plug 'farmergreg/vim-lastplace'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
+Plug 'mg979/vim-visual-multi'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
