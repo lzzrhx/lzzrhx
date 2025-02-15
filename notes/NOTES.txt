@@ -4,7 +4,8 @@
 
  MISC.:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + Search and replace in files: find ./ -type f -exec sed -i "s/old_string/new_string/g" {} \;
+ + Search and replace in files                | find ./ -type f -exec sed -i "s/old_string/new_string/g" {} \;
+ + Vim, Show highlight group of current word  | set statusline=%{synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name')}
 
 
  LITERATURE:

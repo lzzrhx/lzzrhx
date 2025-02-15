@@ -3,10 +3,12 @@ filetype off
 
 call plug#begin()
 
+"Plug 'inside/vim-search-pulse'
 Plug 'farmergreg/vim-lastplace'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
+Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'yggdroot/indentline'
@@ -89,6 +91,7 @@ set formatoptions+=j
 set diffopt+=iwhiteall
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set completeopt-=preview
+set cursorline
 
 " Filetype specific settings
 autocmd FileType c setlocal commentstring=//\ %s
@@ -100,10 +103,6 @@ autocmd FileType cs setlocal commentstring=//\ %s
 
 " Set leader key
 let mapleader = " "
-
-" Vim-powered terminal in split window
-map <Leader>t :term ++close<cr>
-tmap <Leader>t <c-w>:term ++close<cr>
 
 " IndentLine settings
 let g:indentLine_char = '·'
@@ -159,4 +158,5 @@ let g:lightline = {
     \ 't'     : 'TERMINAL',
     \ }
     \ }
+
 

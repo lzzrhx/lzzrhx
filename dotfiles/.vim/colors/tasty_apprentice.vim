@@ -187,8 +187,11 @@ call Highlight('IncSearch',         { 'fg': s:white, 'bg': s:blue, 'style': s:bo
 call Highlight('Search',            { 'fg': s:white, 'bg': s:dark_blue, 'style': s:none })
 call Highlight('Pmenu',             { 'fg': s:lightest_grey, 'bg': s:dark_grey, 'style': s:none })
 call Highlight('StatusLine',        { 'fg': s:lightest_grey, 'bg': s:darker_grey, 'style': s:none })
+call Highlight('CursorLine',        { 'bg': s:darker_grey, 'style': s:none })
+call Highlight('CursorLineNR',      { 'fg': s:lightest_grey, 'style': s:none })
 
-" Highlights, YouCompleteMe
+" Highlights, Plugins
+call Highlight('illuminatedWord',   { 'fg': s:none, 'bg': s:none, 'style': s:underline })
 call Highlight('YcmWarningSign',    { 'fg': s:black, 'bg': s:orange, 'style': s:none })
 call Highlight('YcmWarningSection', { 'fg': s:black, 'bg': s:orange, 'style': s:none })
 call Highlight('YcmErrorSign',      { 'fg': s:white, 'bg': s:red, 'style': s:none })
@@ -196,23 +199,25 @@ call Highlight('YcmErrorSection',   { 'fg': s:white, 'bg': s:red, 'style': s:non
 
 " Highlights, Syntax highlighting
 call Highlight('Type', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
+call Highlight('PreCondit', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Function', { 'fg': s:green, 'bg': s:none, 'style': s:none })
+call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
+call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Constant', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 
 " Highlights, Syntax highlighting, Unmodified (from monokai-tasty)
 call Highlight('Boolean', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Character', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Comment', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
 call Highlight('Conditional', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Constant', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Define', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Error', { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('Float', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Function', { 'fg': s:green, 'bg': s:none, 'style': s:none })
 call Highlight('Identifier', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('Keyword', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Label', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
 call Highlight('Number', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Operator', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('PreCondit', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('PreProc', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Repeat', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Special', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
@@ -221,8 +226,6 @@ call Highlight('SpellBad', { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('SpellRare', { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('SpellCap', { 'fg': s:darkest_grey, 'bg': s:orange, 'style': s:italic })
 call Highlight('SpellLocal', { 'fg': s:darkest_grey, 'bg': s:orange, 'style': s:italic })
-call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
 call Highlight('String', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
 call Highlight('Structure', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('Tag', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
@@ -232,8 +235,6 @@ call Highlight('Todo', { 'fg': s:yellow, 'bg': s:grey, 'style': s:bold })
 call Highlight('ColorColumn', { 'fg': s:none, 'bg': s:darker_grey, 'style': s:none })
 call Highlight('Cursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
 call Highlight('CursorColumn', { 'fg': s:none, 'bg': s:darker_grey, 'style': s:none })
-call Highlight('CursorLine', { 'bg': s:darker_grey, 'style': s:none })
-call Highlight('CursorLineNR', { 'fg': s:yellow, 'style': s:none })
 call Highlight('DiffAdd', { 'fg': s:none, 'bg': s:dark_green, 'style': s:none })
 call Highlight('DiffChange', { 'fg': s:none, 'bg': s:light_grey, 'style': s:none })
 call Highlight('DiffDelete', { 'fg': s:diff_delete_fg, 'bg': s:diff_delete_bg, 'style': s:none })
@@ -365,6 +366,13 @@ call Highlight('jsGlobalNodeObjects', { 'fg': s:magenta, 'bg': s:none, 'style': 
 call Highlight('jsFutureKeys', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('EcmaScriptTemplateStrings', { 'fg': s:yellow, 'bg': s:none, 'style': s:italic })
 
+" Highlights, Links
+hi default link cConstant Normal
+hi default link cppConstant Normal
+hi default link cUserFunction Normal
+hi default link cppUserFunction Normal
+
+" Highlights, Links, Unmodified (from monokai-tasty)
 highlight default link jsComment              Comment
 highlight default link jsEnvComment           Comment
 highlight default link jsCommentTodo          Todo

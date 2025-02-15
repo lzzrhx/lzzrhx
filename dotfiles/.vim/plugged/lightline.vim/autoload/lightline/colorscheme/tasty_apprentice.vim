@@ -2,6 +2,12 @@
 " monokai-tasty | https://github.com/patstockwell/vim-monokai-tasty
 " apprentice    | https://github.com/romainl/Apprentice
 
+" Config, Theme mix level
+" let g:tasty_apprentice_mix_level
+if !exists('g:tasty_apprentice_mix_level') || count([0,1,2,3,4,5], g:tasty_apprentice_mix_level) == 0
+    let g:tasty_apprentice_mix_level = 2
+endif
+
 " Set colors, [monokai-tasty]
 if g:tasty_apprentice_mix_level == 0
     let s:green         = [ '#a4e400', 148 ] " light_green

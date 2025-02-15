@@ -7,8 +7,12 @@ clear
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias vi='vim'
+alias vim='vim -p'
 alias ls='ls --color=auto --group-directories-first'
+alias ip='ip -color=auto'
 alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 alias xresources='xrdb -load ~/.Xresources'
 alias lock='~/.config/i3/lock.sh'
 alias slurm='slurm -i wlp0s20f3'
