@@ -8,6 +8,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
 Plug 'yggdroot/indentline'
 Plug 'lervag/vimtex'
 
@@ -87,6 +88,7 @@ set sidescrolloff=2
 set formatoptions+=j
 set diffopt+=iwhiteall
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set completeopt-=preview
 
 " Filetype specific settings
 autocmd FileType c setlocal commentstring=//\ %s
@@ -112,6 +114,7 @@ let g:indentLine_fileTypeExclude = ['text']
 " YouCompleteMe settings
 let g:ycm_warning_symbol = '››'
 let g:ycm_error_symbol = '!›'
+let g:ycm_auto_hover=''
 
 " Vimtex settings
 let g:tex_flavor='latex'

@@ -25,10 +25,10 @@ function! Highlight(group, colour)
   exec l:highlight_command
 endfunction
 
-" Config - Theme mix level
+" Config, Theme mix level
 " let g:tasty_apprentice_mix_level
 if !exists('g:tasty_apprentice_mix_level') || count([0,1,2,3,4,5], g:tasty_apprentice_mix_level) == 0
-    let g:tasty_apprentice_mix_level = 1
+    let g:tasty_apprentice_mix_level = 2
 endif
 
 " Set colors, [monokai-tasty]
@@ -140,9 +140,6 @@ let s:lighter_grey   = { 'cterm': 245, 'gui': '#8a8a8a' } " grey
 let s:dark_highlight = { 'cterm':   0, 'gui': '#0b0e10' } " dark highlight
 let s:diff_delete_fg = { 'cterm':   1, 'gui': '#5f0000' } " diff_delete_fg
 let s:diff_delete_bg = { 'cterm':  52, 'gui': '#3b0e10' } " diff_delete_bg
-"let s:diff_text      = { 'cterm':  33, 'gui': '#3b3e54' } " diff_text
-"let s:diff_change    = { 'cterm':  60, 'gui': '#252b3e' } " diff_change
-"let s:yellow         = { 'cterm': 228, 'gui': '#ffff87' } " yellow
 
 " Set text styles
 let s:none           = { 'cterm': 'NONE', 'gui': 'NONE' }
@@ -150,14 +147,10 @@ let s:bold           = { 'cterm': 'bold', 'gui': 'bold' }
 let s:underline      = { 'cterm': 'underline', 'gui': 'underline' }
 let s:bold_underline = { 'cterm': 'bold,underline', 'gui': 'bold,underline' }
 
-" Config - Italic text
+" Config, Italic text
 " let g:tasty_apprentice_italic
 if !exists('g:tasty_apprentice_italic')
-    if has('gui_running') || $TERM_ITALICS == 'true'
-        let g:tasty_apprentice_italic = 1
-    else
-        let g:tasty_apprentice_italic = 0
-    endif
+    let g:tasty_apprentice_italic = 1
 endif
 
 if g:tasty_apprentice_italic
@@ -166,7 +159,7 @@ else
     let s:italic = { 'cterm': 'NONE', 'gui': 'NONE' }
 endif
 
-" Config - Window highlight
+" Config, Window highlight
 " let g:tasty_apprentice_highlight_active_window
 if !exists('g:tasty_apprentice_highlight_active_window')
     let g:tasty_apprentice_highlight_active_window = 0
@@ -175,7 +168,7 @@ if g:tasty_apprentice_highlight_active_window == 1
     call Highlight('NormalNC', { 'fg': s:off_white, 'bg': s:darker_grey, 'style': s:none })
 endif
 
-" Config - Selection colored
+" Config, Selection colored
 " let g:tasty_apprentice_selection_colored
 if !exists('g:tasty_apprentice_selection_colored')
     let g:tasty_apprentice_selection_colored = 1
@@ -188,12 +181,12 @@ elseif g:tasty_apprentice_selection_colored == 1
     call Highlight('PmenuSel', { 'fg': s:orange, 'bg': s:grey, 'style': s:none })
 endif
 
-" Highlights, added / modified
+" Highlights, General
+call Highlight('CurSearch',         { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
+call Highlight('IncSearch',         { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
+call Highlight('Search',            { 'fg': s:white, 'bg': s:dark_blue, 'style': s:none })
+call Highlight('Pmenu',             { 'fg': s:lightest_grey, 'bg': s:dark_grey, 'style': s:none })
 call Highlight('StatusLine',        { 'fg': s:lightest_grey, 'bg': s:darker_grey, 'style': s:none })
-call Highlight('Pmenu',             { 'fg': s:lightest_grey, 'bg': s:darker_grey, 'style': s:none })
-call Highlight('IncSearch', { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
-call Highlight('Search', { 'fg': s:white, 'bg': s:dark_blue, 'style': s:none })
-call Highlight('CurSearch', { 'fg': s:white, 'bg': s:blue, 'style': s:bold })
 
 " Highlights, YouCompleteMe
 call Highlight('YcmWarningSign',    { 'fg': s:black, 'bg': s:orange, 'style': s:none })
@@ -201,95 +194,99 @@ call Highlight('YcmWarningSection', { 'fg': s:black, 'bg': s:orange, 'style': s:
 call Highlight('YcmErrorSign',      { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('YcmErrorSection',   { 'fg': s:white, 'bg': s:red, 'style': s:none })
 
-" Highlights, unmodified (from monokai-tasty)
-call Highlight('Normal', { 'fg': s:white, 'bg': s:darkest_grey, 'style': s:none })
-call Highlight('Cursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
-call Highlight('lCursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
-call Highlight('CursorIM', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
-call Highlight('TermCursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
-call Highlight('TermCursorNC', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
-call Highlight('Special', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Title', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
-call Highlight('EndOfBuffer', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
-call Highlight('WinSeparator', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
+" Highlights, Syntax highlighting
+call Highlight('Type', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
+
+" Highlights, Syntax highlighting, Unmodified (from monokai-tasty)
+call Highlight('Boolean', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Character', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Comment', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
+call Highlight('Conditional', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Constant', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Define', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Error', { 'fg': s:white, 'bg': s:red, 'style': s:none })
-call Highlight('ErrorMsg', { 'fg': s:white, 'bg': s:red, 'style': s:none })
-call Highlight('WarningMsg', { 'fg': s:white, 'bg': s:red, 'style': s:none })
+call Highlight('Float', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Function', { 'fg': s:green, 'bg': s:none, 'style': s:none })
+call Highlight('Identifier', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
+call Highlight('Keyword', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Label', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
+call Highlight('Number', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Operator', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('PreCondit', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('PreProc', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Repeat', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('Special', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('SpecialKey', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
 call Highlight('SpellBad', { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('SpellRare', { 'fg': s:white, 'bg': s:red, 'style': s:none })
 call Highlight('SpellCap', { 'fg': s:darkest_grey, 'bg': s:orange, 'style': s:italic })
 call Highlight('SpellLocal', { 'fg': s:darkest_grey, 'bg': s:orange, 'style': s:italic })
-call Highlight('CursorLineNR', { 'fg': s:yellow, 'style': s:none })
-call Highlight('CursorColumn', { 'fg': s:none, 'bg': s:darker_grey, 'style': s:none })
+call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
+call Highlight('String', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
+call Highlight('Structure', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
+call Highlight('Tag', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('Todo', { 'fg': s:yellow, 'bg': s:grey, 'style': s:bold })
+
+" Highlights, General, Unmodified (from monokai-tasty)
 call Highlight('ColorColumn', { 'fg': s:none, 'bg': s:darker_grey, 'style': s:none })
-call Highlight('Conceal', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+call Highlight('Cursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
+call Highlight('CursorColumn', { 'fg': s:none, 'bg': s:darker_grey, 'style': s:none })
 call Highlight('CursorLine', { 'bg': s:darker_grey, 'style': s:none })
-call Highlight('LineNrBe', { 'fg': s:green, 'style': s:none })
-call Highlight('Type', { 'fg': s:none, 'bg': s:none, 'style': s:none })
-call Highlight('Visual', { 'fg': s:none, 'bg': s:grey, 'style': s:none })
-call Highlight('TabLine', { 'fg': s:lightest_grey, 'bg': s:grey, 'style': s:underline })
-call Highlight('Whitespace', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
-call Highlight('TabLineSel', { 'fg': s:none, 'bg': s:darkest_grey, 'style': s:bold })
-call Highlight('SignColumn', { 'fg': s:none, 'bg': s:none, 'style': s:none })
-call Highlight('NonText', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
-call Highlight('TabLineFill', { 'fg': s:none, 'bg': s:dark_grey, 'style': s:none })
+call Highlight('CursorLineNR', { 'fg': s:yellow, 'style': s:none })
+call Highlight('DiffAdd', { 'fg': s:none, 'bg': s:dark_green, 'style': s:none })
+call Highlight('DiffChange', { 'fg': s:none, 'bg': s:light_grey, 'style': s:none })
+call Highlight('DiffDelete', { 'fg': s:diff_delete_fg, 'bg': s:diff_delete_bg, 'style': s:none })
+call Highlight('DiffText', { 'fg': s:none, 'bg': s:diff_text, 'style': s:bold })
+call Highlight('Directory', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('ErrorMsg', { 'fg': s:white, 'bg': s:red, 'style': s:none })
+call Highlight('FoldColumn', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
+call Highlight('Folded', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
 call Highlight('LineNr', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
-call Highlight('VertSplit', { 'fg': s:dark_grey, 'bg': s:darkest_grey, 'style': s:none })
-call Highlight('StatusLineNC', { 'fg': s:lighter_grey, 'bg': s:dark_grey, 'style': s:none })
-call Highlight('Exception', { 'fg': s:magenta, 'bg': s:none, 'style': s:bold })
 call Highlight('MatchParen', { 'fg': s:magenta, 'bg': s:none, 'style': s:bold_underline })
-call Highlight('Include', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Conditional', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Define', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('MoreMsg', { 'fg': s:green, 'bg': s:none, 'style': s:none })
+call Highlight('NonText', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
+call Highlight('Normal', { 'fg': s:white, 'bg': s:darkest_grey, 'style': s:none })
+call Highlight('Question', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
+call Highlight('SignColumn', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+call Highlight('StatusLineNC', { 'fg': s:lighter_grey, 'bg': s:dark_grey, 'style': s:none })
+call Highlight('Title', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
+call Highlight('Underlined', { 'fg': s:none, 'bg': s:none, 'style': s:underline })
+call Highlight('VertSplit', { 'fg': s:dark_grey, 'bg': s:darkest_grey, 'style': s:none })
+call Highlight('Visual', { 'fg': s:none, 'bg': s:grey, 'style': s:none })
+call Highlight('WarningMsg', { 'fg': s:white, 'bg': s:red, 'style': s:none })
+call Highlight('Conceal', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+call Highlight('CursorIM', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
 call Highlight('Debug', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Delimiter', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Keyword', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Macro', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Operator', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('PreProc', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('Repeat', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('DiffChange', { 'fg': s:none, 'bg': s:light_grey, 'style': s:none })
-call Highlight('DiffText', { 'fg': s:none, 'bg': s:diff_text, 'style': s:bold })
-call Highlight('DiffDelete', { 'fg': s:diff_delete_fg, 'bg': s:diff_delete_bg, 'style': s:none })
-call Highlight('DiffAdd', { 'fg': s:none, 'bg': s:dark_green, 'style': s:none })
 call Highlight('diffAdded', { 'fg': s:green, 'bg': s:none, 'style': s:none })
 call Highlight('diffRemoved', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('diffFile', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
 call Highlight('diffLine', { 'fg': s:purple, 'bg': s:none, 'style': s:bold })
 call Highlight('diffIndexLine', { 'fg': s:purple, 'bg': s:none, 'style': s:bold })
 call Highlight('diffSubname', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
+call Highlight('EndOfBuffer', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
+call Highlight('Exception', { 'fg': s:magenta, 'bg': s:none, 'style': s:bold })
 call Highlight('gitcommitHeader', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('gitcommitSelectedFile', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
 call Highlight('gitcommitSummary', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 call Highlight('gitcommitOverflow', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('SpecialKey', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
-call Highlight('Identifier', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
-call Highlight('Question', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
-call Highlight('StorageClass', { 'fg': s:blue, 'bg': s:none, 'style': s:italic })
-call Highlight('Structure', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
-call Highlight('Typedef', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
-call Highlight('Function', { 'fg': s:green, 'bg': s:none, 'style': s:none })
-call Highlight('PreCondit', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Constant', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Directory', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Tag', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Boolean', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Character', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Float', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Number', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
-call Highlight('Folded', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
-call Highlight('FoldColumn', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
-call Highlight('Comment', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:italic })
-call Highlight('Label', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
-call Highlight('String', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
-call Highlight('Todo', { 'fg': s:yellow, 'bg': s:grey, 'style': s:bold })
-call Highlight('Underlined', { 'fg': s:none, 'bg': s:none, 'style': s:underline })
+call Highlight('Include', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('lCursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
+call Highlight('LineNrBe', { 'fg': s:green, 'style': s:none })
+call Highlight('Macro', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
+call Highlight('ModeMsg', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
 call Highlight('PmenuSbar', { 'fg': s:none, 'bg': s:lighter_grey, 'style': s:none })
 call Highlight('PmenuThumb', { 'fg': s:grey, 'bg': s:white, 'style': s:none })
-call Highlight('MoreMsg', { 'fg': s:green, 'bg': s:none, 'style': s:none })
 call Highlight('Substitute', { 'fg': s:black, 'bg': s:green, 'style': s:none })
-call Highlight('ModeMsg', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
+call Highlight('TabLine', { 'fg': s:lightest_grey, 'bg': s:grey, 'style': s:underline })
+call Highlight('TabLineSel', { 'fg': s:none, 'bg': s:darkest_grey, 'style': s:bold })
+call Highlight('TabLineFill', { 'fg': s:none, 'bg': s:dark_grey, 'style': s:none })
+call Highlight('TermCursor', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
+call Highlight('TermCursorNC', { 'fg': s:darkest_grey, 'bg': s:blue, 'style': s:none })
+call Highlight('Typedef', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
+call Highlight('WinSeparator', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
+call Highlight('Whitespace', { 'fg': s:grey, 'bg': s:none, 'style': s:none })
 
 " Custom Status line
 call Highlight('StatusLineBase', { 'fg': s:white, 'bg': s:dark_grey, 'style': s:none })

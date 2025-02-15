@@ -78,7 +78,6 @@
  WEBSITES:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  + Red Blob Games                                        https://www.redblobgames.com/
- + Basic Game Math                                       https://gamemath.com/
  + Immersive Math                                        http://immersivemath.com
  + Learn OpenGL                                          https://learnopengl.com/
 
