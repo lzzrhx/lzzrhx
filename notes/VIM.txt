@@ -143,3 +143,8 @@
  :wq              = write and quit
  :wqa             = write and quit on all tabs
 
+ PLUGINS:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ gc               = comment/uncomment selection
+ gcc              = comment/uncomment line
+

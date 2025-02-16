@@ -3,14 +3,12 @@ filetype off
 
 call plug#begin()
 
-"Plug 'inside/vim-search-pulse'
 Plug 'farmergreg/vim-lastplace'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
-Plug 'RRethy/vim-illuminate'
+Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
 Plug 'yggdroot/indentline'
 Plug 'lervag/vimtex'
 
@@ -25,6 +23,7 @@ set termguicolors
 "colorscheme arcadia
 "colorscheme apprentice
 "colorscheme minimalist
+"colorscheme mountaineer-grey
 colorscheme tasty_apprentice
 
 " Set line number and ruler
@@ -92,6 +91,14 @@ set diffopt+=iwhiteall
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set completeopt-=preview
 set cursorline
+set nofoldenable
+
+" Disable comment on new line
+autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
+
+" Set default split behaviour
+set splitbelow
+set splitright
 
 " Filetype specific settings
 autocmd FileType c setlocal commentstring=//\ %s
@@ -114,12 +121,19 @@ let g:indentLine_fileTypeExclude = ['text']
 let g:ycm_warning_symbol = '››'
 let g:ycm_error_symbol = '!›'
 let g:ycm_auto_hover=''
+let g:ycm_confirm_extra_conf=0
 
 " Vimtex settings
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_syntax_conceal_disable=1
-"let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='okular'
+
+" Match-up settings
+let g:matchup_motion_enabled = 0
+let g:matchup_text_obj_enabled = 0
+let g:matchup_matchparen_deferred = 1
+let g:matchup_matchparen_hi_surround_always = 1
 
 " Lightline settings
 let g:lightline = {
@@ -129,7 +143,7 @@ let g:lightline = {
     \           [ 'readonly', 'absolutepath', 'modified' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \            [ 'hiname', 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'inactive': {
     \ 'left': [ [ 'filename' ] ],
@@ -143,6 +157,9 @@ let g:lightline = {
     \ 'tab': {
     \ 'active': [ 'tabnum', 'filename', 'modified' ],
     \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+    \ },
+    \ 'component': {
+    \ 'hiname': "%{synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name')}"
     \ },
     \ 'mode_map' : {
     \ 'n'     : ' NORMAL ',
@@ -158,5 +175,4 @@ let g:lightline = {
     \ 't'     : 'TERMINAL',
     \ }
     \ }
-
 

@@ -22,7 +22,7 @@
  + Vim Tutorial for Beginners              https://youtu.be/RZ4p-saaQkc
  + Take math notes using LaTeX and Vim     https://castel.dev/post/lecture-notes-1/
  + Getting started with the VimTeX plugin  https://ejmastnak.com/tutorials/vim-latex/vimtex/
- 
+ + Vim help files                          https://vimhelp.org/
 
  PROGRAMMING:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

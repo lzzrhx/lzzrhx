@@ -4,7 +4,7 @@
 
 " Config, Theme mix level
 " let g:tasty_apprentice_mix_level
-if !exists('g:tasty_apprentice_mix_level') || count([0,1,2,3,4,5], g:tasty_apprentice_mix_level) == 0
+if !exists('g:tasty_apprentice_mix_level') || count([0,1,2,3], g:tasty_apprentice_mix_level) == 0
     let g:tasty_apprentice_mix_level = 2
 endif
 
@@ -38,28 +38,8 @@ if g:tasty_apprentice_mix_level == 2
     let s:light_blue     = [ '#88d3f5', 117 ]
 endif
 
-" Set colors, [monokai-tasty / apprentice] mix (40% / 60%)
-if g:tasty_apprentice_mix_level == 3
-    let s:green          = [ '#95c466', 148 ] " light_green / light_green
-    let s:orange         = [ '#ff8d00', 208 ] " orange / orange
-    let s:red            = [ '#d04e5f', 197 ] " danger / red
-    let s:darker_blue    = [ '#306d95',  24 ]
-    let s:dark_blue      = [ '#4887af',  31 ]
-    let s:light_blue     = [ '#88cef1', 117 ]
-endif
-
-" Set colors, [monokai-tasty / apprentice] mix (20% / 80%)
-if g:tasty_apprentice_mix_level == 4
-    let s:green          = [ '#8fb977', 148 ] " light_green / light_green
-    let s:orange         = [ '#ff8a00', 208 ] " orange / orange
-    let s:red            = [ '#bf585f', 197 ] " danger / red
-    let s:darker_blue    = [ '#3a729a',  24 ]
-    let s:dark_blue      = [ '#5487af',  31 ]
-    let s:light_blue     = [ '#88c8ec', 117 ]
-endif
-
 " Set colors, [apprentice]
-if g:tasty_apprentice_mix_level == 5
+if g:tasty_apprentice_mix_level == 3
     let s:green          = [ '#87af87', 108 ] " light_green
     let s:orange         = [ '#ff8700', 208 ] " orange
     let s:red            = [ '#af5f5f', 131 ] " red
