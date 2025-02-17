@@ -8,7 +8,6 @@ default_border none
 
 # Set font
 font pango:PxPlus ToshibaSat 8x16, monospace 8
-#font pango:Px437 IBM VGA 8x16, monospace 8
 
 # Set colors
 set_from_resource $i3-block-warn-color i3wm.color1 #ff0000
@@ -39,7 +38,7 @@ exec --no-startup-id unclutter -idle 1
 exec --no-startup-id numlockx
 
 # Redshift: adjust screen color temperature to reduce eye strain
-exec --no-startup-id redshift -l 60:5 -O 4000
+exec --no-startup-id "sleep 20; redshift -t 5700:3700 -l 60.4:5.3 -m randr"
 
 # Picom: enable vsync to avoid screen tearing
 exec --no-startup-id picom -b
@@ -73,6 +72,7 @@ bindsym XF86AudioPrev exec playerctl -a previous
 bindsym XF86AudioNext exec playerctl -a next
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#bindsym $mod+Shift+m exec ~/.scripts/monitor.sh
 
 # Screenshot hotkeys
 bindsym Print exec shotgun ~/screenshots/screenshot_$(date +%Y-%m-%d-%H%M%S).png -s
@@ -80,7 +80,7 @@ bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S
 #bindsym Shift+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -d 5
 
 # Rofi setup and hotkey
-bindsym $mod+d exec rofi -show run -font "Px437 IBM VGA 8x16 12" -theme custom
+bindsym $mod+d exec rofi -show run -font "PxPlus ToshibaSat 8x16 12" -theme custom
 
 # Lock screen
 bindsym $mod+Shift+e exec ~/.config/i3/lock.sh

@@ -108,6 +108,10 @@ autocmd FileType hpp setlocal commentstring=//\ %s
 autocmd FileType cs setlocal commentstring=//\ %s
 "autocmd FileType tex setlocal textwidth=0 wrapmargin=0 wrap linebreak columns=80
 
+" Set keybinds
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
 " Set leader key
 let mapleader = " "
 
