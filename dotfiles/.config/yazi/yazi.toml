@@ -1,0 +1,15 @@
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = false
+sort_dir_first = true
+#linemode = "size"
+show_hidden = false
+scrolloff = 5
+
+[preview]
+wrap = "no"
+tab_size = 4
+
+[input]
+cursor_blink = false

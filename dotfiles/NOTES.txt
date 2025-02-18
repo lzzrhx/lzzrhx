@@ -186,7 +186,7 @@ x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
 * Redirect i3 sdout and stderr to log file:
 $ sudo vim /usr/share/xsessions/i3.desktop
 * Change the "Exec" line to:
-Exec=i3 > ~/.i3_log 2>&1
+rxec=i3 > ~/.i3_log 2>&1
 
 // PACKAGES:
 $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts

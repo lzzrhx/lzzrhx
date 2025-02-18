@@ -23,10 +23,11 @@ alias dual-monitors='./.scripts/dual-monitors.sh'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export LS_COLORS="ow=01;34:di=01;34"
+export LS_COLORS="ow=01;94:di=01;94"
 
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=5000
 
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '
+PS1='\[\033[01;94m\]\w \$\[\033[00m\] '

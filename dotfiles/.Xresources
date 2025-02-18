@@ -3,7 +3,7 @@
 
 ! Set font
 *font:      xft:PxPlus ToshibaSat 8x16:size=8
-!*font:      xft:PxPlus IBM VGA 8x16:size=8
+!*font:     xft:PxPlus IBM VGA 8x16:size=8
 !*font:     xft:Px437 EverexMe 8x16:size=8
 !*font:     xft:Px437 NEC APC3 8x16:size=8
 !*font:     xft:Px437 FMTowns re. 8x16:size=8
