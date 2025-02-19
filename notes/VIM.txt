@@ -148,3 +148,11 @@
  gc               = comment/uncomment selection
  gcc              = comment/uncomment line
 
+ NVIM:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ :Tutor
+ :help
+ :help option-list
+ :Lazy
+ :Lazu update
+

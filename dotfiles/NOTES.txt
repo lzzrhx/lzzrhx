@@ -6,7 +6,7 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * DISPLAY MANAGER: Ly
 * WINDOW MANAGER: i3
 * LAUNCHER: Rofi 
-* TERMINAL EMULATOR: rxvt-unicode
+* TERMINAL EMULATOR: kitty
 
 // THEME:
 * MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
@@ -37,12 +37,12 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 
 // USAGE/TERMINAL COMMANDS:
 * SPECS:              $ neofetch
-* FILE MANAGER:       $ ranger
+* FILE MANAGER:       $ yazi
 * MUSIC PLAYER:       $ cmus
 * PROCESS MANAGER:    $ htop
 * AUDIO MIXER:        $ alsamixer
-* TEXT EDITOR:        $ vim
-* DIFF TOOL:          $ vimdiff <file1> <file2>
+* TEXT EDITOR:        $ nvim
+* DIFF TOOL:          $ nvimdiff <file1> <file2>
 * LIST WIFI NETWORKS: $ nmcli device wifi list
 * CONNECT TO WIFI:    $ nmcli device wifi connect <ssid> password <password>
 * WIFI MENU:          $ nmtui
@@ -124,9 +124,9 @@ $ vim /etc/pacman.conf/
 * [multilib]
 * Include = /etc/pacman.d/mirrorlist
 $ pacman -Syu
-$ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+$ pacman -S nvidia-open libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot shotgun numlockx unclutter playerctl redshift imagemagick acpi unzip ranger cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts nodejs
+$ pacman -S git neofetch alsa-utils feh scrot shotgun numlockx unclutter playerctl redshift imagemagick acpi unzip 7zip yazi cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts nodejs
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
@@ -189,6 +189,7 @@ $ sudo vim /usr/share/xsessions/i3.desktop
 rxec=i3 > ~/.i3_log 2>&1
 
 // PACKAGES:
+$ pacman -S neovim xclip ripgrep tree-sitter-cli
 $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
 $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
@@ -197,7 +198,7 @@ $ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-d
 $ pacman -S blender godot cuda
 
 // DEVELOPMENT:
-$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime
+$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime dotnet-sdk
 $ pacman -S raylib sdl3 sdl-2-compat
 
 // YAY:
@@ -222,6 +223,9 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
+
+// NVIM
+...
 
 // PAIRED BLUETOOTH DEVICES ON DUAL BOOT:
 * Pair the device on windows, then copy the pairing keys over to Linux:

@@ -84,7 +84,7 @@ set printoptions=header:0,number:y
 set autoread
 set history=1000
 set tabpagemax=50
-set scrolloff=1
+set scrolloff=4
 set sidescrolloff=2
 set formatoptions+=j
 set diffopt+=iwhiteall
@@ -147,7 +147,7 @@ let g:lightline = {
     \           [ 'readonly', 'absolutepath', 'modified' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'hiname', 'fileformat', 'fileencoding', 'filetype' ] ]
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'inactive': {
     \ 'left': [ [ 'filename' ] ],

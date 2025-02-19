@@ -1,0 +1,26 @@
+# COLOR THEME
+config-file = "colors/apprentice"
+
+# FONT
+font-family = PxPlus ToshibaSat 8x16
+font-synthetic-style = true
+font-size = 12
+adjust-cell-width=1
+adjust-cell-height=2
+
+# CURSOR
+cursor-style = block
+cursor-style-blink = true
+focus-follows-mouse = true
+shell-integration-features = no-cursor
+
+# WINDOW
+window-padding-y = 8
+window-padding-x = 8
+window-decoration = false
+
+# OTHER
+window-inherit-working-directory = true
+copy-on-select = true
+clipboard-read = allow
+resize-overlay = never
