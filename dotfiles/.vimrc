@@ -21,8 +21,9 @@ set encoding=utf-8
 " Set color scheme
 set termguicolors
 "colorscheme arcadia
-"colorscheme apprentice
 "colorscheme minimalist
+"colorscheme apprentice
+"colorscheme habamax
 "colorscheme mountaineer-grey
 colorscheme tasty_apprentice
 

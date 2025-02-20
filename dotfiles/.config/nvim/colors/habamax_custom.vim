@@ -40,13 +40,23 @@ hi! link vimSep Normal
 hi! link vimParenSep Normal
 hi! link vimCommentString Comment
 hi! link markdownUrl String
+
+" Modified
 hi Normal guifg=#bcbcbc guibg=NONE gui=NONE cterm=NONE
-hi Statusline guifg=#1c1c1c guibg=#9e9e9e gui=NONE cterm=NONE
+hi FloatBorder guifg=#bcbcbc guibg=NONE gui=NONE cterm=NONE
+hi MatchParen guifg=#bcbcbc guibg=NONE gui=underline cterm=underline
+
+hi WildMenu guifg=#1c1c1c guibg=#d7af87 gui=bold cterm=bold
+hi Pmenu guifg=NONE guibg=#3a3a3a gui=NONE cterm=NONE
+hi PmenuSel guifg=NONE guibg=#585858 gui=NONE cterm=NONE
+hi TabLineSel guifg=#1c1c1c guibg=#9e9e9e gui=bold cterm=bold
+
+hi Statusline guifg=#bcbcbc guibg=NONE gui=NONE cterm=NONE
+
 hi StatuslineNC guifg=#1c1c1c guibg=#767676 gui=NONE cterm=NONE
 hi VertSplit guifg=#767676 guibg=#767676 gui=NONE cterm=NONE
 hi TabLine guifg=#1c1c1c guibg=#767676 gui=NONE cterm=NONE
 hi TabLineFill guifg=#1c1c1c guibg=#767676 gui=NONE cterm=NONE
-hi TabLineSel guifg=#1c1c1c guibg=#9e9e9e gui=bold cterm=bold
 hi ToolbarLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi ToolbarButton guifg=#767676 guibg=#1c1c1c gui=bold,reverse cterm=bold,reverse
 hi QuickFixLine guifg=#1c1c1c guibg=#5f87af gui=NONE cterm=NONE
@@ -60,10 +70,8 @@ hi SpecialKey guifg=#585858 guibg=NONE gui=NONE cterm=NONE
 hi FoldColumn guifg=#585858 guibg=NONE gui=NONE cterm=NONE
 hi Visual guifg=#87afaf guibg=#1c1c1c gui=reverse cterm=reverse
 hi VisualNOS guifg=#1c1c1c guibg=#5f8787 gui=NONE cterm=NONE
-hi Pmenu guifg=NONE guibg=#3a3a3a gui=NONE cterm=NONE
 hi PmenuThumb guifg=NONE guibg=#767676 gui=NONE cterm=NONE
 hi PmenuSbar guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-hi PmenuSel guifg=NONE guibg=#585858 gui=NONE cterm=NONE
 hi PmenuKind guifg=#5f8787 guibg=#3a3a3a gui=NONE cterm=NONE
 hi PmenuKindSel guifg=#5f8787 guibg=#585858 gui=NONE cterm=NONE
 hi PmenuExtra guifg=#767676 guibg=#3a3a3a gui=NONE cterm=NONE
@@ -78,11 +86,9 @@ hi MoreMsg guifg=#5faf5f guibg=NONE gui=NONE cterm=NONE
 hi Question guifg=#d7af87 guibg=NONE gui=NONE cterm=NONE
 hi WarningMsg guifg=#d75f87 guibg=NONE gui=NONE cterm=NONE
 hi Todo guifg=#dadada guibg=NONE gui=bold cterm=bold
-hi MatchParen guifg=#ff00af guibg=NONE gui=bold cterm=bold
 hi Search guifg=#5fafd7 guibg=#1c1c1c gui=reverse cterm=reverse
 hi IncSearch guifg=#ffaf5f guibg=#1c1c1c gui=reverse cterm=reverse
 hi CurSearch guifg=#ffaf5f guibg=#1c1c1c gui=reverse cterm=reverse
-hi WildMenu guifg=#1c1c1c guibg=#d7af87 gui=bold cterm=bold
 hi debugPC guifg=#1c1c1c guibg=#5f87af gui=NONE cterm=NONE
 hi debugBreakpoint guifg=#1c1c1c guibg=#d75f87 gui=NONE cterm=NONE
 hi Cursor guifg=#000000 guibg=#dadada gui=NONE cterm=NONE

@@ -14,7 +14,7 @@ return {
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      { 'j-hui/fidget.nvim', opts = { progress = { display = { done_icon = "✓" } } } },
+      { 'j-hui/fidget.nvim', opts = { progress = { display = { done_icon = "✓", progress_icon = { "dots_scrolling" } } }, notification = { window = { winblend = 0 } } } },
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
@@ -44,16 +44,11 @@ return {
       -- Setup diagnostic display (:help vim.diagnostic.Opts)
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
-        signs = vim.g.enable_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {
+        update_in_insert = false, 
+        float = { source = 'if_many', severity = { min = vim.diagnostic.severity.WARN }, header = '', },
+        underline = { severity = { min = vim.diagnostic.severity.WARN } },
+        signs = {
+          severity = { min = vim.diagnostic.severity.WARN },
           text = {
             [vim.diagnostic.severity.ERROR] = '!›',
             [vim.diagnostic.severity.WARN] = '››',
@@ -61,25 +56,19 @@ return {
             [vim.diagnostic.severity.HINT] = '?›',
           }
         },
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        virtual_text = false,
+        -- {
+        --   source = 'if_many',
+        --   spacing = 2,
+        --   prefix ='■', 
+        --   severity = { vim.diagnostic.severity.ERROR }
+        -- },
       }
 
       -- Set capabilities
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-      
+
       -- Set enabled servers
       local servers = {
         clangd = {},
@@ -88,9 +77,8 @@ return {
         lua_ls = {
           settings = {
             Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
+              completion = { callSnippet = 'Replace', },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },

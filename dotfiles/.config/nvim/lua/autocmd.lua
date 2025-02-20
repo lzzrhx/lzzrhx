@@ -1,3 +1,11 @@
+-- Show LSP diagnostic floating window under the cursor
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+  group = vim.api.nvim_create_augroup("float_diagnostic_cursor", { clear = true }),
+  callback = function ()
+    vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})
+  end
+})
+
 -- Return to last cursor position when opening file
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function(opts)

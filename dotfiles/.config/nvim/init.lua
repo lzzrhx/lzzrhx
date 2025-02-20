@@ -3,8 +3,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set colorscheme
+-- vim.cmd.colorscheme("tasty_apprentice")
 vim.cmd.colorscheme("habamax_custom")
---vim.cmd.colorscheme("tasty_apprentice")
 
 -- Set line number and ruler
 vim.opt.number = true

@@ -27,8 +27,8 @@ return {
         lualine_z = {}
       },
       tabline = {
-        lualine_a = { { 'tabs', mode = 3, path = 0, max_length = vim.o.columns, }, },
-        lualine_b = {},
+        lualine_a = {},
+        lualine_b = { { 'tabs', mode = 3, path = 0, max_length = vim.o.columns } },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},

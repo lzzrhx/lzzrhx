@@ -30,10 +30,6 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noselect' },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
         mapping = cmp.mapping.preset.insert {
           ['<Up>'] = function(fallback)
             if cmp.visible() then
@@ -58,19 +54,20 @@ return {
               fallback()
             end
           end,
-          ['<Esc>'] = cmp.mapping.abort(),
-          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<Esc>'] = function(fallback)
+            if cmp.visible() then
+              cmp.abort()
+            end
+            fallback()
+          end,
+          -- ['<C-Space>'] = function(fallback)
+          --   if cmp.visible() then
+          --     cmp.complete()
+          --   else
+          --     fallback()
+          --   end
+          -- end,
         },
-          -- ['<Up>'] = cmp.config.disable,
-          -- ['<Down>'] = cmp.config.disable,
-          -- ['<C-Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-          -- ['<C-Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-          -- ['<Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-          -- ['<S-Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-          -- ['<CR>'] = cmp.mapping.confirm { select = false },
-          -- ['<Esc>'] = cmp.mapping.abort(),
-          -- ['<C-Space>'] = cmp.mapping.complete {},
-        -- },
         sources = {
           { name = 'lazydev', group_index = 0, },
           { name = 'nvim_lsp' },

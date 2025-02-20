@@ -124,7 +124,7 @@ $ vim /etc/pacman.conf/
 * [multilib]
 * Include = /etc/pacman.d/mirrorlist
 $ pacman -Syu
-$ pacman -S nvidia-open libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+$ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
 $ pacman -S git neofetch alsa-utils feh scrot shotgun numlockx unclutter playerctl redshift imagemagick acpi unzip 7zip yazi cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts nodejs
 $ systemctl enable systemd-timesyncd.service
@@ -198,7 +198,7 @@ $ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-d
 $ pacman -S blender godot cuda
 
 // DEVELOPMENT:
-$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime dotnet-sdk
+$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
 $ pacman -S raylib sdl3 sdl-2-compat
 
 // YAY:
