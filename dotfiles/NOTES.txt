@@ -1,245 +1,298 @@
-Lock-screen from:
-https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
-// SYSTEM:
-* OPERATING SYSTEM:  Arch Linux
-* SHELL:             zsh
-* DISPLAY MANAGER:   Ly
-* WINDOW MANAGER:    i3
-* LAUNCHER:          Rofi
-* TERMINAL EMULATOR: kitty
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+  * * * * * * *    COMFORTABLE COMPUTING ENVIRONMENT SET UP   * * * * * * * * *  
+   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ 
+  #1: ABOUT
+    1.1: SYSTEM
+    1.2: THEME
+    1.3: KEYBINDINGS
+    1.4: TERMINAL KEYBINDINGS
+    1.5: TERMINAL APPLICATIONS
+    1.6: GUI APPLICATIONS
+  #2: INSTALLATION
+    2.1: ARCH
+    2.2: DISABLE SUSPEND
+    2.3: QUIET BOOT
+    2.4: TOUCHPAD GESTURES
+    2.5: PACKAGES
+    2.6: YAY PACKAGES
+    2.7: ADDITIONAL PACKAGES
+    2.8: DOTFILES
+    2.9: VIM
 
-// THEME:
-* MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
-* NVIM THEME: Habamax
-* MAIN FONT:  ToshibaSat 8x16 (https://int10h.org/oldschool-pc-fonts/)
+////////////////////////////////////////////////////////////////////////////////
+// #1 | ABOUT
+////////////////////////////////////////////////////////////////////////////////
 
-// USAGE/KEY COMMANDS:
-* [win] + ENTER = terminal
-* [win] + D = rofi launcher
-* [win] + 0-9 = workspace 1-10
-* [win] + [shift] + Q = kill (quit)
-* [win] + [shift] + E = lock
-* [win] + F = fullscreen
-* [win] + R = resize
-* [win] + H = split h
-* [win] + V = split v
-* [win] + LEFT = focus left
-* [win] + RIGHT = focus right
-* [win] + UP = focus up
-* [win] + DOWN = focus down
-* [win] + [shift] + LEFT = move left
-* [win] + [shift] + RIGHT = move right
-* [win] + [shift] + UP = move up
-* [win] + [shift] + DOWN = move down
-* Print = screenshot
-* Ctrl+PrtSc = selection screenshot
-* Shift+PrtSc = delayed (5 sec) screenshot
+ 1.1 | SYSTEM
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Operating system:      Arch Linux
+ * Shell:                 zsh
+ * Display manager:       Ly
+ * Window manager:        i3
+ * Launcher:              Rofi
+ * Terminal emulator:     kitty
+ 
+ 
+ 1.2 | THEME
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * System theme:          Apprentice (https://romainl.github.io/Apprentice/) 
+ * Neovim theme:          Habamax
+ * Font:                  ToshibaSat 8x16 (https://int10h.org/oldschool-pc-fonts/)
+ 
+ 
+ 1.3 | KEYBINDINGS
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  [Win] + Enter           = Launch terminal emulator
+  [Win] + d               = Launch rofi
+  [Win] + 0-9             = Change workspace
+  [Win] + [Shift] + q     = Kill (quit)
+  [Win] + [Shift] + e     = Lock
+  [Win] + f               = Fullscreen
+  [Win] + r               = Resize
+  [Win] + h               = Split horizontal
+  [Win] + v               = Split verical
+  [Win] + Left            = Focus left
+  [Win] + Right           = Focus right
+  [Win] + Up              = Focus up
+  [Win] + Down            = Focus down
+  [Win] + [Shift] + Left  = Move left
+  [Win] + [Shift] + Right = Move right
+  [Win] + [Shift] + Up    = Move up
+  [Win] + [Shift] + Down  = Move down
+  PrtSc                   = Take screenshot
+  [Ctrl] + PrtSc          = Take screenshot of selected area
+  [Shift] + PrtSc         = Take delayed (5 sec) screenshot
+ 
+ 
+ 1.4 | TERMINAL KEYBINDINGS
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  [Ctrl] + r              = fzf-history-widget
+  [Ctrl] + t              = fzf-file-widget
+  [Alt] + c               = fzf-cd-widget
+ 
+ 
+ 1.5 | TERMINAL APPLICATIONS
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Specs:                 neofetch
+ * Text editor:           nvim
+ * Diff tool:             nvim -d <file1> <file2>
+ * File manager:          yazi
+ * Process manager:       htop
+ * Calculator:            calc
+ * Calendar:              calcurse
+ * Music player:          cmus
+ * Audio mixer:           alsamixer
+ * Wifi menu:             nmtui
+ * List wifi networks:    nmcli device wifi list
+ * Connect to wifi:       nmcli device wifi connect <ssid> password <password>
+ 
+ 
+ 1.6 | GUI APPLICATIONS
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ * File manager:          thunar
+ * Text editor:           subl
+ * Pdf reader:            okular
+ * Web browser:           firefox
+ * Music player:          spotify-launcher
+ * Messaging:             signal-desktop
+ * Chat client:           discord
+ * Torrent client:        qbittorrent
+ * Bluetooth manager:     blueman-manager
+ * Audio mixer:           pavucontrol
+ 
 
-// USAGE/TERMINAL COMMANDS:
-* SPECS:              $ neofetch
-* FILE MANAGER:       $ yazi
-* MUSIC PLAYER:       $ cmus
-* PROCESS MANAGER:    $ htop
-* AUDIO MIXER:        $ alsamixer
-* TEXT EDITOR:        $ nvim
-* DIFF TOOL:          $ nvim -d <file1> <file2>
-* LIST WIFI NETWORKS: $ nmcli device wifi list
-* CONNECT TO WIFI:    $ nmcli device wifi connect <ssid> password <password>
-* WIFI MENU:          $ nmtui
-* CALENDAR:           $ calcurse
-* CALCULATOR:         $ calc
+////////////////////////////////////////////////////////////////////////////////
+// #2 | INSTALLATION
+////////////////////////////////////////////////////////////////////////////////
+ 
+ 2.1 | ARCH
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ (for norwegian keyboard) $ loadkeys no
+ $ cat /sys/firmware/efi/fw_platform_size
+ $ iwctl
+ $ adapter phy0 set-property Powered on
+ $ device wlan0 set-property Powered on
+ $ station wlan0 scan
+ $ station wlan0 connect <wifi name>
+ $ ping archlinux.org
+ $ timedatectl
+ $ fdisk -l
+ $ cfdisk /dev/<disk name>
+ * Make EFI partion (if not dual boot)
+ * Make swap partion (8GB?)
+ * Make main partion
+ * Format EFI partion (if not dual boot)
+ $ mkswap /dev/<swap partion>
+ $ swapon /dev/<swap partion>
+ $ free -m
+ $ mkfs.ext4 /dev/<main partion>
+ $ mount /dev/<main partion> /mnt
+ $ mount /dev/<efi partion> --mkdir /mnt/boot/efi
+ $ lsblk
+ $ pacstrap -K base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim nano networkmanager dhcpcd
+ $ genfstab -U /mnt >> /mnt/etc/fstab
+ $ arch-chroot /mnt
+ $ ln -sf /usr/share/zoneinfo/Europe/Oslo /etc/localtime
+ $ hwclock --systohc
+ $ vim /etc/locale.gen
+ * Uncomment line: en_US.UTF-8 UTF-8
+ * Uncomment line: nb_NO.UTF-8 UTF-8
+ $ locale-gen
+ $ vim /etc/locale.conf
+ * LANG=en_US.UTF-8
+ $ vim /etc/vconsole.conf
+ * KEYMAP=no
+ $ vim /etc/hostname
+ # <hostname>
+ $ vim /etc/hosts
+ * Add these lines:
+ * 127.0.0.1     localhost
+ * ::1           localhost
+ * 127.0.1.1     <hostname>.localdomain  localhost
+ (usually not required) $ mkinitcpio -P linux
+ $ passwd
+ $ useradd -m <username>
+ $ passwd <username>
+ $ visudo
+ * <username> ALL=(ALL:ALL) NOPASSWD: ALL
+ $ vim /etc/default/grub
+ * Uncomment line: GRUB_DISABLE_OS_PROBER=false
+ $ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+ $ grub-mkconfig -o /boot/grub/grub.cfg
+ $ vim /etc/pacman.conf/
+ * Uncomment these lines:
+ * [multilib]
+ * Include = /etc/pacman.d/mirrorlist
+ $ pacman -Syu
+ $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings cuda
+ $ pacman -S ly xorg i3 rxvt-unicode rofi
+ $ pacman -S git fzf zsh
+ $ pacman -S neofetch yazi cmus htop tree calcurse calc
+ $ pacman -S numlockx unclutter redshift acpi playerctl xf86-input-synaptics pulsemixer picom hsetroot alsa-utils
+ $ pacman -S feh scrot shotgun imagemagick unzip 7zip 
+ $ pacman -S nodejs python python-pip
+ $ chsh -s /bin/zsh
+ $ systemctl enable systemd-timesyncd.service
+ $ systemctl enable dhcpcd.service
+ $ systemctl enable NetworkManager.service
+ $ systemctl enable ly.service
+ $ exit
+ $ umount -lR /mnt
+ $ reboot
+ * login with <username>
+ (for norweigan keyboard) $ localectl --no-convert set-x11-keymap no pc104
+ (for dual boot setup) $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+ $ vim /etc/modprobe.d/nobeep.conf
+ * blacklist pcspkr
+ * blacklist snd_pcsp
+ $ nmcli device wifi list
+ $ nmcli device wifi connect <ssid> password <password>
 
-// USAGE/APPS (THROUGH ROFI):
-* WEB BROWSER:       firefox
-* MUSIC PLAYER:      spotify-launcher
-* CHAT CLIENT:       discord
-* FILE MANAGER:      thunar
-* TEXT EDITOR:       subl
-* TORRENT CLIENT:    qbittorrent
-* BLUETOOTH MANAGER: blueman-manager
-* AUDIO MIXER:       pavucontrol
-* 3D EDITOR:         blender
-* GAME ENGINE:       godot
-* PDF READER:        okular
-* MESSAGING:         signal-desktop
 
-// ARCH INSTALLATION:
-(for norwegian keyboard) $ loadkeys no
-$ cat /sys/firmware/efi/fw_platform_size
-$ iwctl
-$ adapter phy0 set-property Powered on
-$ device wlan0 set-property Powered on
-$ station wlan0 scan
-$ station wlan0 connect <wifi name>
-$ ping archlinux.org
-$ timedatectl
-$ fdisk -l
-$ cfdisk /dev/<disk name>
-* Make EFI partion (if not dual boot)
-* Make swap partion (8GB?)
-* Make main partion
-* Format EFI partion (if not dual boot)
-$ mkswap /dev/<swap partion>
-$ swapon /dev/<swap partion>
-$ free -m
-$ mkfs.ext4 /dev/<main partion>
-$ mount /dev/<main partion> /mnt
-$ mount /dev/<efi partion> --mkdir /mnt/boot/efi
-$ lsblk
-$ pacstrap -K base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim nano networkmanager dhcpcd
-$ genfstab -U /mnt >> /mnt/etc/fstab
-$ arch-chroot /mnt
-$ ln -sf /usr/share/zoneinfo/Europe/Oslo /etc/localtime
-$ hwclock --systohc
-$ vim /etc/locale.gen
-* Uncomment line: en_US.UTF-8 UTF-8
-* Uncomment line: nb_NO.UTF-8 UTF-8
-$ locale-gen
-$ vim /etc/locale.conf
-* LANG=en_US.UTF-8
-$ vim /etc/vconsole.conf
-* KEYMAP=no
-$ vim /etc/hostname
-# <hostname>
-$ vim /etc/hosts
-* Add these lines:
-* 127.0.0.1     localhost
-* ::1           localhost
-* 127.0.1.1     <hostname>.localdomain  localhost
-(usually not required) $ mkinitcpio -P linux
-$ passwd
-$ useradd -m <username>
-$ passwd <username>
-$ visudo
-* <username> ALL=(ALL:ALL) NOPASSWD: ALL
-$ vim /etc/default/grub
-* Uncomment line: GRUB_DISABLE_OS_PROBER=false
-$ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
-$ grub-mkconfig -o /boot/grub/grub.cfg
-$ vim /etc/pacman.conf/
-* Uncomment these lines:
-* [multilib]
-* Include = /etc/pacman.d/mirrorlist
-$ pacman -Syu
-$ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
-$ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git fzf zsh
-$ pacman -S neofetch yazi cmus htop tree calcurse calc
-$ pacman -S numlockx unclutter redshift acpi playerctl xf86-input-synaptics pulsemixer picom hsetroot alsa-utils
-$ pacman -S feh scrot shotgun imagemagick unzip 7zip 
-$ pacman -S nodejs python python-pip
-$ chsh -s /bin/zsh
-$ systemctl enable systemd-timesyncd.service
-$ systemctl enable dhcpcd.service
-$ systemctl enable NetworkManager.service
-$ systemctl enable ly.service
-$ exit
-$ umount -lR /mnt
-$ reboot
-* login with <username>
-(for norweigan keyboard) $ localectl --no-convert set-x11-keymap no pc104
-(for dual boot setup) $ sudo grub-mkconfig -o /boot/grub/grub.cfg
-$ vim /etc/modprobe.d/nobeep.conf
-* blacklist pcspkr
-* blacklist snd_pcsp
-$ nmcli device wifi list
-$ nmcli device wifi connect <ssid> password <password>
+ 2.2 | DISABLE SUSPEND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ sudo mkdir /etc/systemd/sleep.conf.d/
+ $ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
+ * Add these lines:
+ [Sleep]
+ AllowSuspend=no
+ AllowHibernation=no
+ AllowSuspendThenHibernate=no
+ AllowHybridSleep=no
 
-// TOUCHPAD GESTURES:
-$ sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf
-* Add these lines:
-Section "InputClass"
-    Identifier "touchpad"
-    Driver "synaptics"
-    MatchIsTouchpad "on"
-        Option "TapButton1" "1"
-        Option "TapButton2" "3"
-        Option "TapButton3" "2"
-        Option "VertEdgeScroll" "on"
-        Option "VertTwoFingerScroll" "on"
-        Option "HorizEdgeScroll" "on"
-        Option "HorizTwoFingerScroll" "on"
-        Option "EmulateTwoFingerMinZ" "40"
-        Option "EmulateTwoFingerMinW" "8"
-        Option "CoastingSpeed" "0"
-        Option "FingerLow" "30"
-        Option "FingerHigh" "50"
-        Option "MaxTapTime" "125"
-        Option "PalmDetect" "1"
-        Option "PalmMinWidth" "6"
-        Option "PalmMinZ" "300"
-EndSection
 
-// DISABLE SUSPEND:
-$ sudo mkdir /etc/systemd/sleep.conf.d/
-$ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
-* Add these lines:
-[Sleep]
-AllowSuspend=no
-AllowHibernation=no
-AllowSuspendThenHibernate=no
-AllowHybridSleep=no
+ 2.3 | QUIET BOOT
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Redirect Xorg stdout and stderr to file:
+ $ sudo vim /etc/ly/config.ini
+ * Change the "x_cmd" line to:
+ x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
+ * Redirect i3 sdout and stderr to log file:
+ $ sudo vim /usr/share/xsessions/i3.desktop
+ * Change the "Exec" line to:
+ rxec=i3 > ~/.i3_log 2>&1
 
-// QUIET BOOT:
-* Redirect Xorg stdout and stderr to file:
-$ sudo vim /etc/ly/config.ini
-* Change the "x_cmd" line to:
-x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
-* Redirect i3 sdout and stderr to log file:
-$ sudo vim /usr/share/xsessions/i3.desktop
-* Change the "Exec" line to:
-rxec=i3 > ~/.i3_log 2>&1
 
-// PAIRED BLUETOOTH DEVICES ON DUAL BOOT:
-* Pair the device on windows, then copy the pairing keys over to Linux:
-https://wiki.archlinux.org/title/bluetooth
+ 2.4 | TOUCHPAD GESTURES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf
+ * Add these lines:
+ Section "InputClass"
+     Identifier "touchpad"
+     Driver "synaptics"
+     MatchIsTouchpad "on"
+         Option "TapButton1" "1"
+         Option "TapButton2" "3"
+         Option "TapButton3" "2"
+         Option "VertEdgeScroll" "on"
+         Option "VertTwoFingerScroll" "on"
+         Option "HorizEdgeScroll" "on"
+         Option "HorizTwoFingerScroll" "on"
+         Option "EmulateTwoFingerMinZ" "40"
+         Option "EmulateTwoFingerMinW" "8"
+         Option "CoastingSpeed" "0"
+         Option "FingerLow" "30"
+         Option "FingerHigh" "50"
+         Option "MaxTapTime" "125"
+         Option "PalmDetect" "1"
+         Option "PalmMinWidth" "6"
+         Option "PalmMinZ" "300"
+ EndSection
 
-// PACKAGES:
-$ pacman -S neovim xclip ripgrep tree-sitter-cli ttf-jetbrains-mono-nerd
-$ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
-$ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
-$ pacman -S texlive-binextra texlive 
-$ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-desktop ark
-$ pacman -S blender godot cuda
-$ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 
-// YAY:
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
-$ makepkg -si
-$ cd
-$ rm -rf ~/yay/
+ 2.5 | PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ pacman -S neovim xclip ripgrep tree-sitter-cli ttf-jetbrains-mono-nerd
+ $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
+ $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
+ $ pacman -S texlive-binextra texlive 
+ $ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-desktop ark
+ $ pacman -S blender godot cuda
+ $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
+ 
 
-// YAY PACKAGES:
-$ yay -S sublime-text-4
-$ yay -S bluetooth-autoconnect
-$ sudo systemctl enable bluetooth-autoconnect
-$ systemctl --user enable pulseaudio-bluetooth-autoconnect
-$ yay -S xcursor-retrosmart
+ 2.6 | YAY PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ git clone https://aur.archlinux.org/yay.git
+ $ cd yay
+ $ makepkg -si
+ $ cd
+ $ rm -rf ~/yay/
+ $ yay -S xcursor-retrosmart
+ $ yay -S sublime-text-4
+ $ yay -S bluetooth-autoconnect
+ $ sudo systemctl enable bluetooth-autoconnect
+ $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
-// DEVELOPMENT
-$ pacman -S github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
-$ pacman -S raylib sdl3 sdl-2-compat
 
-// GAMES:
-$ pacman -S dwarffortress cataclysm-dda nethack steam
+ 2.7 | ADDITIONAL PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ + Development:
+    $ pacman -S github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
+    $ pacman -S raylib sdl3 sdl-2-compat
+ + Games:
+    $ pacman -S dwarffortress cataclysm-dda nethack
+    $ pacman -S steam
+ + Math:
+    $ sudo pacman -S geogebra xournalapp
+    $ yay -S mathpix-snipping-tool
+ + Printing:
+    $ sudo pacman -S cups gedit
+    $ systemctl enable cups.service
 
-// PRINTING:
-$ sudo pacman -S cups gedit
-$ systemctl enable cups.service
 
-// MATH:
-$ sudo pacman -S geogebra xournalapp
-$ yay -S mathpix-snipping-tool
+ 2.8 | DOTFILES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ git clone https://github.com/lzzrhx/lzzrhx.git
+ * Copy contents of /dotfiles to appropriate folders
 
-// VIM:
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-$ vim
-* :PluginInstall
-$ ./.vim/bundles/YouCompleteMe/install.py
 
-// DOTFILES:
-$ git clone https://github.com/lzzrhx/lzzrhx.git
-* Copy contents of /dotfiles to appropriate folders
+ 2.9 | VIM
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ $ vim
+ * :PluginInstall
+ $ ./.vim/bundles/YouCompleteMe/install.py
 

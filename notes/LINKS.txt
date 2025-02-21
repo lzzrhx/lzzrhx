@@ -2,29 +2,30 @@
 // LINKS:
 ////////////////////////////////////////////////////////////////////////////////
 
- MISC.:
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + https://gifcities.org
- + http://wiby.me/
- + https://marginalia-search.com/
- + https://goatcounter.com
- + https://open-slum.org/
- + https://int10h.org/oldschool-pc-fonts/
- + https://brisray.com/web/webring-list.htm
- + https://discuss.32bit.cafe/wiki/resources
- + https://www.uclahealth.org/programs/marc/free-guided-meditations/guided-meditations
+MISC.:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+https://gifcities.org
+http://wiby.me/
+https://marginalia-search.com/
+https://goatcounter.com
+https://open-slum.org/
+https://int10h.org/oldschool-pc-fonts/
+https://brisray.com/web/webring-list.htm
+https://discuss.32bit.cafe/wiki/resources
+https://www.uclahealth.org/programs/marc/free-guided-meditations/guided-meditations
 
 
- VIM:
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + Vimcasts                                http://vimcasts.org/
- + VimTricks, Vim Spell Check              https://vimtricks.com/p/vim-spell-check/
- + Vim Tutorial for Beginners              https://youtu.be/RZ4p-saaQkc
- + Take math notes using LaTeX and Vim     https://castel.dev/post/lecture-notes-1/
- + Getting started with the VimTeX plugin  https://ejmastnak.com/tutorials/vim-latex/vimtex/
- + Vim help files                          https://vimhelp.org/
+VIM:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Vimcasts                                http://vimcasts.org/
+VimTricks, Vim Spell Check              https://vimtricks.com/p/vim-spell-check/
+Vim Tutorial for Beginners              https://youtu.be/RZ4p-saaQkc
+Take math notes using LaTeX and Vim     https://castel.dev/post/lecture-notes-1/
+Getting started with the VimTeX plugin  https://ejmastnak.com/tutorials/vim-latex/vimtex/
+Vim help files                          https://vimhelp.org/
 
- PROGRAMMING:
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + PEP 8: Style Guide for Python Code      https://peps.python.org/pep-0008/
- + C Reference Card (ANSI)                 https://users.ece.utexas.edu/~adnan/c-refcard.pdf
+
+PROGRAMMING:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+PEP 8: Style Guide for Python Code      https://peps.python.org/pep-0008/
+C Reference Card (ANSI)                 https://users.ece.utexas.edu/~adnan/c-refcard.pdf

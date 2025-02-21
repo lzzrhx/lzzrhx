@@ -60,13 +60,9 @@ return {
             end
             fallback()
           end,
-          -- ['<C-Space>'] = function(fallback)
-          --   if cmp.visible() then
-          --     cmp.complete()
-          --   else
-          --     fallback()
-          --   end
-          -- end,
+          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
         },
         sources = {
           { name = 'lazydev', group_index = 0, },
