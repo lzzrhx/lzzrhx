@@ -2,16 +2,17 @@ Lock-screen from:
 https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
 // SYSTEM:
-* OS: ARCH LINUX
-* DISPLAY MANAGER: Ly
-* WINDOW MANAGER: i3
-* LAUNCHER: Rofi 
+* OPERATING SYSTEM:  Arch Linux
+* SHELL:             zsh
+* DISPLAY MANAGER:   Ly
+* WINDOW MANAGER:    i3
+* LAUNCHER:          Rofi
 * TERMINAL EMULATOR: kitty
 
 // THEME:
 * MAIN THEME: Apprentice (https://romainl.github.io/Apprentice/) 
-* VIM THEME: Benokai (https://github.com/benjaminwhite/Benokai)
-* MAIN FONT: IBM VGA 8x16 (https://int10h.org/oldschool-pc-fonts/)
+* NVIM THEME: Habamax
+* MAIN FONT:  ToshibaSat 8x16 (https://int10h.org/oldschool-pc-fonts/)
 
 // USAGE/KEY COMMANDS:
 * [win] + ENTER = terminal
@@ -42,7 +43,7 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * PROCESS MANAGER:    $ htop
 * AUDIO MIXER:        $ alsamixer
 * TEXT EDITOR:        $ nvim
-* DIFF TOOL:          $ nvimdiff <file1> <file2>
+* DIFF TOOL:          $ nvim -d <file1> <file2>
 * LIST WIFI NETWORKS: $ nmcli device wifi list
 * CONNECT TO WIFI:    $ nmcli device wifi connect <ssid> password <password>
 * WIFI MENU:          $ nmtui
@@ -62,9 +63,6 @@ https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_scr
 * GAME ENGINE:       godot
 * PDF READER:        okular
 * MESSAGING:         signal-desktop
-
-// TODO:
-* Issue: urxvt-unicode adds empty lines when moving window (BUG)
 
 // ARCH INSTALLATION:
 (for norwegian keyboard) $ loadkeys no
@@ -126,7 +124,12 @@ $ vim /etc/pacman.conf/
 $ pacman -Syu
 $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 $ pacman -S ly xorg i3 rxvt-unicode rofi
-$ pacman -S git neofetch alsa-utils feh scrot shotgun numlockx unclutter playerctl redshift imagemagick acpi unzip 7zip yazi cmus htop xf86-input-synaptics openssh tree calcurse calc pulsemixer picom hsetroot noto-fonts nodejs
+$ pacman -S git fzf zsh
+$ pacman -S neofetch yazi cmus htop tree calcurse calc
+$ pacman -S numlockx unclutter redshift acpi playerctl xf86-input-synaptics pulsemixer picom hsetroot alsa-utils
+$ pacman -S feh scrot shotgun imagemagick unzip 7zip 
+$ pacman -S nodejs python python-pip
+$ chsh -s /bin/zsh
 $ systemctl enable systemd-timesyncd.service
 $ systemctl enable dhcpcd.service
 $ systemctl enable NetworkManager.service
@@ -188,18 +191,18 @@ $ sudo vim /usr/share/xsessions/i3.desktop
 * Change the "Exec" line to:
 rxec=i3 > ~/.i3_log 2>&1
 
+// PAIRED BLUETOOTH DEVICES ON DUAL BOOT:
+* Pair the device on windows, then copy the pairing keys over to Linux:
+https://wiki.archlinux.org/title/bluetooth
+
 // PACKAGES:
-$ pacman -S neovim xclip ripgrep tree-sitter-cli
-$ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
+$ pacman -S neovim xclip ripgrep tree-sitter-cli ttf-jetbrains-mono-nerd
 $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
 $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
 $ pacman -S texlive-binextra texlive 
 $ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-desktop ark
 $ pacman -S blender godot cuda
-
-// DEVELOPMENT:
-$ pacman -S github-cli python python-pip cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
-$ pacman -S raylib sdl3 sdl-2-compat
+$ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 
 // YAY:
 $ git clone https://aur.archlinux.org/yay.git
@@ -213,10 +216,22 @@ $ yay -S sublime-text-4
 $ yay -S bluetooth-autoconnect
 $ sudo systemctl enable bluetooth-autoconnect
 $ systemctl --user enable pulseaudio-bluetooth-autoconnect
+$ yay -S xcursor-retrosmart
 
-// DOTFILES:
-$ git clone https://github.com/lzzrhx/lzzrhx.git
-* Copy contents of /dotfiles to appropriate folders
+// DEVELOPMENT
+$ pacman -S github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
+$ pacman -S raylib sdl3 sdl-2-compat
+
+// GAMES:
+$ pacman -S dwarffortress cataclysm-dda nethack steam
+
+// PRINTING:
+$ sudo pacman -S cups gedit
+$ systemctl enable cups.service
+
+// MATH:
+$ sudo pacman -S geogebra xournalapp
+$ yay -S mathpix-snipping-tool
 
 // VIM:
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -224,24 +239,7 @@ $ vim
 * :PluginInstall
 $ ./.vim/bundles/YouCompleteMe/install.py
 
-// NVIM
-...
-
-// PAIRED BLUETOOTH DEVICES ON DUAL BOOT:
-* Pair the device on windows, then copy the pairing keys over to Linux:
-https://wiki.archlinux.org/title/bluetooth
-
-// OPTIONAL / EXTRA STUFF:
-* Retro cursor theme:
-$ yay -S xcursor-retrosmart
-* Netork monitor:
-$ yay -S slurm
-* Games:
-$ sudo pacman -S dwarffortress cataclysm-dda nethack steam
-* Math:
-$ sudo pacman -S geogebra xournalapp
-$ yay -S mathpix-snipping-tool
-* Printing:
-$ sudo pacman -S cups gedit
-$ systemctl enable cups.service
+// DOTFILES:
+$ git clone https://github.com/lzzrhx/lzzrhx.git
+* Copy contents of /dotfiles to appropriate folders
 
