@@ -26,11 +26,11 @@ alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
 
 # Enviroment variables
 export VISUAL=nvim
-export EDITOR='$VISUAL'
-export LS_COLORS='ow=94:di=94'
+export EDITOR="$VISUAL"
+export LS_COLORS="ow=94:di=94"
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
 # Prompt style
@@ -47,7 +47,6 @@ setopt hist_save_no_dups
 setopt hist_find_no_dups
 setopt autocd
 unsetopt beep
-bindkey -e
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/laser_wolf/.zshrc'
@@ -62,14 +61,15 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 zstyle ':completion:*' group-name ''
 
 # Keybinds
+bindkey -e
 KEYTIMEOUT=1
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 bindkey "\e[5~" history-search-backward
 bindkey "\e[6~" history-search-forward
-bindkey -M emacs '^R' fzf-history-widget # CTRL+R
-bindkey -M emacs '\ec' fzf-cd-widget     # ALT+C
-bindkey -M emacs '^T' fzf-file-widget    # CTRL+T
+bindkey -M emacs '^R' fzf-history-widget
+bindkey -M emacs '\ec' fzf-cd-widget
+bindkey -M emacs '^T' fzf-file-widget
 bindkey "\e[3~" delete-char
 bindkey -M menuselect '\e' send-break
 bindkey -M menuselect '^M' accept-line
