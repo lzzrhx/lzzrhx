@@ -69,17 +69,21 @@ set noshowmode
 " Remove delay when exiting insert mode
 set ttimeoutlen=50
 set updatetime=300
-set signcolumn=yes
 
-" Statusline & tabline always visible
+" Statusline, tabline & sign column always visible
 set laststatus=2
 set showtabline=2
+set signcolumn=yes
 
 " Set swap file directory
 set directory=$HOME/.vim/swapfiles//
 
 " Set print options for hardprint
 set printoptions=header:0,number:y
+
+" Set cursor shape
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
 
 " Misc settings
 set autoread
@@ -90,9 +94,11 @@ set sidescrolloff=2
 set formatoptions+=j
 set diffopt+=iwhiteall
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set fillchars=eob:\ 
 set completeopt-=preview
 set cursorline
 set nofoldenable
+
 
 " Disable comment on new line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=ro

@@ -11,11 +11,11 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', opts = {} },
+      'hrsh7th/cmp-nvim-lsp',
+      'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = { progress = { display = { done_icon = "✓", progress_icon = { "dots_scrolling" } } }, notification = { window = { winblend = 0 } } } },
-      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -69,11 +69,16 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-      -- Set enabled servers
+      -- Set enabled servers (:h lspconfig-all)
       local servers = {
         clangd = {},
         csharp_ls = {},
         pyright = {},
+        --rust_analyzer = {}
+        --bashls = {}
+        --glsl_analyzer = {}
+        --texlab = {}
+        --ols = {}
         lua_ls = {
           settings = {
             Lua = {

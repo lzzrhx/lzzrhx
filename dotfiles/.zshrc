@@ -59,6 +59,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-tab false
 
 # Keybinds
 bindkey -e

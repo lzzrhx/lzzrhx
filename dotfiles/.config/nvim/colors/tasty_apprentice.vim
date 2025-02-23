@@ -128,6 +128,17 @@ let s:bold           = { 'cterm': 'bold', 'gui': 'bold' }
 let s:underline      = { 'cterm': 'underline', 'gui': 'underline' }
 let s:bold_underline = { 'cterm': 'bold,underline', 'gui': 'bold,underline' }
 
+" Config, Background color
+" let g:tasty_apprentice_dark_bg
+if !exists('g:tasty_apprentice_dark_bg') || count([0,1], g:tasty_apprentice_dark_bg) == 0
+    let g:tasty_apprentice_dark_bg = 1
+endif
+if g:tasty_apprentice_dark_bg == 1
+    call Highlight('Normal', { 'fg': s:white, 'bg': s:black, 'style': s:none })
+else
+    call Highlight('Normal', { 'fg': s:white, 'bg': s:darker_grey, 'style': s:none })
+endif
+
 " General
 call Highlight('WildMenu',          { 'fg': s:darker_grey, 'bg': s:orange, 'style': s:none })
 call Highlight('PmenuSel',          { 'fg': s:orange, 'bg': s:grey, 'style': s:none })
@@ -141,6 +152,8 @@ call Highlight('CursorLineNR',      { 'fg': s:lightest_grey, 'bg': s:dark_grey, 
 call Highlight('MatchParen',        { 'fg': s:white, 'bg': s:none, 'style': s:underline })
 call Highlight('Todo',              { 'fg': s:darker_grey, 'bg': s:yellow, 'style': s:none })
 call Highlight('LineNr',            { 'fg': s:grey, 'bg': s:none, 'style': s:none })
+call Highlight('Border',            { 'fg': s:white, 'bg': s:none, 'style': s:none })
+hi def link FloatBorder Border
 
 " Plugins
 call Highlight('illuminatedWord',       { 'fg': s:none, 'bg': s:none, 'style': s:underline })
@@ -177,7 +190,6 @@ call Highlight('FoldColumn', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:no
 call Highlight('Folded', { 'fg': s:lighter_grey, 'bg': s:none, 'style': s:none })
 call Highlight('MoreMsg', { 'fg': s:green, 'bg': s:none, 'style': s:none })
 call Highlight('NonText', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
-call Highlight('Normal', { 'fg': s:white, 'bg': s:darkest_grey, 'style': s:none })
 call Highlight('Question', { 'fg': s:blue, 'bg': s:none, 'style': s:none })
 call Highlight('SignColumn', { 'fg': s:none, 'bg': s:none, 'style': s:none })
 call Highlight('StatusLineNC', { 'fg': s:lighter_grey, 'bg': s:dark_grey, 'style': s:none })

@@ -6,6 +6,9 @@ vim.g.maplocalleader = ' '
 -- vim.cmd.colorscheme("tasty_apprentice")
 vim.cmd.colorscheme("habamax_custom")
 
+-- Enable/disable nerd font icons
+vim.g.enable_nerd_font = false
+
 -- Set line number and ruler
 vim.opt.number = true
 vim.opt.ruler = true
@@ -50,11 +53,11 @@ vim.opt.inccommand = 'split'
 -- Hide the default mode indicator
 vim.opt.showmode = false
 
--- Enable/disable nerd font icons
-vim.g.enable_nerd_font = false
-
 -- Set horizontal wildmenu
 vim.opt.wildoptions = { 'tagfile' }
+
+-- Set cursor shape
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- Misc. settings
 vim.opt.autoread = true
