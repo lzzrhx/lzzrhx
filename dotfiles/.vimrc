@@ -138,7 +138,7 @@ let g:ycm_confirm_extra_conf=0
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_syntax_conceal_disable=1
-let g:vimtex_view_method='okular'
+"let g:vimtex_view_method='zathura'
 
 " Match-up settings
 let g:matchup_motion_enabled = 0

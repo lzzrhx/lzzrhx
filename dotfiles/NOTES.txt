@@ -270,7 +270,7 @@
  2.7 | ADDITIONAL PACKAGES
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  + Development:
-    $ pacman -S github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
+    $ pacman -S lua github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
     $ pacman -S raylib sdl3 sdl-2-compat
  + Games:
     $ pacman -S dwarffortress cataclysm-dda nethack

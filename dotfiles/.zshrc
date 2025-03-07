@@ -10,6 +10,17 @@ function y() {
 
 # fzf
 source <(fzf --zsh)
+show_file_or_dir_preview="if [ -d {} ]; then ls -a {} | head -200; else cat {} | head -500; fi"
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'ls -a {} | head -200'"
+_fzf_comprun() {
+  local command=$1
+  shift
+  case "$command" in
+    cd)           fzf --preview 'ls -a {} | head -200' "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
 
 # Modules
 zmodload -i zsh/complist
@@ -23,6 +34,7 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias lock='~/.config/i3/lock.sh'
 alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
+#alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 
 # Enviroment variables
 export VISUAL=nvim
