@@ -3,6 +3,10 @@ command=./blocks/$BLOCK_NAME
 separator_block_width=35
 markup=none
 
+# Current music playing
+[cmus]
+interval=2
+
 # Battery indicator
 [bat]
 interval=10
@@ -15,3 +19,4 @@ signal=1
 # Time
 [time]
 interval=1
+

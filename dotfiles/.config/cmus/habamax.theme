@@ -1,0 +1,47 @@
+#Habamax colors:
+#109 - Cyan
+#180 - Yellow
+#139 - Purple
+#113 - Light green 2
+#77  - Light green
+#74  - Light blue
+#167 - Light red
+#168 - Lighter red
+#71  - Dark green
+#66  - Dark cyan
+#67  - Dark blue
+#131 - Red
+#176 - Bright purple
+#199 - Intense purple
+#215 - Dark yellow
+#234 - Black
+#240 - Grey
+#243 - Light grey
+#247 - Lighter grey
+#253 - White
+
+set color_win_fg=default
+set color_win_bg=234
+set color_cmdline_bg=default
+set color_cmdline_fg=default
+set color_error=167
+set color_info=180
+set color_separator=240
+set color_statusline_bg=240
+set color_statusline_fg=253
+set color_statusline_progress_bg=253
+set color_statusline_progress_fg=black
+set color_win_title_bg=240
+set color_win_title_fg=253
+set color_titleline_bg=109
+set color_titleline_fg=black
+set color_win_cur=139
+set color_win_dir=180
+set color_win_sel_bg=180
+set color_win_sel_fg=black
+set color_win_cur_sel_fg=black
+set color_win_cur_sel_bg=139
+set color_win_inactive_sel_bg=243
+set color_win_inactive_cur_sel_bg=243
+set color_win_inactive_sel_fg=black
+set color_win_inactive_cur_sel_fg=black

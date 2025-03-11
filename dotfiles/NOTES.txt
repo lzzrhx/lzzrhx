@@ -275,8 +275,8 @@
  + Games:
     $ pacman -S dwarffortress cataclysm-dda nethack
     $ pacman -S steam
- + Math:
-    $ sudo pacman -S geogebra xournalapp
+ + Math & studies:
+    $ sudo pacman -S geogebra xournalapp libreoffice hunspell libmythes mythes-en
     $ yay -S mathpix-snipping-tool
  + Printing:
     $ sudo pacman -S cups gedit
