@@ -131,7 +131,7 @@
  $ mount /dev/<main partion> /mnt
  $ mount /dev/<efi partion> --mkdir /mnt/boot/efi
  $ lsblk
- $ pacstrap -K base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim nano networkmanager dhcpcd
+ $ pacstrap -K base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim networkmanager dhcpcd
  $ genfstab -U /mnt >> /mnt/etc/fstab
  $ arch-chroot /mnt
  $ ln -sf /usr/share/zoneinfo/Europe/Oslo /etc/localtime
@@ -166,14 +166,14 @@
  * [multilib]
  * Include = /etc/pacman.d/mirrorlist
  $ pacman -Syu
- $ pacman -S nvidia libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings cuda
- $ pacman -S ly xorg i3 rxvt-unicode rofi
- $ pacman -S git fzf zsh
- $ pacman -S neofetch yazi cmus htop tree calcurse calc
- $ pacman -S numlockx unclutter redshift acpi playerctl xf86-input-synaptics pulsemixer picom hsetroot alsa-utils
- $ pacman -S feh scrot shotgun imagemagick unzip 7zip 
+ $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
+ $ pacman -S ly xorg i3 rofi kitty
+ $ pacman -S git fzf zsh rxvt-unicode
+ $ pacman -S yazi cmusd htop tree calcurse calc
+ $ pacman -S numlockx unclutter picom redshift hsetroot playerctl pulsemixer alsa-utils
+ $ pacman -S acpi xf86-input-synaptics
+ $ pacman -S feh shotgun imagemagick unzip 7zip
  $ pacman -S nodejs python python-pip
- $ chsh -s /bin/zsh
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
  $ systemctl enable NetworkManager.service
@@ -189,6 +189,7 @@
  * blacklist snd_pcsp
  $ nmcli device wifi list
  $ nmcli device wifi connect <ssid> password <password>
+ $ chsh -s /bin/zsh
 
 
  2.2 | DISABLE SUSPEND
@@ -245,11 +246,10 @@
  2.5 | PACKAGES
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ pacman -S neovim xclip ripgrep tree-sitter-cli ttf-jetbrains-mono-nerd
- $ pacman -S bluez bluez-utils blueman-manager pulseaudio-bluetooth pavucontrol
  $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
- $ pacman -S texlive-binextra texlive 
- $ pacman -S firefox discord spotify-launcher qbittorrent thunar mplayer signal-desktop ark
- $ pacman -S blender godot cuda
+ $ pacman -S texlive texlive-binextra
+ $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
+ $ pacman -S thunar firefox qbittorrent ark mplayer signal-desktop discord
  $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
  
 
@@ -270,13 +270,14 @@
  2.7 | ADDITIONAL PACKAGES
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  + Development:
-    $ pacman -S lua github-cli cmake gdb dotnet-runtime dotnet-sdk dotnet-sdk-8.0
-    $ pacman -S raylib sdl3 sdl-2-compat
+    $ pacman -S blender godot
+    $ pacman -S cmake gdb github-cli lua dotnet-runtime dotnet-sdk dotnet-sdk-8.0
+    $ pacman -S raylib sdl3 sdl2-compat
  + Games:
     $ pacman -S dwarffortress cataclysm-dda nethack
     $ pacman -S steam
  + Math & studies:
-    $ sudo pacman -S geogebra xournalapp libreoffice hunspell libmythes mythes-en
+    $ sudo pacman -S libreoffice xournalpp hunspell libmythes mythes-en geogebra
     $ yay -S mathpix-snipping-tool
  + Printing:
     $ sudo pacman -S cups gedit
