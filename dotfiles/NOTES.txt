@@ -263,6 +263,7 @@
  $ yay -S xcursor-retrosmart
  $ yay -S sublime-text-4
  $ yay -S bluetooth-autoconnect
+ $ yay -S nvidia-settings
  $ sudo systemctl enable bluetooth-autoconnect
  $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
@@ -292,8 +293,8 @@
 
  2.9 | VIM
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  $ vim
  * :PluginInstall
- $ ./.vim/bundles/YouCompleteMe/install.py
+ $ python3 .vim/plugged/YouCompleteMe/install.py --clangd-completer --cs-complete --rust-completer --go-completer
 
