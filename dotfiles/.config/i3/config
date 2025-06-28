@@ -7,7 +7,7 @@ hide_edge_borders both
 default_border none
 
 # Set font
-font pango:PxPlus ToshibaSat 8x16, monospace 8
+font pango:PxPlus ToshibaSat 8x16, monospace 16px
 
 # Set colors
 set_from_resource $i3-block-warn-color i3wm.color1 #ff0000

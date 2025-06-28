@@ -26,6 +26,7 @@ _fzf_comprun() {
 zmodload -i zsh/complist
 
 # Aliases
+alias vi='nvim'
 alias vim='vim -p'
 alias nvim='nvim -p'
 alias ls='ls --color=auto --group-directories-first'

@@ -2,17 +2,6 @@
 // NOTES:
 ////////////////////////////////////////////////////////////////////////////////
 
-MISC.:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Search and replace in files                | find ./ -type f -exec sed -i "s/old_string/new_string/g" {} \;
 Vim, Show highlight group of current word  | set statusline=%{synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name')}
-
-
-LITERATURE:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-B. W. Kernighan & D. M. Ritchie, The C Programming Language, Second Edition
-Jens Gustedt, Modern C
-S.B Lippmann, J. Lajoie & B. Moo, C++ Primer, Fifth Edition
-Bjarne Stroustrup, The C++ Programming Language, Fourth Edition
-Jon Skeet, C# In Depth, Fourth Edition
 

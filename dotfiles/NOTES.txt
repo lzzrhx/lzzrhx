@@ -93,9 +93,9 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  * File manager:          thunar
  * Text editor:           subl
+ * Mardown editor:        obsidian
  * Pdf reader:            okular
  * Web browser:           firefox
- * Music player:          spotify-launcher
  * Messaging:             signal-desktop
  * Chat client:           discord
  * Torrent client:        qbittorrent
@@ -249,7 +249,7 @@
  $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
  $ pacman -S texlive texlive-binextra
  $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
- $ pacman -S thunar firefox qbittorrent ark mplayer signal-desktop discord
+ $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop discord
  $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
  
 
@@ -264,6 +264,7 @@
  $ yay -S sublime-text-4
  $ yay -S bluetooth-autoconnect
  $ yay -S nvidia-settings
+ $ yay -S grub-customizer
  $ sudo systemctl enable bluetooth-autoconnect
  $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
