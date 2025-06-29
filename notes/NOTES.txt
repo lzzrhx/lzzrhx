@@ -2,6 +2,30 @@
 // NOTES:
 ////////////////////////////////////////////////////////////////////////////////
 
+MISC.:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Search and replace in files                | find ./ -type f -exec sed -i "s/old_string/new_string/g" {} \;
 Vim, Show highlight group of current word  | set statusline=%{synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name')}
+
+
+LITERATURE:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+B. W. Kernighan & D. M. Ritchie, The C Programming Language, Second Edition
+Jens Gustedt, Modern C
+S.B Lippmann, J. Lajoie & B. Moo, C++ Primer, Fifth Edition
+Bjarne Stroustrup, The C++ Programming Language, Fourth Edition
+Jon Skeet, C# In Depth, Fourth Edition
+
+
+FINE FONTS:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+PxPlus_ToshibaSat_8x16.ttf
+PxPlus_IBM_VGA_8x16.ttf
+Px437_NEC_APC3_8x16.ttf
+Px437_FMTowns_re_8x16.ttf
+Px437_EverexME_8x16.ttf
+Px437_DOS-V_re_JPN16.ttf
+Px437_DOS-V_re_ANK16.ttf
+Px437_Compis.ttf
+Px437_Robotron_A7100.ttf   
 
