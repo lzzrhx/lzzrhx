@@ -88,3 +88,5 @@ bindkey "\e[3~" delete-char
 bindkey -M menuselect '\e' send-break
 bindkey -M menuselect '^M' accept-line
 
+# zoxide
+eval "$(zoxide init zsh)"

@@ -169,7 +169,7 @@
  $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
  $ pacman -S ly xorg i3 rofi kitty
  $ pacman -S git fzf zsh rxvt-unicode
- $ pacman -S yazi cmusd htop tree calcurse calc
+ $ pacman -S yazi cmusd htop tree calcurse calc zoxide
  $ pacman -S numlockx unclutter picom redshift hsetroot playerctl pulsemixer alsa-utils
  $ pacman -S acpi xf86-input-synaptics
  $ pacman -S feh shotgun imagemagick unzip 7zip
@@ -189,7 +189,7 @@
  * blacklist snd_pcsp
  $ nmcli device wifi list
  $ nmcli device wifi connect <ssid> password <password>
- $ chsh -s /bin/zsh
+ $ chsh -s /usr/bin/zsh
 
 
  2.2 | DISABLE SUSPEND
