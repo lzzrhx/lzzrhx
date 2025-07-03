@@ -10,14 +10,86 @@ Vim, Show highlight group of current word  | set statusline=%{synIDattr(synIDtra
 
 LITERATURE:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-B. W. Kernighan & D. M. Ritchie, The C Programming Language, Second Edition
-Jens Gustedt, Modern C
-S.B Lippmann, J. Lajoie & B. Moo, C++ Primer, Fifth Edition
-Bjarne Stroustrup, The C++ Programming Language, Fourth Edition
-Jon Skeet, C# In Depth, Fourth Edition
+The C Programming Language
+Modern C
+C++ Primer
+The C++ Programming Language, Fourth Edition
+C# In Depth
+Understanding the Odin Programming
 
 
-FINE FONTS:
+PODCASTS:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Blowback                  - https://blowback.show/
+Chapo Trap House          - https://www.chapotraphouse.com/
+Novara Media              - https://novaramedia.com/
+The LRB Podcast           - https://www.lrb.co.uk/podcasts-and-videos/podcasts/the-lrb-podcast
+Jacobin Radio             - https://jacobin.com/
+The Mondoweiss Podcast    - https://mondoweiss.net/podcast/
+Tides of History          - https://wondery.com/shows/tides-of-history/?utm_source=rss
+The 404 Media Podcast     - https://www.404media.co/the-404-media-podcast/
+Tech Won't Save Us        - https://techwontsave.us/
+Advent of Computing       - http://adventofcomputing.com/
+
+
+NEWS / ARTICLES:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+London Review of Books    - https://www.lrb.co.uk/
+Jacobin                   - https://jacobin.com/
+New Left Review           - https://newleftreview.org/
+It's Going Down           - https://itsgoingdown.org/
+Quanta Magazine           - https://www.quantamagazine.org/
+404 Media                 - https://www.404media.co/
+Truthout                  - https://truthout.org/
+
+
+YOUTUBE CHANNELS:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Novara Media                - https://www.youtube.com/@NovaraMedia
+People Make Games           - https://www.youtube.com/@PeopleMakeGames
+404 Media                   - https://www.youtube.com/@404Mediaco
+Wizard Bisan                - https://www.youtube.com/@wizardbisan
+Palestine Action            - https://www.youtube.com/@pal_action
+AJ+                         - https://www.youtube.com/@ajplus
+London Review of Books      - https://www.youtube.com/@londonreviewofbooks
+Jacobin                     - https://www.youtube.com/@JacobinMag
+Verso Books                 - https://www.youtube.com/@VersoBooks
+Vox                         - https://www.youtube.com/@Vox
+Channel 5                   - https://www.youtube.com/@Channel5YouTube
+Popular Front               - https://www.youtube.com/@PopularFront
+Alice Cappelle              - https://www.youtube.com/@AliceCappelle
+Atrioc                      - https://www.youtube.com/@atrioc
+Dimension 20                - https://www.youtube.com/dimension20show
+WIRED                       - https://www.youtube.com/@WIRED
+Ars Technica                - https://www.youtube.com/@arstechnica
+Quanta Magazine             - https://www.youtube.com/@QuantaScienceChannel
+Veritasium                  - https://www.youtube.com/@veritasium
+pikuma                      - https://www.youtube.com/@pikuma
+3Blue1Brown                 - https://www.youtube.com/@3blue1brown
+Inigo Quilez                - https://www.youtube.com/@InigoQuilez
+Josh's Channel              - https://www.youtube.com/@JoshsHandle
+Acerola                     - https://www.youtube.com/@Acerola_t
+Sebastian Lague             - https://www.youtube.com/@SebastianLague
+Roguelike Celebration       - https://www.youtube.com/@roguelikecelebration
+Coding Math                 - https://www.youtube.com/@codingmath
+The Organic Chemistry Tutor - https://www.youtube.com/@TheOrganicChemistryTutor
+Noclip                      - https://www.youtube.com/@NoclipDocs
+ThatGuyGlen                 - https://www.youtube.com/@ThatGuyGlen
+AI and Games                - https://www.youtube.com/@AIandGames
+Game Maker's Toolkit        - https://www.youtube.com/@GMTK
+Game Developers Conference  - https://www.youtube.com/@Gdconf
+Miziziziz                   - https://www.youtube.com/@Miziziziz
+RujiK the Comatose          - https://www.youtube.com/@RujiKtheComatose
+dogma.questlog              - https://www.youtube.com/@dogma.questlog
+Slug Glove                  - https://www.youtube.com/@SlugGlove
+The Water Museum            - https://www.youtube.com/@thewatermuseum
+PrismaticaDev               - https://www.youtube.com/@PrismaticaDev
+Music for empty rooms       - https://www.youtube.com/@Musicforemptyrooms
+André Navarro II            - https://www.youtube.com/@andrenavarroII
+
+
+
+FONTS:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 PxPlus_ToshibaSat_8x16.ttf
 PxPlus_IBM_VGA_8x16.ttf
