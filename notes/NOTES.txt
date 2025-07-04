@@ -10,12 +10,12 @@ Vim, Show highlight group of current word  | set statusline=%{synIDattr(synIDtra
 
 LITERATURE:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-The C Programming Language
-Modern C
-C++ Primer
-The C++ Programming Language, Fourth Edition
-C# In Depth
-Understanding the Odin Programming
+The C Programming Language (Brian Kernighan, Dennis Ritchie)
+Modern C (Jens Gustedt)
+C++ Primer (Stanley Lippman, Josée Lajoie, Barbara Moo)
+The C++ Programming Language (Bjarne Stroustrup)
+C# In Depth (Jon Skeet)
+Understanding the Odin Programming Language (Karl Zylinski)
 
 
 PODCASTS:
@@ -92,24 +92,24 @@ VIDEO GAMES:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Disco Elysium
 Pentiment
+Return to Monkey Island
 Dragon Quest XI: Echoes of an Elusive Age
 Pillars of Eternity
 Pillars of Eternity II: Deadfire
-Return to Monkey Island
 Caves of Qud
 Dwarf Fortress
 Metal Gear Solid 3: Snake Eater
 Metal Gear Solid 2: Sons of Liberty
 Metal Gear Solid
-Animal Crossing: New Horizons
 The Legend of Zelda: Breath of the Wild
+Animal Crossing: New Horizons
 Dragon's Dogma: Dark Arisen
-Valheim
+Harold Halibut
 Undertale
 Untitled Goose Game
 A Short Hike
 Return of the Obra Dinn
-Harold Halibut
+Valheim
 
 
 FONTS:
