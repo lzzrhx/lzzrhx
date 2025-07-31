@@ -93,7 +93,7 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  * File manager:          thunar
  * Text editor:           subl
- * Mardown editor:        obsidian
+ * Markdown editor:       obsidian
  * Pdf reader:            okular
  * Web browser:           firefox
  * Messaging:             signal-desktop
@@ -168,7 +168,7 @@
  $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
  $ pacman -S ly xorg i3 rofi kitty
  $ pacman -S git fzf zsh rxvt-unicode
- $ pacman -S yazi cmusd htop tree calcurse calc zoxide
+ $ pacman -S yazi cmus htop tree calcurse calc zoxide
  $ pacman -S numlockx unclutter picom redshift hsetroot playerctl pulsemixer alsa-utils
  $ pacman -S acpi xf86-input-synaptics
  $ pacman -S feh shotgun imagemagick unzip 7zip fastfetch
@@ -248,7 +248,7 @@
  $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
  $ pacman -S texlive texlive-binextra
  $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
- $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop
+ $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop vlc
  $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
  
 
@@ -285,6 +285,7 @@
     $ systemctl enable cups.service
  + Misc. other packages:
     $ sudo pacman -S obs-studio screenkey handbrake
+    $ yay -S cmusfm
 
 
  2.8 | DOTFILES
