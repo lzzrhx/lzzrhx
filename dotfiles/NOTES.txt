@@ -75,7 +75,7 @@
  
  1.5 | TERMINAL APPLICATIONS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * Specs:                 neofetch
+ * Specs:                 fastfetch
  * Text editor:           nvim
  * Diff tool:             nvim -d <file1> <file2>
  * File manager:          yazi
@@ -97,7 +97,6 @@
  * Pdf reader:            okular
  * Web browser:           firefox
  * Messaging:             signal-desktop
- * Chat client:           discord
  * Torrent client:        qbittorrent
  * Bluetooth manager:     blueman-manager
  * Audio mixer:           pavucontrol
@@ -172,7 +171,7 @@
  $ pacman -S yazi cmusd htop tree calcurse calc zoxide
  $ pacman -S numlockx unclutter picom redshift hsetroot playerctl pulsemixer alsa-utils
  $ pacman -S acpi xf86-input-synaptics
- $ pacman -S feh shotgun imagemagick unzip 7zip
+ $ pacman -S feh shotgun imagemagick unzip 7zip fastfetch
  $ pacman -S nodejs python python-pip
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
@@ -249,7 +248,7 @@
  $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
  $ pacman -S texlive texlive-binextra
  $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
- $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop discord
+ $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop
  $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
  
 
@@ -284,6 +283,8 @@
  + Printing:
     $ sudo pacman -S cups gedit
     $ systemctl enable cups.service
+ + Misc. other packages:
+    $ sudo pacman -S obs-studio screenkey handbrake
 
 
  2.8 | DOTFILES
@@ -298,4 +299,3 @@
  $ vim
  * :PluginInstall
  $ python3 .vim/plugged/YouCompleteMe/install.py --clangd-completer --cs-complete --rust-completer --go-completer
-
