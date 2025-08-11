@@ -1,0 +1,283 @@
+////////////////////////////////////////////////////////////////////////////////
+// MEDIA:
+////////////////////////////////////////////////////////////////////////////////
+
+PODCASTS:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Blowback                    - https://blowback.show/
+Chapo Trap House            - https://www.chapotraphouse.com/
+Novara Media                - https://novaramedia.com/
+The LRB Podcast             - https://www.lrb.co.uk/podcasts-and-videos/podcasts/the-lrb-podcast
+Jacobin Radio               - https://jacobin.com/
+The Mondoweiss Podcast      - https://mondoweiss.net/podcast/
+Tides of History            - https://wondery.com/shows/tides-of-history/?utm_source=rss
+The 404 Media Podcast       - https://www.404media.co/the-404-media-podcast/
+Tech Won't Save Us          - https://techwontsave.us/
+Advent of Computing         - http://adventofcomputing.com/
+
+
+NEWS / ARTICLES:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+London Review of Books      - https://www.lrb.co.uk/
+Jacobin                     - https://jacobin.com/
+New Left Review             - https://newleftreview.org/
+It's Going Down             - https://itsgoingdown.org/
+Quanta Magazine             - https://www.quantamagazine.org/
+404 Media                   - https://www.404media.co/
+Truthout                    - https://truthout.org/
+
+
+YOUTUBE CHANNELS:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Novara Media                - https://www.youtube.com/@NovaraMedia
+People Make Games           - https://www.youtube.com/@PeopleMakeGames
+404 Media                   - https://www.youtube.com/@404Mediaco
+Wizard Bisan                - https://www.youtube.com/@wizardbisan
+Palestine Action            - https://www.youtube.com/@pal_action
+AJ+                         - https://www.youtube.com/@ajplus
+London Review of Books      - https://www.youtube.com/@londonreviewofbooks
+Jacobin                     - https://www.youtube.com/@JacobinMag
+Verso Books                 - https://www.youtube.com/@VersoBooks
+Vox                         - https://www.youtube.com/@Vox
+Channel 5                   - https://www.youtube.com/@Channel5YouTube
+Popular Front               - https://www.youtube.com/@PopularFront
+Alice Cappelle              - https://www.youtube.com/@AliceCappelle
+Atrioc                      - https://www.youtube.com/@atrioc
+Dimension 20                - https://www.youtube.com/dimension20show
+WIRED                       - https://www.youtube.com/@WIRED
+Ars Technica                - https://www.youtube.com/@arstechnica
+Quanta Magazine             - https://www.youtube.com/@QuantaScienceChannel
+Veritasium                  - https://www.youtube.com/@veritasium
+pikuma                      - https://www.youtube.com/@pikuma
+3Blue1Brown                 - https://www.youtube.com/@3blue1brown
+Inigo Quilez                - https://www.youtube.com/@InigoQuilez
+Josh's Channel              - https://www.youtube.com/@JoshsHandle
+Acerola                     - https://www.youtube.com/@Acerola_t
+Sebastian Lague             - https://www.youtube.com/@SebastianLague
+Roguelike Celebration       - https://www.youtube.com/@roguelikecelebration
+Coding Math                 - https://www.youtube.com/@codingmath
+The Organic Chemistry Tutor - https://www.youtube.com/@TheOrganicChemistryTutor
+Noclip                      - https://www.youtube.com/@NoclipDocs
+ThatGuyGlen                 - https://www.youtube.com/@ThatGuyGlen
+AI and Games                - https://www.youtube.com/@AIandGames
+Game Maker's Toolkit        - https://www.youtube.com/@GMTK
+Game Developers Conference  - https://www.youtube.com/@Gdconf
+Miziziziz                   - https://www.youtube.com/@Miziziziz
+RujiK the Comatose          - https://www.youtube.com/@RujiKtheComatose
+dogma.questlog              - https://www.youtube.com/@dogma.questlog
+Slug Glove                  - https://www.youtube.com/@SlugGlove
+The Water Museum            - https://www.youtube.com/@thewatermuseum
+PrismaticaDev               - https://www.youtube.com/@PrismaticaDev
+Music for empty rooms       - https://www.youtube.com/@Musicforemptyrooms
+André Navarro II            - https://www.youtube.com/@andrenavarroII
+
+
+VIDEO GAMES:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Tokyo Xtreme Racer (2024)
+Caves of Qud (2024)
+Harold Halibut (2024)
+Balatro (2024)
+Armored Core VI: Fires of Rubicon (2023)
+Baldur's Gate 3 (2023)
+Pentiment (2022)
+Return to Monkey Island (2022)
+Dwarf Fortress (2022)
+Elden Ring (2022)
+Valheim (2021)
+Animal Crossing: New Horizons (2020)
+Disco Elysium (2019)
+Untitled Goose Game (2019)
+A Short Hike (2019)
+Return of the Obra Dinn (2018)
+The Legend of Zelda: Breath of the Wild (2017)
+Pillars of Eternity II: Deadfire (2018)
+Dragon Quest XI: Echoes of an Elusive Age (2017)
+Pillars of Eternity (2015)
+Undertale (2015)
+Dragon's Dogma: Dark Arisen (2012)
+Dark Souls (2011)
+Gran Turismo 4 (2004)
+Dragon Quest 8: Journey Of The Cursed King (2004)
+Metal Gear Solid 3: Snake Eater (2004)
+Metal Gear Solid 2: Sons of Liberty (2001)
+Metal Gear Solid (1998)
+
+
+FILMS :
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+No Other Land (2024)
+Harvest (2024)
+All We Imagine as Light (2024)
+Dahomey (2024)
+Caught by the Tides (2024)
+Echo of You (2023)
+About Dry Grasses (2023)
+Samsara (2023)
+Godland (2022)
+Crows Are White (2022)
+A Hero (2021)
+Bait (2019)
+The Lighthouse (2019)
+Corpus Christi (2019)
+System Crasher (2019)
+HyperNormalisation (2016)
+Bitter Lake (2015)
+Aferim! (2015)
+Son of Saul (2015)
+Inherent Vice (2014)
+Listen Up Philip (2014)
+Gett: The Trial of Viviane Amsalem (2014)
+Fateful Finding (2013)
+The Master (2012)
+Paradise: Love (2012)
+Jai Bhim Comrade (2012)
+Le Havre (2011)
+Once Upon a Time in Anatolia (2011)
+A Separation (2011)
+Into the Abyss (2011)
+Certified Copy (2010)
+There Will Be Blood (2007)
+Funny Games (2007)
+Encounters at the End of the World (2007)
+Out of Place: Memories of Edward Said (2006)
+The Fall (2006)
+The Cave of the Yellow Dog (2005)
+Double Down (2005)
+Dogville (2003)
+Touching the Void (2003)
+Oldboy (2003)
+Sympathy for Mr. Vengeance (2002)
+War and Peace (2002)
+Spirited Away (2001)
+Cat Soup (2001)
+The Royal Tenenbaums (2001)
+American Movie (1999)
+Genghis Blues (1999)
+Fear and Loathing in Las Vegas (1998)
+Funny Games (1997)
+Taste of Cherry (1997)
+Princess Mononoke (1997)
+The Apple (1998)
+Fargo (1996)
+Ghost in the Shell (1995)
+Maborosi (1995)
+Through the Olive Trees (1994)
+La Vie de Bohème (1992)
+Living on the River Agano (1992)
+Life, and Nothing More... (1992)
+Baraka (1992)
+Lessons of Darkness (1992)
+Terminator 2: Judgment Day (1991)
+Dostoevsky's Travels (1991)
+The Stranger (1991)
+Barton Fink (1991)
+Close-Up (1990)
+Miami Blues (1990)
+Interrogation (1989)
+Wodaabe: Herdsmen of the Sun (1989)
+Camp de Thiaroye (1988)
+The Vanishing (1988)
+Robo Vampire (1988)
+Where Is the Friend's House? (1987)
+Castle in the Sky (1986)
+Ran (1985)
+Vagabond (1985)
+Come and See (1985)
+Ninja Terminator (1985)
+Nausicaä of the Valley of the Wind (1984)
+Nostalgia (1983)
+Sans Soleil (1983)
+Rumble Fish (1983)
+Blade Runner (1982)
+Fitzcarraldo (1982)
+Burden of Dreams (1982)
+The Flight of the Eagle (1982)
+Xtro (1982)
+The Thing (1982)
+The Man Who Saved the World (1982)
+Das Boot (1981)
+Chashme Buddoor (1981)
+Mad Max 2 (1981)
+Escape from New York (1981)
+Lion of the Desert (1980)
+Rockers (1978)
+Sparsh (1980)
+Stalker (1979)
+Apocalypse Now (1979)
+West Indies (1979)
+Sun Dragon (1979)
+Girlfriends (1978)
+A Grin Without a Cat (1977)
+Ceddo (1977)
+Soul Brothers of Kung Fu (1977)
+Harlan County U.S.A. (1976)
+Nationalité immigré (1976)
+Dersu Uzala (1975)
+Barry Lyndon (1975)
+The Promised Land (1975)
+The Sword and the Claw (1975)
+Death Race 2000 (1975)
+Mirror (1975)
+The Conversation (1974)
+Chinatown (1974)
+The Texas Chain Saw Massacre (1974)
+The Wicker Man (1973)
+World on a Wire (1973)
+Aguirre, the Wrath of God (1972)
+The Dawns Here Are Quiet (1972)
+The New Land (1972)
+The Emigrants (1971)
+Demons (1971)
+Wake in Fright (1971)
+Soleil O (1970)
+The Color of Pomegranates (1969)
+2001: A Space Odyssey (1968)
+Hour of the Wolf (1968)
+Kuroneko (1968)
+Once Upon a Time in the West (1968)
+Samurai Rebellion (1967)
+Japan's Longest Day (1967)
+Bonnie and Clyde (1967)
+Andrei Rublev (1966)
+Persona (1966)
+The Hero (1966)
+Hunger (1966)
+The War Game (1966)
+Subarnarekka (1965)
+The Shop on Main Street (1965)
+A Fugitive from the Past (1965)
+Culloden (1964)
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)
+Yearning (1964)
+8½ (1963)
+Harakiri (1962)
+The Mad Fox (1962)
+Ivan's Childhood (1962)
+Lawrence of Arabia (1962)
+Judgment at Nuremberg (1961)
+The Naked Island (1960)
+Devi (1960)
+The Virgin Spring (1960)
+The Bridge (1959)
+Ice Cold in Alex (1958)
+Wild Strawberries (1957)
+12 Angry Men (1957)
+Paths of Glory (1957)
+Sweet Smell of Success (1957)
+The Killing (1956)
+Bloody Spear at Mount Fuji (1955)
+La Strada (1954)
+Seven Samurai (1954)
+Kon-Tiki (1950)
+Late Spring (1949)
+A Hometown in Heart (1949)
+Twelve O'Clock High (1949)
+Hamlet (1948)
+Bicycle Thieves (1948)
+Letter from an Unknown Woman (1948)
+Henry V (1944)
+Citizen Kane (1941)
+The Passion of Joan of Arc (1928)
+Battleship Potemkin (1925)
+
