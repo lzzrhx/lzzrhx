@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////////
+// BLENDER CHEAT SHEET
+////////////////////////////////////////////////////////////////////////////////
+
+GENERAL:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+tab                   = change mode
+g                     = move
+g + g                 = move along axis
+s                     = scale
+r                     = rotate
+r + r                 = local rotate
+.                     = pivot point
+z                     = render mode
+shift + a             = add
+shift + d             = duplicate
+ctrl + a              = apply
+ctrl + p              = parent
+ctrl + l              = link
+m                     = move to collection
+f3                    = search
+ctrl + space          = fullscreen
+shift + r-click       = set 3d cursor
+shift + c             = reset 3d cursor
+f                     = change tool size
+shift + f             = change tool size
+x / y / z             = lock movement / scale / rotation axis
+
+
+EDIT MODE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+alt + l-click         = select loop
+ctrl + plus           = grow selection
+ctrl + minus          = shrink selection
+a                     = select all
+a + a                 = deselect
+l                     = select linked
+shift + l             = deselect linked
+c                     = circle select
+alt + ctrl + l-click  = (in edge mode) ring select
+ctrl + l-click        = select shortest path between two points
+b                     = box select
+ctrl + r-click        = lasso select
+shift + g             = select similar
+e                     = extrude
+alt + e               = more extrude options
+ctrl + r-click        = extrude (with mouse)
+i                     = inset
+i + i                 = individual inset
+ctrl + b              = bevel
+f                     = create face
+m                     = merge
+h                     = hide selected parts of mesh
+alt + h               = reveal hidden
+ctrl + r              = loop cut
+shift + n             = recalculate normals
+o                     = proportional editing
+alt + o               = connected proportional editing
+alt + z               = toggle x-ray
+
+
+SCULPT MODE:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+i                     = inflate
+g                     = grab
+m                     = mask
+ctrl + i              = invert mask
+(hold) shift          = smooth tool
+
