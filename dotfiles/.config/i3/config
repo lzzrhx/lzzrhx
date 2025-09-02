@@ -76,7 +76,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Screenshot hotkeys
 bindsym Print exec shotgun ~/screenshots/screenshot_$(date +%Y-%m-%d-%H%M%S).png -s
-bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -l mode=edge -s
+bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -l mode=classic -s
 bindsym Shift+Print exec "sleep 5; shotgun ~/screenshots/screenshot_$(date +%Y-%m-%d-%H%M%S).png -s"
 
 # Rofi setup and hotkey
