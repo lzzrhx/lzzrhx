@@ -10,10 +10,10 @@ case "$BLOCK_BUTTON" in
 esac
 
 # Format text
-TIME=$(date '+%d-%m-%Y (%V) %H:%M:%S ')
+TIME=$(date '+%d-%m-%Y (%a #%V) %H:%M:%S ')
 
 # Print long text
-echo "${TIME}"
+echo "${TIME^^}"
 
 # Print short text
-echo "${TIME}"
+echo "${TIME^^}"

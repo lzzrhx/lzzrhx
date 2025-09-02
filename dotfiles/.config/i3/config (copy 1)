@@ -1,0 +1,221 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# General config
+set $mod Mod4
+hide_edge_borders both
+default_border none
+
+# Set font
+font pango:PxPlus ToshibaSat 8x16, monospace 16px
+
+# Set colors
+set_from_resource $i3-block-warn-color i3wm.color1 #ff0000
+set_from_resource $desktop-bg-color i3wm.color0 #000000
+set_from_resource $bg-color i3wm.background #000000
+set_from_resource $text-color i3wm.foreground #cccccc
+set_from_resource $inactive-text-color i3wm.color8 #666666
+set_from_resource $highlight-color i3wm.color11 #ffff00
+
+# Set window colors
+#exec --no-startup-id xsetroot -solid "$desktop-bg-color"
+exec --no-startup-id hsetroot -solid "$desktop-bg-color"
+client.focused $bg-color $bg-color $text-color $highlight-color
+client.unfocused $bg-color $bg-color $inactive-text-color $highlight-color
+client.focused_inactive $bg-color $bg-color $inactive-text-color $highlight-color
+client.urgent $bg-color $bg-color $highlight-color $highlight-color
+
+# Run pactl info to start pulse
+exec --no-startup-id pactl info
+
+# Disable screensaver
+exec --no-startup-id xset s off -dpms 
+
+# Unclutter: hides mouse on inactivity
+exec --no-startup-id unclutter -idle 1
+
+# Numlockx: enable numlock
+exec --no-startup-id numlockx
+
+# Redshift: adjust screen color temperature to reduce eye strain
+exec --no-startup-id "sleep 20; redshift -t 5700:3700 -l 60.4:5.3 -m randr"
+
+# Picom: enable vsync to avoid screen tearing
+exec --no-startup-id picom -b
+
+# Setup status bar
+bar {
+	strip_workspace_numbers yes
+	position top
+	separator_symbol "*"
+	tray_output none        
+	status_command I3BLOCK_WARN_COLOR=$i3-block-warn-color i3blocks -c ~/.config/i3/i3blocks-config
+	colors {
+		background $bg-color
+		separator $text-color
+        statusline $text-color
+        focused_workspace $text-color $text-color $bg-color
+		inactive_workspace $bg-color $bg-color $text-color
+		urgent_workspace $bg-color $bg-color $highlight-color
+    }
+}
+
+# Set hotkeys
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +2 --max-volume 100 && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -2 --max-volume 100 && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec playerctl -a play-pause
+bindsym XF86AudioStop exec playerctl -a stop
+bindsym XF86AudioPrev exec playerctl -a previous
+bindsym XF86AudioNext exec playerctl -a next
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#bindsym $mod+Shift+m exec ~/.scripts/monitor.sh
+
+# Screenshot hotkeys
+bindsym Print exec shotgun ~/screenshots/screenshot_$(date +%Y-%m-%d-%H%M%S).png -s
+bindsym --release Ctrl+Print exec scrot ~/screenshots/screenshot_%Y-%m-%d-%H%M%S.png -l mode=classic -s
+bindsym Shift+Print exec "sleep 5; shotgun ~/screenshots/screenshot_$(date +%Y-%m-%d-%H%M%S).png -s"
+
+# Rofi setup and hotkey
+bindsym $mod+d exec rofi -show run -font "PxPlus ToshibaSat 8x16 12" -theme custom
+
+# Lock screen
+bindsym $mod+Shift+e exec ~/.config/i3/lock.sh
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1:[ 01 ]"
+set $ws2 "2:[ 02 ]"
+set $ws3 "3:[ 03 ]"
+set $ws4 "4:[ 04 ]"
+set $ws5 "5:[ 05 ]"
+set $ws6 "6:[ 06 ]"
+set $ws7 "7:[ 07 ]"
+set $ws8 "8:[ 08 ]"
+set $ws9 "9:[ 09 ]"
+set $ws10 "10:[ 10 ]"
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# set container layout
+workspace_layout default
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing down will shrink the window’s height.
+        # Pressing up will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym l resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
