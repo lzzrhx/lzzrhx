@@ -8,7 +8,7 @@
     1.2: THEME
     1.3: KEYBINDINGS
     1.4: TERMINAL KEYBINDINGS
-    1.5: TERMINAL APPLICATIONS
+    1.5: TERMINAL COMMANDS
     1.6: GUI APPLICATIONS
   #2: INSTALLATION
     2.1: ARCH
@@ -73,7 +73,7 @@
   [Alt] + c               = fzf-cd-widget
  
  
- 1.5 | TERMINAL APPLICATIONS
+ 1.5 | TERMINAL COMMANDS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  * Specs:                 fastfetch
  * Text editor:           nvim
@@ -87,13 +87,18 @@
  * Wifi menu:             nmtui
  * List wifi networks:    nmcli device wifi list
  * Connect to wifi:       nmcli device wifi connect <ssid> password <password>
+ * Copy text file:        cpf <filename>
+ * Pomodoro timer (25m)   work
+ * Pomodoro timer (5m)    sbreak
+ * Pomodoro timer (30m)   lbreak
+ * Pomodoro timer (2.5h)  pomodoro
  
  
  1.6 | GUI APPLICATIONS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  * File manager:          thunar
  * Text editor:           subl
- * Markdown editor:       obsidian
+ * Notes:                 obsidian
  * Pdf reader:            okular
  * Web browser:           firefox
  * Messaging:             signal-desktop
@@ -109,8 +114,8 @@
  2.1 | ARCH
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  (for norwegian keyboard) $ loadkeys no
- $ cat /sys/firmware/efi/fw_platform_size
- $ iwctl
+ $ cat /sys/firmware/efi/fw_platform_size
+ $ iwctl
  $ adapter phy0 set-property Powered on
  $ device wlan0 set-property Powered on
  $ station wlan0 scan
@@ -125,7 +130,7 @@
  * Format EFI partion (if not dual boot)
  $ mkswap /dev/<swap partion>
  $ swapon /dev/<swap partion>
- $ free -m
+ $ free -m
  $ mkfs.ext4 /dev/<main partion>
  $ mount /dev/<main partion> /mnt
  $ mount /dev/<efi partion> --mkdir /mnt/boot/efi
@@ -139,7 +144,7 @@
  * Uncomment line: en_US.UTF-8 UTF-8
  * Uncomment line: nb_NO.UTF-8 UTF-8
  $ locale-gen
- $ vim /etc/locale.conf
+ $ vim /etc/locale.conf
  * LANG=en_US.UTF-8
  $ vim /etc/vconsole.conf
  * KEYMAP=no
@@ -152,7 +157,7 @@
  * 127.0.1.1     <hostname>.localdomain  localhost
  (usually not required) $ mkinitcpio -P linux
  $ passwd
- $ useradd -m <username>
+ $ useradd -m <username>
  $ passwd <username>
  $ visudo
  * <username> ALL=(ALL:ALL) NOPASSWD: ALL
@@ -264,8 +269,9 @@
  $ yay -S bluetooth-autoconnect
  $ yay -S nvidia-settings
  $ yay -S grub-customizer
- $ sudo systemctl enable bluetooth-autoconnect
+ $ sudo systemctl enable bluetooth-autoconnect
  $ systemctl --user enable pulseaudio-bluetooth-autoconnect
+ $ yay -S timer
 
 
  2.7 | ADDITIONAL PACKAGES
@@ -274,6 +280,7 @@
     $ pacman -S blender godot
     $ pacman -S cmake gdb github-cli lua dotnet-runtime dotnet-sdk dotnet-sdk-8.0
     $ pacman -S raylib sdl3 sdl2-compat
+    $ pacman -S jdk-openjdk maven
  + Games:
     $ pacman -S dwarffortress cataclysm-dda nethack
     $ pacman -S steam

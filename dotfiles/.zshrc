@@ -26,6 +26,7 @@ _fzf_comprun() {
 zmodload -i zsh/complist
 
 # Aliases
+alias cpf='xclip -sel c < '
 alias vi='nvim'
 alias vim='vim -p'
 alias nvim='nvim -p'
@@ -36,6 +37,13 @@ alias diff='diff --color=auto'
 alias lock='~/.config/i3/lock.sh'
 alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
 #alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+
+# Pomodoro timer
+pomodoro-timer () { timer -n "$1$4" $2m --format 24h && mplayer ~/.sounds/$3.wav > /dev/null 2>&1 }
+alias work='pomodoro-timer "Work" 25 pom1'
+alias sbreak='pomodoro-timer "Short break" 5 pom2'
+alias lbreak='pomodoro-timer "Long break" 30 pom2'
+alias pomodoro='echo "Starting 2.5 hour Pomodoro session:" && work " 1/4" && sbreak " 1/4" && work " 2/4" && sbreak " 2/4" && work " 3/4" && sbreak " 3/4" && work " 4/4" && sbreak " 4/4" && lbreak'
 
 # Enviroment variables
 export VISUAL=nvim
@@ -62,7 +70,7 @@ setopt autocd
 unsetopt beep
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/laser_wolf/.zshrc'
+zstyle :compinstall filename '/home/lzzrhx/.zshrc'
 
 # Command completion
 autoload -Uz compinit; compinit

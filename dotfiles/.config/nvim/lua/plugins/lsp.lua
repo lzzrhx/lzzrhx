@@ -70,15 +70,9 @@ return {
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       -- Set enabled servers (:h lspconfig-all)
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
       local servers = {
-        clangd = {},
-        csharp_ls = {},
-        pyright = {},
-        --rust_analyzer = {}
-        --bashls = {}
-        --glsl_analyzer = {}
-        --texlab = {}
-        --ols = {}
+        -- Lua:
         lua_ls = {
           settings = {
             Lua = {
@@ -88,6 +82,34 @@ return {
             },
           },
         },
+        -- C / C++:
+        clangd = {},
+        -- Python:
+        pyright = {},
+        -- C#:
+        -- csharp_ls = {},
+        -- Java:
+        -- jdtls = {},
+        -- Odin:
+        -- ols = {}
+        -- Rust:
+        -- rust_analyzer = {}
+        -- GLSL:
+        -- glsl_analyzer = {}
+        -- PICO-8:
+        -- pico8-ls = {}
+        -- Bash:
+        -- bashls = {}
+        -- Tex:
+        -- texlab = {}
+        -- HTML:
+        -- html = {}
+        -- Haskell:
+        -- hls = {}
+        -- Motorola 68000 assembly:
+        -- m68k = {}
+        -- Assembly:
+        -- asm-lsp = {}
       }
 
       -- Ensure required servers and tools are installed
