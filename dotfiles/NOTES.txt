@@ -253,7 +253,7 @@
  $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
  $ pacman -S texlive texlive-binextra
  $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
- $ pacman -S thunar firefox obsidian qbittorrent ark mplayer signal-desktop vlc
+ $ pacman -S thunar thunar-archive-plugin firefox obsidian qbittorrent ark mplayer signal-desktop vlc
  $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
  
 
