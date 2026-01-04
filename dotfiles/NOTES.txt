@@ -181,7 +181,7 @@
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
  $ systemctl enable NetworkManager.service
- $ systemctl enable ly.service
+ $ systemctl enable ly@tty2.service
  $ exit
  $ umount -lR /mnt
  $ reboot
