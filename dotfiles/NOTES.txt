@@ -12,14 +12,14 @@
     1.6: GUI APPLICATIONS
   #2: INSTALLATION
     2.1: ARCH
-    2.2: DISABLE SUSPEND
-    2.3: QUIET BOOT
-    2.4: TOUCHPAD GESTURES
-    2.5: PACKAGES
-    2.6: YAY PACKAGES
-    2.7: ADDITIONAL PACKAGES
-    2.8: DOTFILES
-    2.9: VIM
+    2.2: PACKAGES
+    2.3: YAY PACKAGES
+    2.4: ADDITIONAL PACKAGES
+    2.5: DOTFILES
+    2.6: VIM
+    2.7: DISABLE SUSPEND
+    2.8: TOUCHPAD GESTURES (FOR LAPTOP)
+    2.0: NVIDIA DRIVERS
 
 ////////////////////////////////////////////////////////////////////////////////
 // #1 | ABOUT
@@ -135,7 +135,7 @@
  $ mount /dev/<main partion> /mnt
  $ mount /dev/<efi partion> --mkdir /mnt/boot/efi
  $ lsblk
- $ pacstrap -K base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim networkmanager dhcpcd
+ $ pacstrap -K /mnt base base-devel intel-ucode linux linux-firmware linux-headers grub efibootmgr os-prober vim networkmanager dhcpcd
  $ genfstab -U /mnt >> /mnt/etc/fstab
  $ arch-chroot /mnt
  $ ln -sf /usr/share/zoneinfo/Europe/Oslo /etc/localtime
@@ -177,7 +177,7 @@
  $ pacman -S numlockx unclutter picom redshift hsetroot playerctl pulsemixer alsa-utils
  $ pacman -S acpi xf86-input-synaptics
  $ pacman -S feh shotgun imagemagick unzip 7zip fastfetch
- $ pacman -S nodejs python python-pip
+ $ pacman -S nodejs npm python
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
  $ systemctl enable NetworkManager.service
@@ -187,8 +187,7 @@
  $ reboot
  * login with <username>
  (for norweigan keyboard) $ localectl --no-convert set-x11-keymap no pc104
- (for dual boot setup) $ sudo grub-mkconfig -o /boot/grub/grub.cfg
- $ vim /etc/modprobe.d/nobeep.conf
+ $ sudo vim /etc/modprobe.d/nobeep.conf
  * blacklist pcspkr
  * blacklist snd_pcsp
  $ nmcli device wifi list
@@ -196,7 +195,69 @@
  $ chsh -s /usr/bin/zsh
 
 
- 2.2 | DISABLE SUSPEND
+ 2.2 | PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ sudo pacman -S neovim xclip ripgrep tree-sitter-cli
+ $ sudo pacman -S okular zathura zathura-pdf-mupdf pdfarranger
+ $ sudo pacman -S texlive texlive-binextra
+ $ sudo pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
+ $ sudo pacman -S thunar thunar-archive-plugin thunar-volman gvfs firefox obsidian qbittorrent ark mplayer signal-desktop vlc
+ $ sudo pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
+ $ systemctl enable bluetooth.service
+
+ 2.3 | YAY PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ git clone https://aur.archlinux.org/yay.git
+ $ cd yay
+ $ makepkg -si
+ $ cd
+ $ rm -rf ~/yay/
+ $ yay -S xcursor-retrosmart
+ $ yay -S sublime-text-4
+ $ yay -S bluetooth-autoconnect
+ $ yay -S nvidia-settings
+ $ yay -S grub-customizer
+ $ yay -S timer
+ $ sudo systemctl enable bluetooth-autoconnect
+ $ systemctl --user enable pulseaudio-bluetooth-autoconnect
+
+
+ 2.4 | ADDITIONAL PACKAGES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ + Development:
+    $ pacman -S blender godot
+    $ pacman -S cmake gdb github-cli lua dotnet-runtime dotnet-sdk
+    $ pacman -S raylib sdl3 sdl2-compat
+    $ pacman -S jdk-openjdk maven
+ + Games:
+    $ pacman -S dwarffortress cataclysm-dda nethack
+    $ pacman -S steam
+ + Math & studies:
+    $ sudo pacman -S libreoffice xournalpp geogebra
+    $ yay -S mathpix-snipping-tool
+ + Printing:
+    $ sudo pacman -S cups gedit
+    $ systemctl enable cups.service
+    $ yay -S brother-hll2400dwe-bin
+ + Misc. other packages:
+    $ sudo pacman -S handbrake obs-studio screenkey
+    $ yay -S cmusfm
+
+
+ 2.5 | DOTFILES
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ git clone https://github.com/lzzrhx/lzzrhx.git
+ * Copy contents of /dotfiles to appropriate folders
+
+
+ 2.6 | VIM
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ $ vim
+ * :PluginInstall
+ $ python3 .vim/plugged/YouCompleteMe/install.py --clangd-completer --cs-complete --rust-completer --go-completer
+
+ 2.7 | DISABLE SUSPEND
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ sudo mkdir /etc/systemd/sleep.conf.d/
  $ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
@@ -208,19 +269,7 @@
  AllowHybridSleep=no
 
 
- 2.3 | QUIET BOOT
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * Redirect Xorg stdout and stderr to file:
- $ sudo vim /etc/ly/config.ini
- * Change the "x_cmd" line to:
- x_cmd = /usr/bin/X > ~/.xorg_log 2>&1
- * Redirect i3 sdout and stderr to log file:
- $ sudo vim /usr/share/xsessions/i3.desktop
- * Change the "Exec" line to:
- rxec=i3 > ~/.i3_log 2>&1
-
-
- 2.4 | TOUCHPAD GESTURES
+ 2.8 | TOUCHPAD GESTURES (FOR LAPTOP)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf
  * Add these lines:
@@ -246,64 +295,25 @@
          Option "PalmMinZ" "300"
  EndSection
 
-
- 2.5 | PACKAGES
+ 2.9 | NVIDIA DRIVERS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ pacman -S neovim xclip ripgrep tree-sitter-cli ttf-jetbrains-mono-nerd
- $ pacman -S okular zathura zathura-pdf-mupdf pdfarranger
- $ pacman -S texlive texlive-binextra
- $ pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
- $ pacman -S thunar thunar-archive-plugin firefox obsidian qbittorrent ark mplayer signal-desktop vlc
- $ pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
- 
-
- 2.6 | YAY PACKAGES
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ git clone https://aur.archlinux.org/yay.git
- $ cd yay
- $ makepkg -si
- $ cd
- $ rm -rf ~/yay/
- $ yay -S xcursor-retrosmart
- $ yay -S sublime-text-4
- $ yay -S bluetooth-autoconnect
- $ yay -S nvidia-settings
- $ yay -S grub-customizer
- $ sudo systemctl enable bluetooth-autoconnect
- $ systemctl --user enable pulseaudio-bluetooth-autoconnect
- $ yay -S timer
-
-
- 2.7 | ADDITIONAL PACKAGES
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + Development:
-    $ pacman -S blender godot
-    $ pacman -S cmake gdb github-cli lua dotnet-runtime dotnet-sdk dotnet-sdk-8.0
-    $ pacman -S raylib sdl3 sdl2-compat
-    $ pacman -S jdk-openjdk maven
- + Games:
-    $ pacman -S dwarffortress cataclysm-dda nethack
-    $ pacman -S steam
- + Math & studies:
-    $ sudo pacman -S libreoffice xournalpp hunspell libmythes mythes-en geogebra
-    $ yay -S mathpix-snipping-tool
- + Printing:
-    $ sudo pacman -S cups gedit
-    $ systemctl enable cups.service
- + Misc. other packages:
-    $ sudo pacman -S obs-studio screenkey handbrake
-    $ yay -S cmusfm
-
-
- 2.8 | DOTFILES
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ git clone https://github.com/lzzrhx/lzzrhx.git
- * Copy contents of /dotfiles to appropriate folders
-
-
- 2.9 | VIM
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
- $ vim
- * :PluginInstall
- $ python3 .vim/plugged/YouCompleteMe/install.py --clangd-completer --cs-complete --rust-completer --go-completer
+ $ sudo grub-customizer
+ * General settings -> kernel parameters -> "loglevel=3 quiet nvidia-drm.modeset=1 nvidia-drm.fbdev=0"
+ $ sudo vim /etc/default/grub
+ $ sudo vim /etc/mkinitcpio.conf
+ * MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+ * remove "kms" from HOOKS=( ... )
+ $ sudo mkinitcpio -P
+ $ sudo mkdir /etc/pacman.d/hooks/
+ $ sudo vim /etc/pacman.d/hooks/nvidia.hook
+ * Add the lines:
+ [Trigger]
+ Operation=Install
+ Operation=Upgrade
+ Operation=Remove
+ Type=Package
+ Target=nvidia
+ [Action]
+ Depends=mkinitcpio
+ When=PostTransaction
+ Exec=/usr/bin/mkinitcpio -P
