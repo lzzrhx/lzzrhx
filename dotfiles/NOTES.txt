@@ -298,12 +298,10 @@
  2.9 | NVIDIA DRIVERS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ sudo grub-customizer
- * General settings -> kernel parameters -> "loglevel=3 quiet nvidia-drm.modeset=1 nvidia-drm.fbdev=0"
+ * General settings -> kernel parameters -> "loglevel=3 quiet nvidia-drm.modeset=1"
  $ sudo vim /etc/default/grub
  $ sudo vim /etc/mkinitcpio.conf
  * MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
- * remove "kms" from HOOKS=( ... )
- $ sudo mkinitcpio -P
  $ sudo mkdir /etc/pacman.d/hooks/
  $ sudo vim /etc/pacman.d/hooks/nvidia.hook
  * Add the lines:
@@ -317,3 +315,5 @@
  Depends=mkinitcpio
  When=PostTransaction
  Exec=/usr/bin/mkinitcpio -P
+ $ sudo nvidia-xconfig
+ $ sudo mkinitcpio -P
