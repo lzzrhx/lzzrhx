@@ -9,72 +9,12 @@ Chapo Trap House            - https://www.chapotraphouse.com/
 Novara Media                - https://novaramedia.com/
 The LRB Podcast             - https://www.lrb.co.uk/podcasts-and-videos/podcasts/the-lrb-podcast
 Jacobin Radio               - https://jacobin.com/
-The Mondoweiss Podcast      - https://mondoweiss.net/podcast/
 Tides of History            - https://wondery.com/shows/tides-of-history/?utm_source=rss
-The 404 Media Podcast       - https://www.404media.co/the-404-media-podcast/
 Tech Won't Save Us          - https://techwontsave.us/
-Advent of Computing         - http://adventofcomputing.com/
-
-
-NEWS / ARTICLES:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-London Review of Books      - https://www.lrb.co.uk/
-Jacobin                     - https://jacobin.com/
-New Left Review             - https://newleftreview.org/
-It's Going Down             - https://itsgoingdown.org/
-Quanta Magazine             - https://www.quantamagazine.org/
-404 Media                   - https://www.404media.co/
-Truthout                    - https://truthout.org/
-
-
-YOUTUBE CHANNELS:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Novara Media                - https://www.youtube.com/@NovaraMedia
-People Make Games           - https://www.youtube.com/@PeopleMakeGames
-404 Media                   - https://www.youtube.com/@404Mediaco
-Wizard Bisan                - https://www.youtube.com/@wizardbisan
-Palestine Action            - https://www.youtube.com/@pal_action
-AJ+                         - https://www.youtube.com/@ajplus
-London Review of Books      - https://www.youtube.com/@londonreviewofbooks
-Jacobin                     - https://www.youtube.com/@JacobinMag
-Verso Books                 - https://www.youtube.com/@VersoBooks
-Vox                         - https://www.youtube.com/@Vox
-Channel 5                   - https://www.youtube.com/@Channel5YouTube
-Popular Front               - https://www.youtube.com/@PopularFront
-Alice Cappelle              - https://www.youtube.com/@AliceCappelle
-Atrioc                      - https://www.youtube.com/@atrioc
-Dimension 20                - https://www.youtube.com/dimension20show
-WIRED                       - https://www.youtube.com/@WIRED
-Ars Technica                - https://www.youtube.com/@arstechnica
-Quanta Magazine             - https://www.youtube.com/@QuantaScienceChannel
-Veritasium                  - https://www.youtube.com/@veritasium
-pikuma                      - https://www.youtube.com/@pikuma
-3Blue1Brown                 - https://www.youtube.com/@3blue1brown
-Inigo Quilez                - https://www.youtube.com/@InigoQuilez
-Josh's Channel              - https://www.youtube.com/@JoshsHandle
-Acerola                     - https://www.youtube.com/@Acerola_t
-Sebastian Lague             - https://www.youtube.com/@SebastianLague
-Roguelike Celebration       - https://www.youtube.com/@roguelikecelebration
-Coding Math                 - https://www.youtube.com/@codingmath
-The Organic Chemistry Tutor - https://www.youtube.com/@TheOrganicChemistryTutor
-Noclip                      - https://www.youtube.com/@NoclipDocs
-ThatGuyGlen                 - https://www.youtube.com/@ThatGuyGlen
-AI and Games                - https://www.youtube.com/@AIandGames
-Game Maker's Toolkit        - https://www.youtube.com/@GMTK
-Game Developers Conference  - https://www.youtube.com/@Gdconf
-Miziziziz                   - https://www.youtube.com/@Miziziziz
-RujiK the Comatose          - https://www.youtube.com/@RujiKtheComatose
-dogma.questlog              - https://www.youtube.com/@dogma.questlog
-Slug Glove                  - https://www.youtube.com/@SlugGlove
-The Water Museum            - https://www.youtube.com/@thewatermuseum
-PrismaticaDev               - https://www.youtube.com/@PrismaticaDev
-Music for empty rooms       - https://www.youtube.com/@Musicforemptyrooms
-André Navarro II            - https://www.youtube.com/@andrenavarroII
 
 
 VIDEO GAMES:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Tokyo Xtreme Racer (2024)
 Caves of Qud (2024)
 Harold Halibut (2024)
 Balatro (2024)
@@ -97,15 +37,26 @@ Pillars of Eternity (2015)
 Undertale (2015)
 Dragon's Dogma: Dark Arisen (2012)
 Dark Souls (2011)
+Fallout: New Vegas (2010)
+Supreme Commander (2007)
+Company of Heroes (2006)
 Gran Turismo 4 (2004)
 Dragon Quest 8: Journey Of The Cursed King (2004)
 Metal Gear Solid 3: Snake Eater (2004)
+The Elder Scrolls III: Morrowind (2002)
 Metal Gear Solid 2: Sons of Liberty (2001)
+Baldur's Gate II (2000)
+Planescape: Torment (1999)
 Metal Gear Solid (1998)
+Baldur's Gate (1998)
 
 
 FILMS :
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+A Poet (2025)
+One Battle After Another (2025)
+A Light That Never Goes Out (2025)
+To Kill a War Machine (2025)
 No Other Land (2024)
 Harvest (2024)
 All We Imagine as Light (2024)
@@ -116,6 +67,7 @@ About Dry Grasses (2023)
 Samsara (2023)
 Godland (2022)
 Crows Are White (2022)
+The Fire Within: A Requiem for Katia and Maurice Krafft (2022)
 A Hero (2021)
 Bait (2019)
 The Lighthouse (2019)
@@ -200,6 +152,7 @@ Das Boot (1981)
 Chashme Buddoor (1981)
 Mad Max 2 (1981)
 Escape from New York (1981)
+Southern Comfort (1981)
 Lion of the Desert (1980)
 Rockers (1978)
 Sparsh (1980)
@@ -277,7 +230,8 @@ Hamlet (1948)
 Bicycle Thieves (1948)
 Letter from an Unknown Woman (1948)
 Henry V (1944)
+To Be or Not to Be (1942)
 Citizen Kane (1941)
+The Shop Around the Corner (1940)
 The Passion of Joan of Arc (1928)
 Battleship Potemkin (1925)
-

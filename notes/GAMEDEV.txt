@@ -4,13 +4,13 @@
 
  VIDEO:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + Gamedev #1                                            https://www.youtube.com/playlist?list=PLUznfNKscdcPwi9lqA-nCmzzGjvamtTFk
- + Gamedev #2                                            https://www.youtube.com/playlist?list=PLUznfNKscdcMenAaMby5wO1JI8bxJJpn1
+ + Video game development                                https://www.youtube.com/playlist?list=PLUznfNKscdcPwi9lqA-nCmzzGjvamtTFk
+ + Gamedev - Technical                                   https://www.youtube.com/playlist?list=PLUznfNKscdcMenAaMby5wO1JI8bxJJpn1
  + Devlogs                                               https://www.youtube.com/playlist?list=PLUznfNKscdcPTyLIUIbY98FFfMp76GD3l
  + Godot                                                 https://www.youtube.com/playlist?list=PLUznfNKscdcNpHVcxUch_Xfsc6I8wu791
- + PICO-8                                                https://www.youtube.com/playlist?list=PLUznfNKscdcNqvEYwCTjIIRpgd-MUwxc-
+ + PICO-8/Picotron                                       https://www.youtube.com/playlist?list=PLUznfNKscdcNqvEYwCTjIIRpgd-MUwxc-
  + NES                                                   https://www.youtube.com/playlist?list=PLUznfNKscdcPw5CnWLlj42EjGwv9AwlEK
- + CS/Math                                               https://www.youtube.com/playlist?list=PLUznfNKscdcN4GoQADvhbC8ER_ny3Wl-S
+ + Math/Physics                                          https://www.youtube.com/playlist?list=PLUznfNKscdcN4GoQADvhbC8ER_ny3Wl-S
 
 
  AUDIO:
@@ -20,13 +20,7 @@
 
  COURSES:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- + Gustavo Pezzi, Pikuma
-    + Master the Linux Terminal & Bash Shell             https://pikuma.com/courses/linux-unix-command-line-bash-shell
-    + Understanding Bitshifting Operations               https://pikuma.com/courses/bit-shifting-operator-tutorial
-    + NES Programming with 6502 Assembly                 https://pikuma.com/courses/nes-game-programming-tutorial
-    + Raycasting Engine Programming with C               https://pikuma.com/courses/raycasting-engine-tutorial-algorithm-javascript
-    + 3D Computer Graphics Programming                   https://pikuma.com/courses/learn-3d-computer-graphics-programming
-    + C++ Game Engine Programming                        https://pikuma.com/courses/cpp-2d-game-engine-development
+ + Gustavo Pezzi, Pikuma                                 https://pikuma.com/
  + Jasper Flick, Catlike Coding (Unity/Godot)            https://catlikecoding.com/
 
 
@@ -80,6 +74,7 @@
  + Red Blob Games                                        https://www.redblobgames.com/
  + Immersive Math                                        http://immersivemath.com
  + Learn OpenGL                                          https://learnopengl.com/
+ + Nerdy Teaachers PICO-8                                https://nerdyteachers.com/PICO-8/
 
 
  TOOLS:
@@ -121,7 +116,6 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  + Fonts, The Ultimate Oldschool PC Font Pack            https://int10h.org/oldschool-pc-fonts/
  + Mixed, itch.io                                        https://itch.io/game-assets/free
- + Mixed, Kenney                                         https://kenney.nl/assets
  + Lospec Palette list                                   https://lospec.com/palette-list
 
 
@@ -154,4 +148,9 @@
  + Godot docs                                            https://docs.godotengine.org/
  + PICO-8 User Manual                                    https://www.lexaloffle.com/dl/docs/pico-8_manual.html
  + Raylib Cheatsheet                                     https://www.raylib.com/cheatsheet/cheatsheet.html
+ + PICO-8 Cheat Sheet                                    https://f000.backblazeb2.com/file/bbs-media/13822/47_PICO-8%20Cheat%20Sheet%20(4k).png
+ + Picotron Manual                                       https://www.lexaloffle.com/dl/docs/picotron_manual.html
+ + raylib cheatsheet                                     https://www.raylib.com/cheatsheet/cheatsheet.html
+ + Playstation 1                                         https://problemkaputt.de/psx-spx.htm
+ 
  
