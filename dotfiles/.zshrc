@@ -35,7 +35,7 @@ alias ip='ip -color=auto'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias lock='~/.config/i3/lock.sh'
-alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
+#alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
 #alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 
 # Pomodoro timer

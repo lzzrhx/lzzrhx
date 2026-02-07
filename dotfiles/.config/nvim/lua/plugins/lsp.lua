@@ -84,32 +84,32 @@ return {
         },
         -- C / C++:
         clangd = {},
+        -- Odin:
+        ols = {},
         -- Python:
         pyright = {},
         -- C#:
-        -- csharp_ls = {},
+        csharp_ls = {},
         -- Java:
-        -- jdtls = {},
-        -- Odin:
-        -- ols = {}
-        -- Rust:
-        -- rust_analyzer = {}
+        jdtls = {},
         -- GLSL:
-        -- glsl_analyzer = {}
+        glsl_analyzer = {},
+        -- Tex:
+        texlab = {},
+        -- Zig:
+        -- zls = {},
+        -- Rust:
+        -- rust_analyzer = {},
+        -- Go:
+        -- gopls = {},
         -- PICO-8:
-        -- pico8-ls = {}
+        -- pico8_ls = {},
         -- Bash:
         -- bashls = {}
-        -- Tex:
-        -- texlab = {}
         -- HTML:
         -- html = {}
         -- Haskell:
         -- hls = {}
-        -- Motorola 68000 assembly:
-        -- m68k = {}
-        -- Assembly:
-        -- asm-lsp = {}
       }
 
       -- Ensure required servers and tools are installed

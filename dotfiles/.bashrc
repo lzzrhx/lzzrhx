@@ -21,9 +21,6 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 #alias xresources='xrdb -load ~/.Xresources'
 alias lock='~/.config/i3/lock.sh'
-alias reboot-windows='sudo grub-reboot "Windows" && sudo reboot'
-#alias single-monitor='./.scripts/single-monitor.sh'
-#alias dual-monitors='./.scripts/dual-monitors.sh'
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
