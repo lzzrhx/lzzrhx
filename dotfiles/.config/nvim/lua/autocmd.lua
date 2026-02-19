@@ -66,3 +66,5 @@ vim.api.nvim_create_autocmd('Filetype', { pattern = { 'xml', 'html', 'xhtml', 'c
 -- Set comment format
 vim.api.nvim_create_autocmd('Filetype', { pattern = { 'c, h, cpp, hpp, cs' }, command = 'setlocal commentstring=//\\ %s' })
 
+-- Turn on spellcheck
+--vim.api.nvim_create_autocmd('Filetype', { pattern = { 'txt', 'tex', 'md' }, command = 'setlocal spell' })

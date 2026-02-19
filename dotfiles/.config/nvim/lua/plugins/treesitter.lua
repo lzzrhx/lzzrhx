@@ -2,7 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter',
+    main = 'nvim-treesitter.config',
     dependencies = {
       {
         'andymass/vim-matchup',

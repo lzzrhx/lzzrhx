@@ -330,3 +330,8 @@
  * Copy the key of the bluetooth device (in the "data" field)
  * Reboot into Arch Linux
  * Edit the file /var/lib/bluetooth/<BT-Adapter-MAC-Address>/info and paste the key copied from windows into the Key field (without spaces between the characters)
+
+   2.11 | MISC.
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Use Kitty as default terminal when opening from Thunar:
+ $ ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec
