@@ -227,7 +227,7 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  + Development:
     $ pacman -S blender godot
-    $ pacman -S cmake gdb github-cli lua dotnet-runtime dotnet-sdk
+    $ pacman -S cmake gdb github-cli odin rust zig go lua dotnet-runtime dotnet-sdk
     $ pacman -S raylib sdl3 sdl2-compat
     $ pacman -S jdk-openjdk maven
  + Games:
@@ -335,3 +335,5 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  * Use Kitty as default terminal when opening from Thunar:
  $ ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec
+ * Fix Nvidia screen tearing:
+ $ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
