@@ -350,6 +350,15 @@
  * Disable root login and set desired port (uncomment and change lines):
  * Port <desired port>
  * PermitRootLogin no
+ $ mkdir http
+ $ sudo pacman -S apache
+ $ sudo nvim /etc/httpd/conf/httpd.conf
+ * Change the "/srv/http" document root to userdir/http:
+ * DocumentRoot "/home/<username>/http"
+ * <Directory "/home/<username>/http">
+ $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
+ * ProtectHome=no
+ $ systemctl enable httpd
  $ sudo pacman -S postgresql
  $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
  * listen_addresses = '*'
@@ -362,6 +371,14 @@
  $ CREATE USER <username> WITH PASSWORD '<password>';
  $ CREATE DATABASE <db name> OWNER <username>;
  $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
+ $ sudo pacman -S ufw
+ $ sudo ufw default deny incoming
+ $ sudo ufw default allow outgoing
+ $ sudo ufw allow ssh
+ $ sudo ufw allow http
+ $ sudo ufw allow 5432/tcp
+ $ systemctl enable ufw.service
+
 
  2.12 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
