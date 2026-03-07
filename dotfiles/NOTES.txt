@@ -353,7 +353,10 @@
  $ mkdir http
  $ sudo pacman -S apache
  $ sudo nvim /etc/httpd/conf/httpd.conf
- * Change the "/srv/http" document root to userdir/http:
+ * Comment out userdir lines:
+ * #LoadModule userdir_module modules/mod_userdir.so
+ * #Include conf/extra/httpd-userdir.conf
+ * Change the "/srv/http" document root to /home/<username>/http:
  * DocumentRoot "/home/<username>/http"
  * <Directory "/home/<username>/http">
  $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
