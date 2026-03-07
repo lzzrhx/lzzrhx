@@ -381,7 +381,8 @@
  $ sudo ufw allow http
  $ sudo ufw allow 5432/tcp
  $ systemctl enable ufw.service
-
+ $ sudo pacman -S cockpit cockpit-storaged udisks2 pcp
+ $ systemctl start cockpit.socket
 
  2.12 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
