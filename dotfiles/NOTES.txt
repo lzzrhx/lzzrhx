@@ -365,6 +365,7 @@
     $ systemctl start fail2ban.service
  * nginx:
     $ mkdir html
+    $ chmod 701 /home/<username>
     $ sudo pacman -S nginx
     $ sudo vim /etc/nginx/nginx.conf
     * Settings (for server with domain name and SSL cert):
