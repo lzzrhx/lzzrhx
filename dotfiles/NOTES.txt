@@ -357,8 +357,12 @@
     * Disable root login, set desired port and disable password login (uncomment and change lines):
     * Port <desired port>
     * PermitRootLogin no
+    * PermitEmptyPasswords no
     * PasswordAuthentication no
     * AuthenticationMethods publickey
+    $ sudo pacman -S fail2ban
+    $ systemctl enable fail2ban.service
+    $ systemctl start fail2ban.service
  * nginx:
     $ mkdir html
     $ sudo pacman -S nginx
