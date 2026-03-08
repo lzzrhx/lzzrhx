@@ -337,52 +337,102 @@
 
  2.11 | SERVER SETUP
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ sudo pacman -S openssh
- $ systemctl enable sshd.service
- * Get list of network devices:
- $ nmcli device status
- * List current connection info:
- $ nmcli device show <device id>
- * Take note of IP4.ADDRESS, IP4.GATEWAY, IP4.DNS[1], IP4.DNS[2]
- $ nmtui
- * Edit your connection, set IPv4 CONFIGURATION to Manual and fill in desired static IP + gateway and DNS from earlier
- $ sudo vim /etc/ssh/sshd_config
- * Disable root login and set desired port (uncomment and change lines):
- * Port <desired port>
- * PermitRootLogin no
- $ mkdir http
- $ sudo pacman -S apache
- $ sudo nvim /etc/httpd/conf/httpd.conf
- * Comment out userdir lines:
- * #LoadModule userdir_module modules/mod_userdir.so
- * #Include conf/extra/httpd-userdir.conf
- * Change the "/srv/http" document root to /home/<username>/http:
- * DocumentRoot "/home/<username>/http"
- * <Directory "/home/<username>/http">
- $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
- * ProtectHome=no
- $ systemctl enable httpd
- $ sudo pacman -S postgresql
- $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
- * listen_addresses = '*'
- $ sudo -u postgres vim /var/lib/postgres/data/pg_hba.conf
- * host    all             all             0.0.0.0/0            md5
- $ sudo -iu postgres
- $ initdb --locale nb_NO.UTF-8 -E UTF8 -D /var/lib/postgres/data
- $ systemctl enable postgresql
- $ psql
- $ CREATE USER <username> WITH PASSWORD '<password>';
- $ CREATE DATABASE <db name> OWNER <username>;
- $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
- $ sudo pacman -S ufw
- $ sudo ufw default deny incoming
- $ sudo ufw default allow outgoing
- $ sudo ufw allow ssh
- $ sudo ufw allow http
- $ sudo ufw allow 5432/tcp
- $ systemctl enable ufw.service
- $ sudo pacman -S cockpit cockpit-storaged udisks2 pcp
- $ systemctl start cockpit.socket
+ * Static IP:
+    * Get list of network devices:
+    $ nmcli device status
+    * List current connection info:
+    $ nmcli device show <device id>
+    * Take note of IP4.ADDRESS, IP4.GATEWAY, IP4.DNS[1], IP4.DNS[2]
+    $ nmtui
+    * Edit your connection, set IPv4 CONFIGURATION to Manual and fill in desired static IP + gateway and DNS from earlier
+ * SSH:
+    $ sudo pacman -S openssh
+    $ systemctl enable sshd.service
+    $ systemctl start sshd.service
+    * From the client computer:
+    $ (client) ssh-keygen -t rsa
+    $ (client) ssh-copy-id <username>@<server ip>
+    * Back to the server computer:
+    $ sudo vim /etc/ssh/sshd_config
+    * Disable root login, set desired port and disable password login (uncomment and change lines):
+    * Port <desired port>
+    * PermitRootLogin no
+    * PasswordAuthentication no
+    * AuthenticationMethods publickey
+ * nginx:
+    $ mkdir html
+    $ sudo pacman -S nginx
+    $ sudo vim /etc/nginx/nginx.conf
+    * Settings (for server with domain name and SSL cert):
+     worker_processes <num cpu cores>;
+     http {
+        charset utf-8;
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        server {
+            listen 80;
+            server_name <domain> www.<domain>;
+            return 301 https://$server_name$request_uri;
+        }
+        server {
+            listen 443 ssl;
+            server_name <domain> www.<domain>;
+            #ssl_certificate      /home/<username>/ssl/<cert file>;
+            #ssl_certificate_key  /home/<username>/ssl/<key file>;
+            location / {
+                root   /home/<username>/html;
+                index  index.html index.htm;
+            }
+        }
+     }
+    $ sudo pacman -S certbot certbot-nginx
+    $ sudo certbot --nginx
+    $ systemctl enable nginx.service
+    $ systemctl start nginx.service
+    $ systemctl enable certbot-renew.timer
+ * (nginx alternative) Apache:
+    $ mkdir http
+    $ sudo pacman -S apache
+    $ sudo nvim /etc/httpd/conf/httpd.conf
+    * Comment out userdir lines:
+    * #LoadModule userdir_module modules/mod_userdir.so
+    * #Include conf/extra/httpd-userdir.conf
+    * Change the "/srv/http" document root to /home/<username>/http:
+    * DocumentRoot "/home/<username>/http"
+    * <Directory "/home/<username>/http">
+    $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
+    * ProtectHome=no
+    $ systemctl enable httpd
+    $ systemctl start httpd
+ * PostgreSQL:
+    $ sudo pacman -S postgresql
+    $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
+    * listen_addresses = '*'
+    $ sudo -u postgres vim /var/lib/postgres/data/pg_hba.conf
+    * host    all             all             0.0.0.0/0            md5
+    $ sudo -iu postgres
+    $ initdb --locale nb_NO.UTF-8 -E UTF8 -D /var/lib/postgres/data
+    $ systemctl enable postgresql
+    $ systemctl start postgresql
+    $ psql
+    $ CREATE USER <username> WITH PASSWORD '<password>';
+    $ CREATE DATABASE <db name> OWNER <username>;
+    $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
+ * Firewall:
+    $ sudo pacman -S ufw
+    $ sudo ufw default deny incoming
+    $ sudo ufw default allow outgoing
+    $ sudo ufw allow ssh
+    $ sudo ufw allow http
+    $ sudo ufw allow https
+    $ sudo ufw allow 5432/tcp
+    $ systemctl enable ufw.service
+    $ systemctl start ufw.service
+ * Cockpit:
+    $ sudo pacman -S cockpit cockpit-storaged udisks2 pcp
+    $ systemctl enable cockpit.socket
+    $ systemctl start cockpit.socket
 
  2.12 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -55,6 +55,7 @@ SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
 # Prompt style
+#PROMPT=$'%{\e[92m%}(%m) %{\e[94m%}%~ ›%{\e[00m%} '
 PROMPT=$'%{\e[94m%}%~ ›%{\e[00m%} '
 
 # Options
