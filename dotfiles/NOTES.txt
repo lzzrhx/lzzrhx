@@ -22,7 +22,8 @@
     2.9:  NVIDIA DRIVERS
     2.10: BLUETOOTH ON DUAL BOOT
     2.11: SERVER SETUP
-    2.12: MISC.
+    2.12: SERVER SETUP (OPTIONALAL / ALTERNATIVE SOLUTIONS)
+    2.13: MISC.
 
 ////////////////////////////////////////////////////////////////////////////////
 // #1 | ABOUT
@@ -82,7 +83,7 @@
  * Text editor:           nvim
  * Diff tool:             nvim -d <file1> <file2>
  * File manager:          yazi
- * Process manager:       htop
+ * Process manager:       htop / btop
  * Calculator:            calc
  * Calendar:              calcurse
  * Music player:          cmus
@@ -175,7 +176,7 @@
  $ pacman -Syu
  $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
  $ pacman -S git zsh ly xorg i3 rofi kitty rxvt-unicode
- $ pacman -S tree fzf zoxide yazi htop calcurse calc unclutter picom hsetroot
+ $ pacman -S tree fzf zoxide yazi htop btop calcurse calc unclutter picom hsetroot
  $ pacman -S unzip 7zip fastfetch
  $ pacman -S nodejs npm python
  $ pacman -S cmus playerctl pulsemixer alsa-utils
@@ -345,7 +346,7 @@
     * Take note of IP4.ADDRESS, IP4.GATEWAY, IP4.DNS[1], IP4.DNS[2]
     $ nmtui
     * Edit your connection, set IPv4 CONFIGURATION to Manual and fill in desired static IP + gateway and DNS from earlier
- * SSH:
+ * SSH (default port 22):
     $ sudo pacman -S openssh
     $ systemctl enable sshd.service
     $ systemctl start sshd.service
@@ -363,7 +364,8 @@
     $ sudo pacman -S fail2ban
     $ systemctl enable fail2ban.service
     $ systemctl start fail2ban.service
- * nginx:
+    * (on client) ssh <username>@<server ip> -p <port>
+ * nginx (port 80/443):
     $ mkdir html
     $ chmod 701 /home/<username>
     $ sudo pacman -S nginx
@@ -383,8 +385,10 @@
         server {
             listen 443 ssl;
             server_name <domain> www.<domain>;
-            #ssl_certificate      /home/<username>/ssl/<cert file>;
-            #ssl_certificate_key  /home/<username>/ssl/<key file>;
+            #ssl_certificate      <from certbot>;
+            #ssl_certificate_key  <from certbot>;
+            #include <from certbot>;
+            #ssh_dhparam <from certbot>;
             location / {
                 root   /home/<username>/html;
                 index  index.html index.htm;
@@ -396,21 +400,7 @@
     $ systemctl enable nginx.service
     $ systemctl start nginx.service
     $ systemctl enable certbot-renew.timer
- * (nginx alternative) Apache:
-    $ mkdir http
-    $ sudo pacman -S apache
-    $ sudo nvim /etc/httpd/conf/httpd.conf
-    * Comment out userdir lines:
-    * #LoadModule userdir_module modules/mod_userdir.so
-    * #Include conf/extra/httpd-userdir.conf
-    * Change the "/srv/http" document root to /home/<username>/http:
-    * DocumentRoot "/home/<username>/http"
-    * <Directory "/home/<username>/http">
-    $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
-    * ProtectHome=no
-    $ systemctl enable httpd
-    $ systemctl start httpd
- * PostgreSQL:
+ * PostgreSQL (default port 5432):
     $ sudo pacman -S postgresql
     $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
     * listen_addresses = '*'
@@ -424,6 +414,7 @@
     $ CREATE USER <username> WITH PASSWORD '<password>';
     $ CREATE DATABASE <db name> OWNER <username>;
     $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
+    * (on client) psql -h <server ip>:5432 -U <username> -d <db name>
  * Firewall:
     $ sudo pacman -S ufw
     $ sudo ufw default deny incoming
@@ -434,12 +425,84 @@
     $ sudo ufw allow 5432/tcp
     $ systemctl enable ufw.service
     $ systemctl start ufw.service
- * Cockpit:
-    $ sudo pacman -S cockpit cockpit-storaged udisks2 pcp
+ * GoAccess:
+    $ sudo pacman -S goaccess
+    $ goaccess /var/log/nginx/access.log --log-format=COMBINED
+ 
+ 2.12 | SERVER SETUP (OPTIONAL / ALTERNATIVE SOLUTIONS)
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * (optional) TODO: CrowdSec
+ * (optional) TODO: Nagios
+ * (optional) TODO: Zabbix
+ * (optional) TODO: Checkmk
+ * (optional) GoAccess live html version:
+    $mkdir goaccess
+    $sudo vim /etc/nginx/nginx.conf
+    * Add:
+     server {
+         listen 1337;
+         location / {
+             root /home/<username>/goaccess;
+             index  report.html;
+         }
+     }
+    $ goaccess /var/log/nginx/access.log -o /home/<username>/goaccess/report.html --log-format=COMBINED --real-time-html --daemonize
+    * Visit <server ip>:1337 to view the report
+ * (optional) Cockpit (port 9090):
+    $ sudo pacman -S cockpit
     $ systemctl enable cockpit.socket
     $ systemctl start cockpit.socket
+ * (nginx alternative) Apache (port 80/443):
+    $ mkdir http
+    $ sudo pacman -S apache
+    $ sudo nvim /etc/httpd/conf/httpd.conf
+    * Comment out userdir lines:
+    * #LoadModule userdir_module modules/mod_userdir.so
+    * #Include conf/extra/httpd-userdir.conf
+    * Change the "/srv/http" document root to /home/<username>/http:
+    * DocumentRoot "/home/<username>/http"
+    * <Directory "/home/<username>/http">
+    $ sudo nvim /etc/systemd/system/httpd.service.d/hardening.conf
+    * ProtectHome=no
+    $ systemctl enable httpd
+    $ systemctl start httpd
+ * (optional) Prometheus / Loki / Grafana Monitoring:
+    * Ports: 3000 (grafana) / 3100 (loki) / 9090 (prometheus) / 9100 (node exporter)
+    $ sudo pacman -S prometheus prometheus-node-exporter loki grafana-alloy grafana
+    $ systemctl enable prometheus.service
+    $ systemctl enable prometheus-node-exporter.service
+    $ systemctl enable loki.service
+    $ systemctl enable grafana-alloy.service
+    $ systemctl enable grafana.service
+    $ systemctl start prometheus.service
+    $ systemctl start prometheus-node-exporter.service
+    $ systemctl start grafana.service
+    $ systemctl start grafana-alloy.service
+    $ systemctl start loki.service
+    $ sudo vim /etc/prometheus/prometheus.yml
+    * Add the lines:
+      - job_name: "node_exporter"
+        static_configs:
+          - targets: ["localhost:9100"]
+    $ sudo vim /etc/grafana-alloy/config.alloy
+    * Lines:
+     local.file_match "local_files" {
+       path_targets = [{"__path__" = "/var/log/*.log"}]
+       sync_period = "5s"
+     }
+     loki.source.file "log_scrape" {
+       targets    = local.file_match.local_files.targets
+       forward_to = [loki.write.grafana_loki.receiver]
+       tail_from_end = true
+     }
 
- 2.12 | MISC.
+     loki.write "grafana_loki" {
+       endpoint {
+         url = "http://localhost:3100/loki/api/v1/push"
+       }
+     }
+
+ 2.13 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  * Use Kitty as default terminal when opening from Thunar:
  $ ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec
