@@ -278,28 +278,7 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ sudo pacman -S acpi xf86-input-synaptics
  $ sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf
- * Add these lines:
- Section "InputClass"
-     Identifier "touchpad"
-     Driver "synaptics"
-     MatchIsTouchpad "on"
-         Option "TapButton1" "1"
-         Option "TapButton2" "3"
-         Option "TapButton3" "2"
-         Option "VertEdgeScroll" "on"
-         Option "VertTwoFingerScroll" "on"
-         Option "HorizEdgeScroll" "on"
-         Option "HorizTwoFingerScroll" "on"
-         Option "EmulateTwoFingerMinZ" "40"
-         Option "EmulateTwoFingerMinW" "8"
-         Option "CoastingSpeed" "0"
-         Option "FingerLow" "30"
-         Option "FingerHigh" "50"
-         Option "MaxTapTime" "125"
-         Option "PalmDetect" "1"
-         Option "PalmMinWidth" "6"
-         Option "PalmMinZ" "300"
- EndSection
+ * See "example/70-synaptics.conf" for file content
 
  2.9 | NVIDIA DRIVERS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -309,17 +288,7 @@
  * MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
  $ sudo mkdir /etc/pacman.d/hooks/
  $ sudo vim /etc/pacman.d/hooks/nvidia.hook
- * Add the lines:
- [Trigger]
- Operation=Install
- Operation=Upgrade
- Operation=Remove
- Type=Package
- Target=nvidia
- [Action]
- Depends=mkinitcpio
- When=PostTransaction
- Exec=/usr/bin/mkinitcpio -P
+ * See "example/nvidia.hook" for file content
  $ sudo nvidia-xconfig
  $ sudo mkinitcpio -P
 
@@ -366,35 +335,10 @@
     $ systemctl start fail2ban.service
     * (on client) ssh <username>@<server ip> -p <port>
  * nginx (port 80/443):
-    $ mkdir html
     $ chmod 701 /home/<username>
     $ sudo pacman -S nginx
     $ sudo vim /etc/nginx/nginx.conf
-    * Settings (for server with domain name and SSL cert):
-     worker_processes <num cpu cores>;
-     http {
-        charset utf-8;
-        sendfile on;
-        tcp_nopush on;
-        tcp_nodelay on;
-        server {
-            listen 80;
-            server_name <domain> www.<domain>;
-            return 301 https://$server_name$request_uri;
-        }
-        server {
-            listen 443 ssl;
-            server_name <domain> www.<domain>;
-            #ssl_certificate      <from certbot>;
-            #ssl_certificate_key  <from certbot>;
-            #include <from certbot>;
-            #ssh_dhparam <from certbot>;
-            location / {
-                root   /home/<username>/html;
-                index  index.html index.htm;
-            }
-        }
-     }
+    * See "example/nginx.conf" for an example file with two domains (replace <domain1> and <domain2> with domain names)
     $ sudo pacman -S certbot certbot-nginx
     $ sudo certbot --nginx
     $ systemctl enable nginx.service
@@ -415,7 +359,7 @@
     $ CREATE DATABASE <db name> OWNER <username>;
     $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
     * (on client) psql -h <server ip>:5432 -U <username> -d <db name>
- * Firewall:
+ * Firewall (ufw):
     $ sudo pacman -S ufw
     $ sudo ufw default deny incoming
     $ sudo ufw default allow outgoing
@@ -425,16 +369,22 @@
     $ sudo ufw allow 5432/tcp
     $ systemctl enable ufw.service
     $ systemctl start ufw.service
- * GoAccess:
-    $ sudo pacman -S goaccess
+ * Logging (logrotate / lnav / goaccess):
+    $ sudo pacman -S lnav goaccess logrotate
+    $ sudo vim /etc/logrotate.d/nginx
+    * See "example/nginx" for an example file
+    $ systemctl enable logrotate.timer
+    $ systemctl start logrotate.timer
+    * Example commands for viewing log files:
+    $ lnav /var/log/nginx/error.log
     $ goaccess /var/log/nginx/access.log --log-format=COMBINED
  
  2.12 | SERVER SETUP (OPTIONAL / ALTERNATIVE SOLUTIONS)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * (optional) TODO: CrowdSec
- * (optional) TODO: Nagios
- * (optional) TODO: Zabbix
- * (optional) TODO: Checkmk
+ * (optional) CrowdSec
+ * (optional) Nagios
+ * (optional) Zabbix 
+ * (optional) Checkmk
  * (optional) GoAccess live html version:
     $mkdir goaccess
     $sudo vim /etc/nginx/nginx.conf
@@ -446,7 +396,7 @@
              index  report.html;
          }
      }
-    $ goaccess /var/log/nginx/access.log -o /home/<username>/goaccess/report.html --log-format=COMBINED --real-time-html --daemonize
+    $ (add as systemd service) goaccess /var/log/nginx/access.log -o /home/<username>/goaccess/report.html --log-format=COMBINED --real-time-html --daemonize
     * Visit <server ip>:1337 to view the report
  * (optional) Cockpit (port 9090):
     $ sudo pacman -S cockpit
@@ -469,16 +419,8 @@
  * (optional) Prometheus / Loki / Grafana Monitoring:
     * Ports: 3000 (grafana) / 3100 (loki) / 9090 (prometheus) / 9100 (node exporter)
     $ sudo pacman -S prometheus prometheus-node-exporter loki grafana-alloy grafana
-    $ systemctl enable prometheus.service
-    $ systemctl enable prometheus-node-exporter.service
-    $ systemctl enable loki.service
-    $ systemctl enable grafana-alloy.service
-    $ systemctl enable grafana.service
-    $ systemctl start prometheus.service
-    $ systemctl start prometheus-node-exporter.service
-    $ systemctl start grafana.service
-    $ systemctl start grafana-alloy.service
-    $ systemctl start loki.service
+    $ systemctl enable prometheus prometheus-node-exporter loki grafana-alloy grafana
+    $ systemctl start prometheus prometheus-node-exporter grafana grafana-alloy loki
     $ sudo vim /etc/prometheus/prometheus.yml
     * Add the lines:
       - job_name: "node_exporter"
