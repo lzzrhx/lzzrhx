@@ -175,7 +175,7 @@
  * Include = /etc/pacman.d/mirrorlist
  $ pacman -Syu
  $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
- $ pacman -S git zsh ly xorg i3 rofi kitty rxvt-unicode
+ $ pacman -S git zsh ly xorg i3 rofi kitty rxvt-unicode xorg-xauth
  $ pacman -S tree fzf zoxide yazi htop btop calcurse calc unclutter picom hsetroot
  $ pacman -S unzip 7zip fastfetch
  $ pacman -S nodejs npm python
@@ -381,10 +381,6 @@
  
  2.12 | SERVER SETUP (OPTIONAL / ALTERNATIVE SOLUTIONS)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * (optional) CrowdSec
- * (optional) Nagios
- * (optional) Zabbix 
- * (optional) Checkmk
  * (optional) GoAccess live html version:
     $mkdir goaccess
     $sudo vim /etc/nginx/nginx.conf
@@ -443,6 +439,10 @@
          url = "http://localhost:3100/loki/api/v1/push"
        }
      }
+ * (optional) CrowdSec
+ * (optional) Nagios
+ * (optional) Zabbix 
+ * (optional) Checkmk
 
  2.13 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
