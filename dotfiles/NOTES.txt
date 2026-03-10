@@ -180,7 +180,7 @@
  $ pacman -S unzip 7zip fastfetch
  $ pacman -S nodejs npm python
  $ pacman -S cmus playerctl pulsemixer alsa-utils
- $ pacman -S redshift feh shotgun imagemagick
+ $ pacman -S redshift feh shotgun imagemagick scrot
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
  $ systemctl enable NetworkManager.service
