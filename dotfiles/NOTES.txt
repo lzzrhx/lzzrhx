@@ -180,7 +180,7 @@
  $ pacman -S unzip 7zip fastfetch
  $ pacman -S nodejs npm python
  $ pacman -S cmus playerctl pulsemixer alsa-utils
- $ pacman -S redshift feh shotgun imagemagick scrot
+ $ pacman -S redshift feh shotgun imagemagick
  $ systemctl enable systemd-timesyncd.service
  $ systemctl enable dhcpcd.service
  $ systemctl enable NetworkManager.service
@@ -359,6 +359,14 @@
     $ CREATE DATABASE <db name> OWNER <username>;
     $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
     * (on client) psql -h <server ip>:5432 -U <username> -d <db name>
+    * (optional) Add SSL support:
+        $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
+        * Use SSL cert from nginx certbot config:
+            ssl = on  
+            ssl_cert_file = '<fullchain.pem from certbot (aquired during nginx setup)>'
+            ssl_key_file = '<privkey.pem from certbot (aquired during nginx setup)>'
+            ssl_prefer_server_ciphers = on
+            ssl_dh_params_file = '/etc/letsencrypt/ssl-dhparams.pem'
  * Firewall (ufw):
     $ sudo pacman -S ufw
     $ sudo ufw default deny incoming
