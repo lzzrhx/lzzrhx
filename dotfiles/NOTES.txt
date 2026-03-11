@@ -359,14 +359,6 @@
     $ CREATE DATABASE <db name> OWNER <username>;
     $ GRANT ALL PRIVILEGES ON DATABASE <db name> TO <username>;
     * (on client) psql -h <server ip>:5432 -U <username> -d <db name>
-    * (optional) Add SSL support:
-        $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
-        * Use SSL cert from nginx certbot config:
-            ssl = on  
-            ssl_cert_file = '<fullchain.pem from certbot (aquired during nginx setup)>'
-            ssl_key_file = '<privkey.pem from certbot (aquired during nginx setup)>'
-            ssl_prefer_server_ciphers = on
-            ssl_dh_params_file = '/etc/letsencrypt/ssl-dhparams.pem'
  * Firewall (ufw):
     $ sudo pacman -S ufw
     $ sudo ufw default deny incoming
@@ -389,6 +381,14 @@
  
  2.12 | SERVER SETUP (OPTIONAL / ALTERNATIVE SOLUTIONS)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * (optional) Add SSL support to PostgreSQL:
+    $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
+    * Use SSL cert from certbot:
+       ssl = on  
+       ssl_cert_file = '<fullchain.pem from certbot (aquired during nginx setup)>'
+       ssl_key_file = '<privkey.pem from certbot (aquired during nginx setup)>'
+       ssl_prefer_server_ciphers = on
+       ssl_dh_params_file = '/etc/letsencrypt/ssl-dhparams.pem'
  * (optional) GoAccess live html version:
     $mkdir goaccess
     $sudo vim /etc/nginx/nginx.conf
@@ -447,10 +447,10 @@
          url = "http://localhost:3100/loki/api/v1/push"
        }
      }
- * (optional) CrowdSec
  * (optional) Nagios
  * (optional) Zabbix 
  * (optional) Checkmk
+ * (optional) CrowdSec
 
  2.13 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
