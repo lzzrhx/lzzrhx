@@ -1,0 +1,7 @@
+sort          = "name"
+layout        = "inverted"
+dir-order     = "last"
+icons         = true
+human         = true
+long          = false
+suppress-size = true

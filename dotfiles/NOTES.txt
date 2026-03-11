@@ -79,23 +79,32 @@
  
  1.5 | TERMINAL COMMANDS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * Specs:                 fastfetch
- * Text editor:           nvim
- * Diff tool:             nvim -d <file1> <file2>
- * File manager:          yazi
- * Process manager:       htop / btop
- * Calculator:            calc
- * Calendar:              calcurse
- * Music player:          cmus
- * Audio mixer:           alsamixer
- * Wifi menu:             nmtui
- * List wifi networks:    nmcli device wifi list
- * Connect to wifi:       nmcli device wifi connect <ssid> password <password>
- * Copy text file:        cpf <filename>
- * Pomodoro timer (25m)   work
- * Pomodoro timer (5m)    sbreak
- * Pomodoro timer (30m)   lbreak
- * Pomodoro timer (2.5h)  pomodoro
+ * Specs:                     fastfetch
+ * Quick go to directory:     z
+ * File manager:              yazi (y)
+ * Text editor:               nvim
+ * Directory tree:            erd (tree)
+ * Print file:                bat (cat)
+ * File and directory search: fd (find)
+ * Line-oriented search:      rg (grep)
+ * Disk usage overview:       duf (df)
+ * Simplified man pages:      tldr <package>
+ * Copy contents of file:     fcp <filename>
+ * Copy file (SSH):           scp <source> <target>
+ * Diff tool:                 diff <file1> <file2>
+ * Process manager:           htop
+ * Resource monitor:          btop
+ * Calculator:                calc
+ * Calendar:                  calcurse
+ * Music player:              cmus
+ * Audio mixer:               alsamixer
+ * Wifi menu:                 nmtui
+ * List wifi networks:        nmcli device wifi list
+ * Connect to wifi:           nmcli device wifi connect <ssid> password <password>
+ * Pomodoro timer (25m):      work
+ * Pomodoro timer (5m):       sbreak
+ * Pomodoro timer (30m):      lbreak
+ * Pomodoro timer (2.5h):     pomodoro
  
  
  1.6 | GUI APPLICATIONS
@@ -176,8 +185,9 @@
  $ pacman -Syu
  $ pacman -S nvidia-open nvidia-utils lib32-nvidia-utils
  $ pacman -S git zsh ly xorg i3 rofi kitty rxvt-unicode xorg-xauth
- $ pacman -S tree fzf zoxide yazi htop btop calcurse calc unclutter picom hsetroot
- $ pacman -S unzip 7zip fastfetch
+ $ pacman -S unclutter picom hsetroot
+ $ pacman -S fzf zoxide yazi htop btop calcurse calc erdtree bat ripgrep trash-cli fastfetch tldr duf fd ttf-nerd-fonts-symbols
+ $ pacman -S unzip 7zip
  $ pacman -S nodejs npm python
  $ pacman -S cmus playerctl pulsemixer alsa-utils
  $ pacman -S redshift feh shotgun imagemagick
@@ -200,7 +210,7 @@
 
  2.2 | PACKAGES
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- $ sudo pacman -S neovim xclip ripgrep tree-sitter-cli
+ $ sudo pacman -S neovim xclip tree-sitter-cli
  $ sudo pacman -S okular zathura zathura-pdf-mupdf pdfarranger
  $ sudo pacman -S texlive texlive-binextra texlive-langeuropean
  $ sudo pacman -S bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol
