@@ -22,7 +22,7 @@
     2.9:  NVIDIA DRIVERS
     2.10: BLUETOOTH ON DUAL BOOT
     2.11: SERVER SETUP
-    2.12: SERVER SETUP (OPTIONALAL / ALTERNATIVE SOLUTIONS)
+    2.12: SERVER SETUP (OPTIONAL / ALTERNATE SOLUTIONS)
     2.13: MISC.
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -389,7 +389,7 @@
     $ lnav /var/log/nginx/error.log
     $ goaccess /var/log/nginx/access.log --log-format=COMBINED
  
- 2.12 | SERVER SETUP (OPTIONAL / ALTERNATIVE SOLUTIONS)
+ 2.12 | SERVER SETUP (OPTIONAL / ALTERNATE SOLUTIONS)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  * (optional) Add SSL support to PostgreSQL:
     $ sudo -u postgres vim /var/lib/postgres/data/postgresql.conf
