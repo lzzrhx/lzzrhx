@@ -206,6 +206,7 @@
  * blacklist snd_pcsp
  $ nmcli device wifi list
  $ nmcli device wifi connect <ssid> password <password>
+ $ gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 
  2.2 | PACKAGES
@@ -232,7 +233,6 @@
  $ yay -S nvidia-settings
  $ yay -S grub-customizer
  $ yay -S timer
- $ sudo systemctl enable bluetooth-autoconnect
  $ systemctl --user enable pulseaudio-bluetooth-autoconnect
 
 
@@ -276,13 +276,7 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  $ sudo mkdir /etc/systemd/sleep.conf.d/
  $ sudo vim /etc/systemd/sleep.conf.d/disable-suspend.conf
- * Add these lines:
- [Sleep]
- AllowSuspend=no
- AllowHibernation=no
- AllowSuspendThenHibernate=no
- AllowHybridSleep=no
-
+ * See "example/disable-suspend.conf" for file content
 
  2.8 | BATTERY MONITOR AND TOUCHPAD GESTURES (FOR LAPTOP)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -465,7 +459,7 @@
  2.13 | MISC.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  * Use Kitty as default terminal when opening from Thunar:
- $ ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec
+ $ sudo ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec
  * Fix Nvidia screen tearing:
  $ sudo vim /etc/X11/xorg.conf.d/20-nvidia.conf
  * Add ForceFullCompositionPipeline settings (from https://wiki.archlinux.org/title/NVIDIA/Troubleshooting#Avoid_screen_tearing_on_Xorg)
